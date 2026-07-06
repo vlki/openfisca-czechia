@@ -1,4 +1,8 @@
 
+## 0.1.1
+
+* Updatované README.md
+
 ## 0.1.0
 
 První verze modelu obsahující:
