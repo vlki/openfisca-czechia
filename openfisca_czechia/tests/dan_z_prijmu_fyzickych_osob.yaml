@@ -1,0 +1,15 @@
+- name: Základní sazba daně v 2026 je 15%
+  absolute_error_margin: 0.01
+  period: 2026-01
+  input:
+    hruby_prijem_z_hlavniho_zamestnani: 50000
+  output:
+    dan_z_prijmu_z_hlavniho_zamestnani: 7500
+
+- name: Pokud by roční příjem zaměstnance překročil hranici pro vyšší sazbu daně z příjmu FO, pak se pro část nad hranicí aplikuje vyšší sazba
+  absolute_error_margin: 0.01
+  period: 2026-01
+  input:
+    hruby_prijem_z_hlavniho_zamestnani: 200000
+  output:
+    dan_z_prijmu_z_hlavniho_zamestnani: 34247.92

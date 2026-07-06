@@ -1,0 +1,30 @@
+metadata:
+  unit: /1
+  reference:
+    2025-10-01:
+      title: § 41 zákona č. 151/2025 Sb. o dávce státní sociální pomoci - znění od 31.03.2026
+      href: https://e-sbirka.gov.cz/sb/2025/151/2026-03-31#par_41
+
+nasobek_zivotniho_minima_domacnosti_jako_hranice_rozhodneho_prijmu_delici_vypocty_pracovniho_bonusu:
+  description: Násobek životního minima domácnosti jako hranice rozhodného příjmu dělící výpočty pracovního bonusu DSSP
+  values:
+    2025-01-01:
+      value: 1.6
+
+pracovni_bonus_jako_cast_prijmu_v_situaci_pod_hranici:
+  description: Část příjmu zohledňovaného pro pracovní bonus, která se stane pracovním bonusem, když je rozhodný příjem domácnosti pod hranicí dělící výpočty pracovního bonusu DSSP
+  values:
+    2025-01-01:
+      value: 0.4
+
+cast_kladneho_rozdilu_prijmu_a_rozhodneho_prijmu_prevysujiciho_hranici_jako_zakladni_cast_pro_vypocet_bonusu:
+  description: Část kladného rozdílu příjmu a rozhodného příjmu převyšujícího hranici, která je základní částí pro výpočet bonusu v situaci nad hranicí
+  values:
+    2025-01-01:
+      value: 0.4
+
+cast_rozhodneho_prijmu_prevysujiciho_hranici_jako_redukcni_cast_pro_vypocet_bonusu:
+  description: Část rozhodného příjmu převyšujícího hranici, která je redukční částí pro výpočet bonusu v situaci nad hranicí
+  values:
+    2025-01-01:
+      value: 0.3

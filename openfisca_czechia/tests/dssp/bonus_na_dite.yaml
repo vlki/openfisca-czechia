@@ -1,0 +1,98 @@
+- name: Nezranitelný samoživitel s dvěmi dětmi pod nejnižší hranicí (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 10000
+        dssp_je_osoba_pracovne_aktivni: true
+        dssp_je_osoba_zranitelna: false
+      dite1:
+        je_nezaopatrene_dite: true
+        dssp_je_osoba_zranitelna: true
+        vek: 2
+      dite2:
+        je_nezaopatrene_dite: true
+        dssp_je_osoba_zranitelna: true
+        vek: 8
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dite1, dite2]
+  output:
+    domacnost:
+      dssp_bonus_na_dite: 1000
+  absolute_error_margin: 0.01
+
+- name: Zranitelný samoživitel s dvěmi dětmi pod nejnižší hranicí (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 10000
+        dssp_je_osoba_pracovne_aktivni: true
+        dssp_je_osoba_zranitelna: true
+      dite1:
+        je_nezaopatrene_dite: true
+        dssp_je_osoba_zranitelna: true
+        vek: 2
+      dite2:
+        je_nezaopatrene_dite: true
+        dssp_je_osoba_zranitelna: true
+        vek: 8
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dite1, dite2]
+  output:
+    domacnost:
+      dssp_bonus_na_dite: 2000
+  absolute_error_margin: 0.01
+
+- name: Zranitelný samoživitel s dvěmi dětmi nad nejvyšší hranicí (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 45000
+        dssp_je_osoba_pracovne_aktivni: true
+        dssp_je_osoba_zranitelna: true
+      dite1:
+        je_nezaopatrene_dite: true
+        dssp_je_osoba_zranitelna: true
+        vek: 2
+      dite2:
+        je_nezaopatrene_dite: true
+        dssp_je_osoba_zranitelna: true
+        vek: 8
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dite1, dite2]
+  output:
+    domacnost:
+      dssp_bonus_na_dite: 0
+  absolute_error_margin: 0.01
+
+- name: Pár s dvěmi dětmi pod nejnižší hranicí, jeden z páru nezranitelný a nepracovně aktivní (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 10000
+        dssp_je_osoba_pracovne_aktivni: true
+        dssp_je_osoba_zranitelna: true
+      dospely2:
+        dssp_je_osoba_pracovne_aktivni: false
+        dssp_je_osoba_zranitelna: false
+      dite1:
+        je_nezaopatrene_dite: true
+        dssp_je_osoba_zranitelna: true
+        vek: 2
+      dite2:
+        je_nezaopatrene_dite: true
+        dssp_je_osoba_zranitelna: true
+        vek: 8
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2, dite1, dite2]
+  output:
+    domacnost:
+      dssp_bonus_na_dite: 0
+  absolute_error_margin: 0.01

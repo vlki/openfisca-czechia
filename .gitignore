@@ -11,10 +11,10 @@ dist
 .idea
 .project
 .pydevproject
-.python-version
 .settings
 .spyderproject
 .vscode
+.python-version
 
 # OS stuff
 

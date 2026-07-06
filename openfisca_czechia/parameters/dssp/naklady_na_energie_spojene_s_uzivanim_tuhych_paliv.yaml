@@ -1,0 +1,36 @@
+metadata:
+  unit: currency-CZK
+  reference:
+    2025-10-01:
+      title: § 26 odst. 4 zákona č. 151/2025 Sb., o dávce státní sociální pomoci
+      href: https://e-sbirka.gov.cz/sb/2025/151/2026-03-31#par_26-odst_4
+
+jednoclenna_domacnost:
+  description: Výše energetického paušálu pro jednočlennou domácnost
+  values:
+    2025-10-01:
+      value: 1500
+
+dvouclenna_domacnost:
+  description: Výše energetického paušálu pro dvoučlennou domácnost
+  values:
+    2025-10-01:
+      value: 2000
+
+triclenna_domacnost:
+  description: Výše energetického paušálu pro tříčlennou domácnost
+  values:
+    2025-10-01:
+      value: 2500
+
+ctyrclenna_domacnost:
+  description: Výše energetického paušálu pro čtyřčlennou domácnost
+  values:
+    2025-10-01:
+      value: 3000
+
+peti_nebo_viceclenna_domacnost:
+  description: Výše energetického paušálu pro pěti a vícečlennou domácnost
+  values:
+    2025-10-01:
+      value: 3500

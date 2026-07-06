@@ -1,0 +1,33 @@
+- name: Všechny osoby zranitelné
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        dssp_je_osoba_zranitelna: true
+      dospely2:
+        dssp_je_osoba_zranitelna: true
+      dite1:
+        dssp_je_osoba_zranitelna: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2, dite1]
+  output:
+    domacnost:
+      dssp_jsou_vsechny_osoby_v_domacnosti_zranitelne: true
+
+- name: Jedna osoba nezranitelná
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        dssp_je_osoba_zranitelna: true
+      dospely2:
+        dssp_je_osoba_zranitelna: false
+      dite1:
+        dssp_je_osoba_zranitelna: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2, dite1]
+  output:
+    domacnost:
+      dssp_jsou_vsechny_osoby_v_domacnosti_zranitelne: false

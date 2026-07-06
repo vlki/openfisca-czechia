@@ -1,0 +1,10 @@
+description: Násobek energetického paušálu aplikovaný pro domácnosti se všemi zranitelnými osobami
+metadata:
+  unit: /1
+  reference:
+    2025-10-01:
+      title: § 32 odst. 3 zákona č. 151/2025 Sb., o dávce státní sociální pomoci
+      href: https://e-sbirka.gov.cz/sb/2025/151/2026-03-31#par_32-odst_3
+values:
+  2025-10-01:
+    value: 1.4

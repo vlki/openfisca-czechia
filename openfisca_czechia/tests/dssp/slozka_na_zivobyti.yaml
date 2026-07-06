@@ -1,0 +1,60 @@
+- name: Jednočlenná pracovně aktivní domácnost s rozhodným příjmem pod hranicí pro započítání složky (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 6000
+        dssp_je_osoba_pracovne_aktivni: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1]
+  output:
+    domacnost:
+      # 4860 - (6000 - (6000 * 0.3))
+      dssp_slozka_na_zivobyti: 660
+  absolute_error_margin: 0.01
+
+- name: Jednočlenná pracovně aktivní domácnost s rozhodným příjmem nad hranicí pro započítání složky (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 8000
+        dssp_je_osoba_pracovne_aktivni: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1]
+  output:
+    domacnost:
+      dssp_slozka_na_zivobyti: 0
+  absolute_error_margin: 0.01
+
+- name: Pětičlenná zranitelná domácnost s příjem pod hranicí pro započítání složky (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 20000
+        dssp_je_osoba_zranitelna: true
+      dospely2:
+        dssp_je_osoba_zranitelna: true
+      dite1:
+        dssp_je_osoba_zranitelna: true
+        je_nezaopatrene_dite: true
+        vek: 5
+      dite2:
+        dssp_je_osoba_zranitelna: true
+        je_nezaopatrene_dite: true
+        vek: 8
+      dite3:
+        dssp_je_osoba_zranitelna: true
+        je_nezaopatrene_dite: true
+        vek: 16
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2, dite1, dite2, dite3]
+  output:
+    domacnost:
+      # 17530 - (20000 - (20000 * 0.3))
+      dssp_slozka_na_zivobyti: 3530
+  absolute_error_margin: 0.01

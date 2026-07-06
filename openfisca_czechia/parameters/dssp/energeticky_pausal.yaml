@@ -1,0 +1,36 @@
+metadata:
+  unit: currency-CZK
+  reference:
+    2025-10-01:
+      title: § 32 odst. 2 zákona č. 151/2025 Sb., o dávce státní sociální pomoci
+      href: https://e-sbirka.gov.cz/sb/2025/151/2026-03-31#par_32-odst_2
+
+jednoclenna_domacnost:
+  description: Výše energetického paušálu pro jednočlennou domácnost
+  values:
+    2025-10-01:
+      value: 2300
+
+dvouclenna_domacnost:
+  description: Výše energetického paušálu pro dvoučlennou domácnost
+  values:
+    2025-10-01:
+      value: 2800
+
+triclenna_domacnost:
+  description: Výše energetického paušálu pro tříčlennou domácnost
+  values:
+    2025-10-01:
+      value: 3300
+
+ctyrclenna_domacnost:
+  description: Výše energetického paušálu pro čtyřčlennou domácnost
+  values:
+    2025-10-01:
+      value: 3800
+
+peti_nebo_viceclenna_domacnost:
+  description: Výše energetického paušálu pro pěti a vícečlennou domácnost
+  values:
+    2025-10-01:
+      value: 4300

@@ -1,0 +1,24 @@
+metadata:
+  unit: /1
+  reference:
+    2025-10-01:
+      title: § 19 zákona č. 151/2025 Sb. o dávce státní sociální pomoci - znění od 31.03.2026
+      href: https://e-sbirka.gov.cz/sb/2025/151/2026-03-31#par_19
+
+koeficient_pro_vypocet_urcene_casti_rozhodneho_prijmu:
+  description: Koeficient pro výpočet určené části rozhodného příjmu pro výpočet složky DSSP na bydlení
+  values:
+    2025-10-01:
+      value: 0.3
+
+nasobek_zivotniho_minima_domacnosti_jako_hranice_pro_rozhodny_prijem_nad_kterou_se_pricita_k_urcene_casti_rozhodneho_prijmu:
+  description: Násobek životního minima domácnosti jako hranice pro rozhodný příjem, nad kterou se přičítá k určené části rozhodného příjmu pro výpočet složky DSSP na bydlení
+  values:
+    2025-10-01:
+      value: 2
+
+koeficient_jako_nasobek_castky_presujici_hranici_nasobku_zivotniho_minima_ktery_se_pricita_k_urcene_casti_rozhodneho_prijmu:
+  description: Koeficient jako násobek částky převyšující hranici násobku životního minima, který se přičítá k určené části rozhodného příjmu pro výpočet složky DSSP na bydlení
+  values:
+    2025-10-01:
+      value: 0.1

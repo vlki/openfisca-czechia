@@ -1,0 +1,41 @@
+- name: Všechny příjmy zahrnuté do příjmu zohledňovaného pro pracovní bonus pro DSSP (leden 2026)
+  absolute_error_margin: 0.01
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 30000
+      dospely2:
+        duchody: 1000
+        materska: 2000
+        nemocenska: 3000
+        odmena_pestouna: 4000
+        podpora_v_nezamestnanosti: 5000
+        prispevek_na_uhradu_potreb_na_dite: 6000
+        rodicovsky_prispevek: 7000
+        vyzivne_na_deti: 8000
+        navazuje_rodicovsky_prispevek_na_materskou: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2]
+  output:
+    domacnost:
+      # 30000 + 3000 + 4000 + 7000
+      dssp_prijem_zohlednovany_pro_pracovni_bonus: 44000
+
+- name: Rodičovský příspěvek není zahrnutý pokud nenavazoval na mateřskou (leden 2026)
+  absolute_error_margin: 0.01
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 30000
+      dospely2:
+        rodicovsky_prispevek: 2000
+        navazuje_rodicovsky_prispevek_na_materskou: false
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2]
+  output:
+    domacnost:
+      dssp_prijem_zohlednovany_pro_pracovni_bonus: 30000

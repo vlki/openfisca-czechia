@@ -1,0 +1,60 @@
+- name: Nezranitelný samoživitel s dítětem pod hranicí měnící výpočty pracovního bonusu (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 8000
+        dssp_je_osoba_pracovne_aktivni: true
+        dssp_je_osoba_zranitelna: false
+      dite1:
+        je_nezaopatrene_dite: true
+        dssp_je_osoba_zranitelna: true
+        vek: 2
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dite1]
+  output:
+    domacnost:
+      # 8000 * 0.4
+      dssp_pracovni_bonus: 3200
+  absolute_error_margin: 0.01
+
+- name: Nezranitelný samoživitel s dítětem nad hranicí měnící výpočty pracovního bonusu (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 12000
+        dssp_je_osoba_pracovne_aktivni: true
+        dssp_je_osoba_zranitelna: false
+      dite1:
+        je_nezaopatrene_dite: true
+        dssp_je_osoba_zranitelna: true
+        vek: 2
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dite1]
+  output:
+    domacnost:
+      # 0.4 * (12000 - (12000 - 11120)) - 0.3 * (12000 - 11120)
+      dssp_pracovni_bonus: 4184
+  absolute_error_margin: 0.01
+
+- name: Jednotlivec s ostatními složkami DSSP nulovými (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 12000
+        dssp_je_osoba_pracovne_aktivni: false
+        dssp_je_osoba_zranitelna: false
+    domacnosti:
+      domacnost:
+        clenove: [dospely1]
+        typ_bydleni: byt_nebo_rodinny_dum
+        vztah_k_nemovitosti: najemni_podnajemni
+        naklady_na_najemne: 1000
+  output:
+    domacnost:
+      dssp_pracovni_bonus: 0
+  absolute_error_margin: 0.01

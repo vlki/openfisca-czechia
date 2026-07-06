@@ -1,0 +1,55 @@
+metadata:
+  reference:
+    2025-10-01:
+      title: § 39 zákona č. 151/2025 Sb. o dávce státní sociální pomoci - znění od 31.03.2026
+      href: https://e-sbirka.gov.cz/sb/2025/151/2026-03-31#par_39
+
+hranice_jako_nasobky_zivotniho_minima_domacnosti:
+  metadata:
+    unit: /1
+
+  hranice_1:
+    description: Nejnižší hranice jako násobek životniho minima, která mění výpočet částky na nezaopatřené dítě ve výpočtu bonusu na dítě v rámci DSSP
+    values:
+      2025-10-01:
+        value: 1.43
+
+  hranice_2:
+    description: Střední hranice jako násobek životniho minima, která mění výpočet částky na nezaopatřené dítě ve výpočtu bonusu na dítě v rámci DSSP
+    values:
+      2025-10-01:
+        value: 3
+
+  hranice_3:
+    description: Nejvyšší hranice jako násobek životniho minima, která mění výpočet částky na nezaopatřené dítě ve výpočtu bonusu na dítě v rámci DSSP
+    values:
+      2025-10-01:
+        value: 4
+
+castky_mezi_hranicemi:
+  metadata:
+    unit: currency-CZK
+
+  castka_pod_hranici_1_pro_nezranitelne:
+    description: Částka na nezaopatřené dítě pro nezranitelnou domácnost s rozhodným příjmem pod nejnižší hranicí
+    values:
+      2025-10-01:
+        value: 500
+
+  castka_pod_hranici_1_pro_zranitelne:
+    description: Částka na nezaopatřené dítě pro zranitelnou domácnost s rozhodným příjmem pod nejnižší hranicí
+    values:
+      2025-10-01:
+        value: 1000
+
+  castka_pod_hranici_2:
+    description: Částka na nezaopatřené dítě pro domácnost s rozhodným příjmem mezi nejnižší a střední hranicí
+    values:
+      2025-10-01:
+        value: 1000
+
+  zakladni_castka_pod_hranici_3_ktera_se_snizuje_koeficientem:
+    description: Částka na nezaopatřené dítě pro domácnost s rozhodným příjmem mezi střední a nejvyšší hranicí, snižuje se koeficientem
+    values:
+      2025-10-01:
+        value: 1000

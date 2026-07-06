@@ -1,0 +1,41 @@
+- name: Všechny příjmy zahrnuté do rozhodného příjmu pro DSSP
+  absolute_error_margin: 0.01
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 30000
+      dospely2:
+        duchody: 1000
+        materska: 1000
+        nemocenska: 1000
+        odmena_pestouna: 1000
+        podpora_v_nezamestnanosti: 1000
+        prispevek_na_uhradu_potreb_na_dite: 1000
+        rodicovsky_prispevek: 10000
+        vyzivne_na_deti: 3000
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2]
+  output:
+    domacnost:
+      dssp_rozhodny_prijem: 49000
+
+- name: Do rozhodného příjmu pro DSSP se nezahrnují příjmy nezaopatřených dětí
+  absolute_error_margin: 0.01
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 30000
+      dospely2:
+        cisty_prijem_osoby: 20000
+      dite1:
+        je_nezaopatrene_dite: true
+        cisty_prijem_osoby: 15000
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2, dite1]
+  output:
+    domacnost:
+      dssp_rozhodny_prijem: 50000

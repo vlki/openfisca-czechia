@@ -1,0 +1,36 @@
+metadata:
+  unit: currency-CZK
+  reference:
+    2025-10-01:
+      title: § 29 zákona č. 151/2025 Sb. o dávce státní sociální pomoci - znění od 31.03.2026
+      href: https://e-sbirka.gov.cz/sb/2025/151/2026-03-31#par_29
+
+jednoclenna_domacnost:
+  description: Náklady spojené s užíváním bytu pro jednočlennou domácnost se všemi zranitelnými osobami
+  values:
+    2025-10-01:
+      value: 1310
+
+dvouclenna_domacnost:
+  description: Náklady spojené s užíváním bytu pro dvoučlennou domácnost se všemi zranitelnými osobami
+  values:
+    2025-10-01:
+      value: 1770
+
+triclenna_domacnost:
+  description: Náklady spojené s užíváním bytu pro tříčlennou domácnost se všemi zranitelnými osobami
+  values:
+    2025-10-01:
+      value: 2230
+
+ctyrclenna_domacnost:
+  description: Náklady spojené s užíváním bytu pro čtyřčlennou domácnost se všemi zranitelnými osobami
+  values:
+    2025-10-01:
+      value: 2370
+
+peti_nebo_viceclenna_domacnost:
+  description: Náklady spojené s užíváním bytu pro pěti a vícečlennou domácnost se všemi zranitelnými osobami
+  values:
+    2025-10-01:
+      value: 2380

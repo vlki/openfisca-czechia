@@ -1,0 +1,34 @@
+- name: Všechny osoby zranitelné nebo pracovně aktivní
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        dssp_je_osoba_pracovne_aktivni: true
+      dospely2:
+        dssp_je_osoba_zranitelna: true
+      dite1:
+        dssp_je_osoba_zranitelna: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2, dite1]
+  output:
+    domacnost:
+      dssp_pocet_osob_v_domacnosti_pro_vypocet_nakladu_na_bydleni: 3
+
+- name: Jedna osoba nezranitelná a pracovně neaktivní
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        dssp_je_osoba_pracovne_aktivni: false
+        dssp_je_osoba_zranitelna: false
+      dospely2:
+        dssp_je_osoba_zranitelna: true
+      dite1:
+        dssp_je_osoba_zranitelna: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2, dite1]
+  output:
+    domacnost:
+      dssp_pocet_osob_v_domacnosti_pro_vypocet_nakladu_na_bydleni: 2

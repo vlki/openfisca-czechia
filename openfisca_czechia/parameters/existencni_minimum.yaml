@@ -1,0 +1,10 @@
+description: Částka existenčního minima osoby
+values:
+  2023-10-01:
+    value: 2020
+metadata:
+  unit: currency-CZK
+  reference:
+    2023-10-01:
+      title: § 5 odst. 1 zákona č. 110/2006 Sb., o životním a existenčním minimu
+      href: https://e-sbirka.gov.cz/sb/2006/110/2026-03-31#par_5-odst_1

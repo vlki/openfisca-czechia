@@ -1,0 +1,100 @@
+- name: Nezranitelný samoživitel s dítětem pod nejnižší hranicí (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 6000
+        dssp_je_osoba_pracovne_aktivni: true
+        dssp_je_osoba_zranitelna: false
+      dite1:
+        je_nezaopatrene_dite: true
+        dssp_je_osoba_zranitelna: true
+        vek: 2
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dite1]
+  output:
+    domacnost:
+      dssp_castka_na_nezaopatrene_dite: 500
+  absolute_error_margin: 0.01
+
+- name: Zranitelný samoživitel s dítětem pod nejnižší hranicí (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 6000
+        dssp_je_osoba_pracovne_aktivni: true
+        dssp_je_osoba_zranitelna: true
+      dite1:
+        je_nezaopatrene_dite: true
+        dssp_je_osoba_zranitelna: true
+        vek: 2
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dite1]
+  output:
+    domacnost:
+      dssp_castka_na_nezaopatrene_dite: 1000
+  absolute_error_margin: 0.01
+
+- name: Samoživitel s dítětem mezi nejnižší a střední hranicí (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 10000
+        dssp_je_osoba_pracovne_aktivni: true
+        dssp_je_osoba_zranitelna: false
+      dite1:
+        je_nezaopatrene_dite: true
+        dssp_je_osoba_zranitelna: true
+        vek: 2
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dite1]
+  output:
+    domacnost:
+      dssp_castka_na_nezaopatrene_dite: 1000
+  absolute_error_margin: 0.01
+
+- name: Samoživitel s dítětem mezi střední a nejvyšší hranicí (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 25000
+        dssp_je_osoba_pracovne_aktivni: true
+        dssp_je_osoba_zranitelna: false
+      dite1:
+        je_nezaopatrene_dite: true
+        dssp_je_osoba_zranitelna: true
+        vek: 2
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dite1]
+  output:
+    domacnost:
+      # 1000 * (4 - 25000 / 6950)
+      dssp_castka_na_nezaopatrene_dite: 402.88
+  absolute_error_margin: 0.01
+
+- name: Samoživitel s dítětem nad nejvyšší hranicí (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 30000
+        dssp_je_osoba_pracovne_aktivni: true
+        dssp_je_osoba_zranitelna: false
+      dite1:
+        je_nezaopatrene_dite: true
+        dssp_je_osoba_zranitelna: true
+        vek: 2
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dite1]
+  output:
+    domacnost:
+      dssp_castka_na_nezaopatrene_dite: 0
+  absolute_error_margin: 0.01

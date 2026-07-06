@@ -1,0 +1,47 @@
+- name: Jednočlenná nezranitelná domácnost ve vlastním bytě nebo domě s příjem pod hranicí, kdy se počítají reálné náklady na energie (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 6000
+        dssp_je_osoba_pracovne_aktivni: true
+        dssp_je_osoba_zranitelna: false
+    domacnosti:
+      domacnost:
+        clenove: [dospely1]
+        typ_bydleni: byt_nebo_rodinny_dum
+        vztah_k_nemovitosti: vlastni_druzstevni_sluzebni
+        dssp_velikost_obce_bydliste: praha_a_brno
+        naklady_na_energie: 5000
+        dalsi_poplatky_spojene_s_bydlenim: 0
+  output:
+    domacnost:
+      dssp_slozka_na_bydleni: 5425.3
+  absolute_error_margin: 0.01
+
+- name: Tříčlenná zranitelná domácnost v nájmu s příjem nad hranicí, kdy se počítá energetický paušál (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 20000
+        dssp_je_osoba_zranitelna: true
+      dospely2:
+        dssp_je_osoba_zranitelna: true
+      dite1:
+        dssp_je_osoba_zranitelna: true
+        je_nezaopatrene_dite: true
+        vek: 3
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2, dite1]
+        typ_bydleni: byt_nebo_rodinny_dum
+        vztah_k_nemovitosti: najemni_podnajemni
+        dssp_velikost_obce_bydliste: obec_70000_obyvatel_a_vice
+        naklady_na_najemne: 18000
+        naklady_na_energie: 7000
+        dalsi_poplatky_spojene_s_bydlenim: 1000
+  output:
+    domacnost:
+      dssp_slozka_na_bydleni: 14014
+  absolute_error_margin: 0.01

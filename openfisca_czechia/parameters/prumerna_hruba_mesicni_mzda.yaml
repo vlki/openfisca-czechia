@@ -1,0 +1,6 @@
+description: Průměrná hrubá měsíční mzda
+metadata:
+  unit: currency-CZK
+values:
+  2025-01-01:
+    value: 48967

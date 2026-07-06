@@ -1,44 +1,47 @@
 [project]
-name = "openfisca-country_template"
-version = "7.0.0"
-description = "OpenFisca Rules as Code model for Country-Template."
+name = "openfisca-czechia"
+version = "0.1.0"
+description = "OpenFisca Rules as Code model for Czechia."
 readme = "README.md"
-keywords = ["microsimulation", "tax", "benefit", "rac", "rules-as-code"]
-authors = []
-maintainers = []
+keywords = ["microsimulation", "tax", "benefit", "rac", "rules-as-code", "czechia"]
+authors = [
+    {name = "Jan Vlcek", email = "jan.vlcek@vlki.cz"}
+]
 classifiers = [
-    "Development Status :: 5 - Production/Stable",
+    "Development Status :: 3 - Alpha",
     "License :: OSI Approved :: GNU Affero General Public License v3",
     "Operating System :: POSIX",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Topic :: Scientific/Engineering :: Information Analysis",
 ]
+license = "AGPL-3.0-only"
+license-files = ["LICENSE"]
 requires-python = ">= 3.9"
 dependencies = [
-    "openfisca-core[web-api] >= 41.0.0, < 42.0.0"
+    "openfisca-core[web-api] >= 44.0.0, < 45",
+    "numpy >= 1.26.0, < 2.5.0"
 ]
 
 [project.urls]
-Homepage = "https://github.com/openfisca/country-template"
-Repository = "https://github.com/openfisca/country-template"
-Documentation = "https://openfisca.org/doc"
-Issues = "https://github.com/openfisca/country-template/issues"
-Changelog = "https://github.com/openfisca/country-template/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/vlki/openfisca-czechia"
+Repository = "https://github.com/vlki/openfisca-czechia"
+Issues = "https://github.com/vlki/openfisca-czechia/issues"
+Changelog = "https://github.com/vlki/openfisca-czechia/blob/main/CHANGELOG.md"
 
-[project.optional-dependencies]
+[dependency-groups]
 dev = [
-    "autopep8 >= 2.0.4",
-    "flake8 >= 7.0.0",
-    "isort >= 5.13.2",
-    "pylint >= 3.1.0",
-    "pyupgrade >= 3.15.1",
+    "ruff >= 0.15.20",
     "yamllint >= 1.35.1"
 ]
 
 [tool.pytest.ini_options]
 addopts = "--showlocals --doctest-modules"
-testpaths = [ "openfisca_country_template/tests" ]
+testpaths = [ "openfisca_czechia/tests" ]
 python_files = "**/*.py"
 filterwarnings = [
     "error",
@@ -46,47 +49,24 @@ filterwarnings = [
     'ignore:function ham\(\) is deprecated:DeprecationWarning'
 ]
 
-[tool.pylint.messages_control]
-disable = [
-    "invalid-name",
-    "missing-class-docstring",
-    "missing-function-docstring",
-    "line-too-long",
-    "no-self-argument",
-    "invalid-enum-extension",
-    "no-member",
-    "not-callable",
-    "duplicate-code",
-    "too-many-locals",
-    "fixme",
-    "unused-argument",
-    "redefined-outer-name"
-]
-score = "no"
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "PL"]
+ignore = ["E501"]        # no max line length enforced (as before)
 
-[tool.isort]
-case_sensitive = "true"
-force_alphabetical_sort_within_sections = "false"
-group_by_package = "true"
-include_trailing_comma = "true"
-multi_line_output = "8"
-py_version = "39"
-known_first_party = "openfisca_country_template"
-known_openfisca = [
-    "openfisca_core",
-    "openfisca_country_template"
-]
-known_typing = [
-    "mypy*", 
-    "*types*", 
-    "*typing*"
-]
-sections = [
-    "FUTURE",
-    "TYPING",
-    "STDLIB",
-    "THIRDPARTY",
-    "OPENFISCA",
-    "FIRSTPARTY",
-    "LOCALFOLDER"
-]
+[tool.ruff.lint.isort]
+section-order = ["future", "typing", "standard-library", "third-party", "openfisca", "first-party", "local-folder"]
+known-first-party = ["openfisca_czechia"]
+
+[tool.ruff.lint.isort.sections]
+typing = ["typing", "typing_extensions"]
+openfisca = ["openfisca_core"]
+
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["openfisca_czechia*"]

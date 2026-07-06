@@ -1,0 +1,35 @@
+- name: Jednočlenná nezranitelná domácnost (leden 2026)
+  absolute_error_margin: 0.01
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        dssp_je_osoba_pracovne_aktivni: true
+        dssp_je_osoba_zranitelna: false
+    domacnosti:
+      domacnost:
+        clenove: [dospely1]
+  output:
+    domacnost:
+      dssp_energeticky_pausal_domacnosti: 2300
+
+- name: Pětičlenná zranitelná domácnost (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        dssp_je_osoba_zranitelna: true
+      dospely2:
+        dssp_je_osoba_zranitelna: true
+      dite1:
+        dssp_je_osoba_zranitelna: true
+      dite2:
+        dssp_je_osoba_zranitelna: true
+      dite3:
+        dssp_je_osoba_zranitelna: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2, dite1, dite2, dite3]
+  output:
+    domacnost:
+      dssp_energeticky_pausal_domacnosti: 6020

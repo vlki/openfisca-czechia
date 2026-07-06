@@ -1,0 +1,87 @@
+metadata:
+  unit: currency-CZK
+
+jednoclenna_domacnost:
+  obec_do_69999_obyvatel:
+    description: Normativní nájemné pro jednočlennou domácnost se všemi zranitelnými osobami v obci do 69 999 obyvatel
+    values:
+      2026-01-01:
+        value: 10310
+  obec_70000_obyvatel_a_vice:
+    description: Normativní nájemné pro jednočlennou domácnost se všemi zranitelnými osobami v obci s alespoň 70 000 obyvateli
+    values:
+      2026-01-01:
+        value: 12310
+  praha_a_brno:
+    description: Normativní nájemné pro jednočlennou domácnost se všemi zranitelnými osobami v Praze a Brně
+    values:
+      2026-01-01:
+        value: 15910
+
+dvouclenna_domacnost:
+  obec_do_69999_obyvatel:
+    description: Normativní nájemné pro dvoučlennou domácnost se všemi zranitelnými osobami v obci do 69 999 obyvatel
+    values:
+      2026-01-01:
+        value: 12109
+  obec_70000_obyvatel_a_vice:
+    description: Normativní nájemné pro dvoučlennou domácnost se všemi zranitelnými osobami v obci s alespoň 70 000 obyvateli
+    values:
+      2026-01-01:
+        value: 13770
+  praha_a_brno:
+    description: Normativní nájemné pro dvoučlennou domácnost se všemi zranitelnými osobami v Praze a Brně
+    values:
+      2026-01-01:
+        value: 18103
+
+triclenna_domacnost:
+  obec_do_69999_obyvatel:
+    description: Normativní nájemné pro tříčlennou domácnost se všemi zranitelnými osobami v obci do 69 999 obyvatel
+    values:
+      2026-01-01:
+        value: 13758
+  obec_70000_obyvatel_a_vice:
+    description: Normativní nájemné pro tříčlennou domácnost se všemi zranitelnými osobami v obci s alespoň 70 000 obyvateli
+    values:
+      2026-01-01:
+        value: 15394
+  praha_a_brno:
+    description: Normativní nájemné pro tříčlennou domácnost se všemi zranitelnými osobami v Praze a Brně
+    values:
+      2026-01-01:
+        value: 20230
+
+ctyrclenna_domacnost:
+  obec_do_69999_obyvatel:
+    description: Normativní nájemné pro čtyřčlennou domácnost se všemi zranitelnými osobami v obci do 69 999 obyvatel
+    values:
+      2026-01-01:
+        value: 14370
+  obec_70000_obyvatel_a_vice:
+    description: Normativní nájemné pro čtyřčlennou domácnost se všemi zranitelnými osobami v obci s alespoň 70 000 obyvateli
+    values:
+      2026-01-01:
+        value: 16230
+  praha_a_brno:
+    description: Normativní nájemné pro čtyřčlennou domácnost se všemi zranitelnými osobami v Praze a Brně
+    values:
+      2026-01-01:
+        value: 22170
+
+peti_nebo_viceclenna_domacnost:
+  obec_do_69999_obyvatel:
+    description: Normativní nájemné pro pěti nebo vícečlennou domácnost se všemi zranitelnými osobami v obci do 69 999 obyvatel
+    values:
+      2026-01-01:
+        value: 14880
+  obec_70000_obyvatel_a_vice:
+    description: Normativní nájemné pro pěti nebo vícečlennou domácnost se všemi zranitelnými osobami v obci s alespoň 70 000 obyvateli
+    values:
+      2026-01-01:
+        value: 15780
+  praha_a_brno:
+    description: Normativní nájemné pro pěti nebo vícečlennou domácnost se všemi zranitelnými osobami v Praze a Brně
+    values:
+      2026-01-01:
+        value: 22380

@@ -1,47 +1,31 @@
 all: test
 
-uninstall:
-	pip freeze | grep -v "^-e" | xargs pip uninstall -y
+install:
+	uv sync
 
 clean:
 	rm -rf build dist
-	find . -name '*.pyc' -exec rm \{\} \;
-
-deps:
-	pip install --upgrade pip build twine
-
-install: deps
-	@# Install OpenFisca-Extension-Template for development.
-	@# `make install` installs the editable version of openfisca-country_template.
-	@# This allows contributors to test as they code.
-	pip install --editable .[dev] --upgrade --use-deprecated=legacy-resolver
-
-build: clean deps
-	@# Install OpenFisca-Extension-Template for deployment and publishing.
-	@# `make build` allows us to be be sure tests are run against the packaged version
-	@# of OpenFisca-Extension-Template, the same we put in the hands of users and reusers.
-	python -m build
-	find dist -name "*.whl" -exec pip install --force-reinstall {}[dev] \;
-
-check-syntax-errors:
-	python -m compileall -q .
+	find . -type d -name '__pycache__' -not -path './.venv/*' -exec rm -rf {} +
 
 format-style:
-	@# Do not analyse .gitignored files.
-	@# `make` needs `$$` to output `$`. Ref: http://stackoverflow.com/questions/2382764.
-	isort `git ls-files | grep "\.py$$"`
-	autopep8 `git ls-files | grep "\.py$$"`
-	pyupgrade --py39-plus `git ls-files | grep "\.py$$"`
+	uv run ruff check --fix .
+	uv run ruff format .
 
 check-style:
-	@# Do not analyse .gitignored files.
-	@# `make` needs `$$` to output `$`. Ref: http://stackoverflow.com/questions/2382764.
-	flake8 `git ls-files | grep "\.py$$"`
-	pylint `git ls-files | grep "\.py$$"`
-	yamllint `git ls-files | grep "\.yaml$$"`
+	uv run ruff check .
+	uv run ruff format --check .
+	uv run yamllint .
 
-test: clean check-syntax-errors check-style
-	openfisca test --country-package openfisca_country_template openfisca_country_template/tests
+test: check-style
+	uv run openfisca test --country-package openfisca_czechia openfisca_czechia/tests
 
-serve-local: build
-	openfisca serve --country-package openfisca_country_template
+build: clean
+	@# Build and test the packaged (wheel) version, the same we put in the
+	@# hands of users and reusers. `--no-sync` keeps uv from re-syncing the
+	@# environment back to the editable install before the test runs.
+	uv build
+	uv pip install --force-reinstall dist/*.whl
+	uv run --no-sync openfisca test --country-package openfisca_czechia openfisca_czechia/tests
+
+serve-local:
+	uv run openfisca serve --country-package openfisca_czechia

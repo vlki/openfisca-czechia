@@ -1,0 +1,18 @@
+metadata:
+  unit: /1
+  reference:
+    2025-10-01:
+      title: § 36 zákona č. 151/2025 Sb. o dávce státní sociální pomoci - znění od 31.03.2026
+      href: https://e-sbirka.gov.cz/sb/2025/151/2026-03-31#par_36
+
+nasobek_zivotniho_minima_domacnosti_jako_hranice_rozhodneho_prijmu_pod_kterou_je_slozka_soucasti_davky:
+  description: Násobek životního minima domácnosti jako hranice rozhodného příjmu, pod kterou je složka DSSP na živobytí součástí dávky jako celku
+  values:
+    2025-10-01:
+      value: 1.43
+
+odecitany_nasobek_rozhodneho_prijmu_ve_vypoctu:
+  description: Odečítaný násobek rozhodného příjmu ve výpočtu složky DSSP na živobytí
+  values:
+    2025-10-01:
+      value: 0.3

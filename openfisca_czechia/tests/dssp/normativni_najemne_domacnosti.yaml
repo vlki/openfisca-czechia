@@ -1,0 +1,69 @@
+- name: Jednočlenná nezranitelná domácnost v Praze nebo Brně (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        dssp_je_osoba_pracovne_aktivni: true
+        dssp_je_osoba_zranitelna: false
+    domacnosti:
+      domacnost:
+        clenove: [dospely1]
+        dssp_velikost_obce_bydliste: praha_a_brno
+  output:
+    domacnost:
+      dssp_normativni_najemne_domacnosti: 12831
+
+- name: Dvoučlenná zranitelná domácnost v obci do 69 999 obyvateli (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        dssp_je_osoba_zranitelna: true
+      dite1:
+        dssp_je_osoba_zranitelna: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dite1]
+        dssp_velikost_obce_bydliste: obec_do_69999_obyvatel
+  output:
+    domacnost:
+      dssp_normativni_najemne_domacnosti: 12109
+
+- name: Tříčlenná zranitelná domácnost v obci s 70 000 a více obyvateli (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        dssp_je_osoba_zranitelna: true
+      dospely2:
+        dssp_je_osoba_zranitelna: true
+      dite1:
+        dssp_je_osoba_zranitelna: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2, dite1]
+        dssp_velikost_obce_bydliste: obec_70000_obyvatel_a_vice
+  output:
+    domacnost:
+      dssp_normativni_najemne_domacnosti: 15394
+
+- name: Čtyřčlenná nezranitelná domácnost v Praze nebo Brně (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        dssp_je_osoba_pracovne_aktivni: true
+        dssp_je_osoba_zranitelna: false
+      dospely2:
+        dssp_je_osoba_zranitelna: true
+      dite1:
+        dssp_je_osoba_zranitelna: true
+      dite2:
+        dssp_je_osoba_zranitelna: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2, dite1, dite2]
+        dssp_velikost_obce_bydliste: praha_a_brno
+  output:
+    domacnost:
+      dssp_normativni_najemne_domacnosti: 17710

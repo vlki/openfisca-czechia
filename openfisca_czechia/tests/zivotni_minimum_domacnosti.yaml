@@ -1,0 +1,112 @@
+- name: Jednotlivec (leden 2026)
+  period: 2026-01
+  absolute_error_margin: 0.01
+  input:
+    osoby:
+      dospely1:
+        vek: 40
+    domacnosti:
+      domacnost:
+        clenove: [dospely1]
+  output:
+    domacnost:
+      zivotni_minimum_domacnosti: 4860
+
+- name: Pár bez dětí (leden 2026)
+  period: 2026-01
+  absolute_error_margin: 0.01
+  input:
+    osoby:
+      dospely1:
+        vek: 40
+      dospely2:
+        vek: 38
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2]
+  output:
+    domacnost:
+      # 4470 + 4040
+      zivotni_minimum_domacnosti: 8510
+
+- name: Pár s dětmi 4 a 8 let (leden 2026)
+  period: 2026-01
+  absolute_error_margin: 0.01
+  input:
+    osoby:
+      dospely1:
+        vek: 40
+      dospely2:
+        vek: 38
+      dite1:
+        vek: 4
+        je_nezaopatrene_dite: true
+      dite2:
+        vek: 8
+        je_nezaopatrene_dite: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2, dite1, dite2]
+  output:
+    domacnost:
+      # 4470 + 4040 + 2480 + 3050
+      zivotni_minimum_domacnosti: 14040
+
+- name: Samoživitelka s dítětem 16 let (leden 2026)
+  period: 2026-01
+  absolute_error_margin: 0.01
+  input:
+    osoby:
+      dospely1:
+        vek: 45
+      dite1:
+        vek: 16
+        je_nezaopatrene_dite: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dite1]
+  output:
+    domacnost:
+      # 4470 + 3490
+      zivotni_minimum_domacnosti: 7960
+
+- name: Hraniční věky dětí – přesně 6 a přesně 15 let (leden 2026)
+  period: 2026-01
+  absolute_error_margin: 0.01
+  input:
+    osoby:
+      dospely1:
+        vek: 40
+      dite1:
+        vek: 6
+        je_nezaopatrene_dite: true
+      dite2:
+        vek: 15
+        je_nezaopatrene_dite: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dite1, dite2]
+  output:
+    domacnost:
+      # 4470 + 3050 + 3490
+      zivotni_minimum_domacnosti: 11010
+
+- name: Nezaopatřené dítě starší než dospělý – první v pořadí je dospělý (leden 2026)
+  period: 2026-01
+  absolute_error_margin: 0.01
+  input:
+    osoby:
+      student:
+        vek: 25
+        je_nezaopatrene_dite: true
+      dospely1:
+        vek: 22
+      dospely2:
+        vek: 30
+    domacnosti:
+      domacnost:
+        clenove: [student, dospely1, dospely2]
+  output:
+    domacnost:
+      # 4470 + 4040 + 3490
+      zivotni_minimum_domacnosti: 12000

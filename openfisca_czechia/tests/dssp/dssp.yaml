@@ -1,0 +1,118 @@
+- name: Pár s dětmi v nájmu v Praze (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 25000
+        dssp_je_osoba_pracovne_aktivni: true
+        dssp_je_osoba_zranitelna: false
+      dospely2:
+        rodicovsky_prispevek: 12000
+        dssp_je_osoba_zranitelna: true
+      dite1:
+        je_nezaopatrene_dite: true
+        dssp_je_osoba_zranitelna: true
+        vek: 2
+      dite2:
+        je_nezaopatrene_dite: true
+        dssp_je_osoba_zranitelna: true
+        vek: 8
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2, dite1, dite2]
+        typ_bydleni: byt_nebo_rodinny_dum
+        vztah_k_nemovitosti: najemni_podnajemni
+        dssp_velikost_obce_bydliste: praha_a_brno
+        naklady_na_najemne: 18000
+        dalsi_poplatky_spojene_s_bydlenim: 2000
+        naklady_na_energie: 5000
+  output:
+    domacnost:
+      # Složka na bydlení 9518
+      # Složka na živobytí 0
+      # Bonus na dítě 2000
+      # Pracovní bonus 4624.8
+      dssp: 16143
+  absolute_error_margin: 0.01
+
+- name: Samoživitelka s dítětem v nájmu v malé obci (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 4000
+        rodicovsky_prispevek: 4000
+        dssp_je_osoba_pracovne_aktivni: true
+        dssp_je_osoba_zranitelna: true
+      dite1:
+        je_nezaopatrene_dite: true
+        dssp_je_osoba_zranitelna: true
+        vek: 2
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dite1]
+        typ_bydleni: byt_nebo_rodinny_dum
+        vztah_k_nemovitosti: najemni_podnajemni
+        dssp_velikost_obce_bydliste: obec_do_69999_obyvatel
+        naklady_na_najemne: 12000
+        dalsi_poplatky_spojene_s_bydlenim: 0
+        naklady_na_energie: 3000
+  output:
+    domacnost:
+      # Složka na bydlení 9600
+      # Složka na živobytí 1350
+      # Bonus na dítě 1000
+      # Pracovní bonus 3200
+      dssp: 18150
+  absolute_error_margin: 0.01
+
+- name: Jednotlivec v ubytovně (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 8000
+        dssp_je_osoba_pracovne_aktivni: true
+        dssp_je_osoba_zranitelna: false
+    domacnosti:
+      domacnost:
+        clenove: [dospely1]
+        typ_bydleni: ubytovaci_zarizeni
+        vztah_k_nemovitosti: najemni_podnajemni
+        dssp_velikost_obce_bydliste: obec_do_69999_obyvatel
+        naklady_na_najemne: 4000
+        dalsi_poplatky_spojene_s_bydlenim: 0
+        naklady_na_energie: 0
+  output:
+    domacnost:
+      # Složka na bydlení 3900
+      # Složka na živobytí 0
+      # Bonus na dítě 0
+      # Pracovní bonus 3043.2
+      dssp: 6944
+  absolute_error_margin: 0.01
+
+- name: Senior ve vlastním bytě v okresním městě (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        duchody: 8000
+        dssp_je_osoba_pracovne_aktivni: false
+        dssp_je_osoba_zranitelna: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1]
+        typ_bydleni: byt_nebo_rodinny_dum
+        vztah_k_nemovitosti: vlastni_druzstevni_sluzebni
+        dssp_velikost_obce_bydliste: obec_70000_obyvatel_a_vice
+        dalsi_poplatky_spojene_s_bydlenim: 1000
+        naklady_na_energie: 3000
+  output:
+    domacnost:
+      # Složka na bydlení 5430
+      # Složka na živobytí 0
+      # Bonus na dítě 0
+      # Pracovní bonus 0
+      dssp: 5430
+  absolute_error_margin: 0.01

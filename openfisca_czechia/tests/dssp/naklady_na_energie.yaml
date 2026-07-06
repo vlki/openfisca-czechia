@@ -1,0 +1,64 @@
+- name: Jednočlenná domácnost využívající tuhá paliva s rozhodným příjem pod hranicí, pod kterou se aplikuje částka za tuhá
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 6000
+        dssp_je_osoba_pracovne_aktivni: true
+        dssp_je_osoba_zranitelna: false
+    domacnosti:
+      domacnost:
+        clenove: [dospely1]
+        dssp_velikost_obce_bydliste: praha_a_brno
+        naklady_na_energie: 5000
+        vyuziva_domacnost_tuha_paliva: true
+  output:
+    domacnost:
+      dssp_naklady_na_energie: 6500
+
+- name: Jednočlenná domácnost využívající tuhá paliva s rozhodným příjem nad hranicí, pod kterou se aplikuje částka za tuhá
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 10000
+        dssp_je_osoba_pracovne_aktivni: true
+        dssp_je_osoba_zranitelna: false
+    domacnosti:
+      domacnost:
+        clenove: [dospely1]
+        dssp_velikost_obce_bydliste: praha_a_brno
+        naklady_na_energie: 5000
+        vyuziva_domacnost_tuha_paliva: true
+  output:
+    domacnost:
+      dssp_naklady_na_energie: 5000
+
+- name: Pětičlenná domácnost využívající tuhá paliva s rozhodným příjem pod hranicí, pod kterou se aplikuje částka za tuhá
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        cisty_prijem_osoby: 25000
+        dssp_je_osoba_pracovne_aktivni: true
+        dssp_je_osoba_zranitelna: false
+      dospely2:
+        dssp_je_osoba_zranitelna: false
+      dite1:
+        dssp_je_osoba_zranitelna: false
+        vek: 2
+      dite2:
+        dssp_je_osoba_zranitelna: false
+        vek: 5
+      dite3:
+        dssp_je_osoba_zranitelna: false
+        vek: 8
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2, dite1, dite2, dite3]
+        dssp_velikost_obce_bydliste: praha_a_brno
+        naklady_na_energie: 7000
+        vyuziva_domacnost_tuha_paliva: true
+  output:
+    domacnost:
+      dssp_naklady_na_energie: 8500

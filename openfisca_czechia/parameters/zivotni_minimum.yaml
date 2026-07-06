@@ -1,0 +1,42 @@
+metadata:
+  unit: currency-CZK
+  reference:
+    2023-10-01:
+      title: § 2 a § 3 zákona č. 110/2006 Sb., o životním a existenčním minimu
+      href: https://e-sbirka.gov.cz/sb/2006/110/2026-03-31#par_2
+
+jednotlivec:
+  description: Částka životního minima jednotlivce
+  values:
+    2023-10-01:
+      value: 4860
+
+vice_osob_prvni:
+  description: Částka životního minima první osoby v pořadí
+  values:
+    2023-10-01:
+      value: 4470
+
+vice_osob_druha_nebo_dalsi_neni_nezaopatrene_dite:
+  description: Částka životního minima druhé nebo další osoby v pořadí od 15 let věku, která není nezaopatřeným dítětem
+  values:
+    2023-10-01:
+      value: 4040
+
+vice_osob_druha_nebo_dalsi_nezaopatrene_dite_15_az_26_let:
+  description: Částka životního minima druhé nebo další osoby v pořadí, když je nezaopatřeným dítětem od 15 do 26 let věku
+  values:
+    2023-10-01:
+      value: 3490
+
+vice_osob_druha_nebo_dalsi_nezaopatrene_dite_6_az_15_let:
+  description: Částka životního minima druhé nebo další osoby v pořadí, když je nezaopatřeným dítětem od 6 do 15 let věku
+  values:
+    2023-10-01:
+      value: 3050
+
+vice_osob_druha_nebo_dalsi_nezaopatrene_dite_do_6_let:
+  description: Částka životního minima druhé nebo další osoby v pořadí, když je nezaopatřeným dítětem do 6 let věku
+  values:
+    2023-10-01:
+      value: 2480
