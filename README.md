@@ -14,7 +14,7 @@ OpenFisca je svobodný software pro simulace a mikrosimulace. Tento repozitář 
 
 Model aktuálně obsahuje:
 
-* výpočet DSSP (dávky státní sociální pomoci) podle legislativy platné k červenci 2026
+* výpočet DSSP (dávky státní sociální pomoci) podle legislativy platné k červenci 2026 (bez majetkového testu)
 * výpočet daně z příjmu fyzických osob
 
 Soubory modelu najdete ve složce `openfisca_czechia`.
@@ -22,6 +22,15 @@ Soubory modelu najdete ve složce `openfisca_czechia`.
 * Parametry použité v modelu jsou v podsložce `parameters`
 * Vstupy a výpočty jsou v podsložce `variables`
 * Testy pro výpočty najdete v podsložce `tests`
+
+## Plán dalšího vývoje
+
+- [ ] Slevy DPFO
+- [ ] Zdravotní a sociální odvody z pracovního příjmu
+- [ ] Exekuční a insolvenční srážky
+- [ ] Změny DSSP s plánovanou platností k 1. říjnu 2026 (normativy podle okresů)
+- [ ] Majetkový test DSSP
+- [ ] Příjmy z podnikání (OSVČ)
 
 ## Použití jako balíčku v Python skriptech
 
