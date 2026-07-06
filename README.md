@@ -78,22 +78,18 @@ def main():
     simulation_builder = SimulationBuilder()
     simulation = simulation_builder.build_from_entities(tax_benefit_system, TEST_CASE)
 
-    vyse_dssp = simulation.calculate("dssp", "2026-01")
+    dssp = simulation.calculate("dssp", "2026-01")
 
-    vyse_dssp_slozky_na_bydleni = simulation.get_array(
-        "dssp_slozka_na_bydleni", "2026-01"
-    )
-    vyse_dssp_slozky_na_zivobyti = simulation.get_array(
-        "dssp_slozka_na_zivobyti", "2026-01"
-    )
-    vyse_dssp_bonusu_na_dite = simulation.get_array("dssp_bonus_na_dite", "2026-01")
-    vyse_dssp_pracovniho_bonusu = simulation.get_array("dssp_pracovni_bonus", "2026-01")
+    slozka_na_bydleni = simulation.get_array("dssp_slozka_na_bydleni", "2026-01")
+    slozka_na_zivobyti = simulation.get_array("dssp_slozka_na_zivobyti", "2026-01")
+    bonus_na_dite = simulation.get_array("dssp_bonus_na_dite", "2026-01")
+    pracovni_bonus = simulation.get_array("dssp_pracovni_bonus", "2026-01")
 
-    print(f"DSSP: {vyse_dssp}")
-    print(f"- slozka na bydleni: {vyse_dssp_slozky_na_bydleni}")
-    print(f"- slozka na zivobyti: {vyse_dssp_slozky_na_zivobyti}")
-    print(f"- bonus na dite: {vyse_dssp_bonusu_na_dite}")
-    print(f"- pracovni bonus: {vyse_dssp_pracovniho_bonusu}")
+    print(f"DSSP: {dssp}")
+    print(f"- slozka na bydleni: {slozka_na_bydleni}")
+    print(f"- slozka na zivobyti: {slozka_na_zivobyti}")
+    print(f"- bonus na dite: {bonus_na_dite}")
+    print(f"- pracovni bonus: {pracovni_bonus}")
 
 
 if __name__ == "__main__":
