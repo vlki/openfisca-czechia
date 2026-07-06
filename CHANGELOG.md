@@ -1,4 +1,8 @@
 
+## 0.1.2
+
+* Updatované description v pyproject.toml
+
 ## 0.1.1
 
 * Updatované README.md
