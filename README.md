@@ -4,7 +4,7 @@
 
 ## [EN] Introduction
 
-OpenFisca is a versatile simulation and microsimulation free software. This repository contains the OpenFisca model of the Czech tax and benefit system. Therefore, the working language here is Czech. You can however check the [general OpenFisca documentation](https://openfisca.org/doc/) in English!
+OpenFisca is a versatile simulation and microsimulation free software. This repository contains the OpenFisca model of the Czech tax and benefit system. Therefore, the working language here is Czech. You can however check the [general OpenFisca documentation](https://openfisca.org/doc/) in English.
 
 ## [CS] Introduction
 
