@@ -32,7 +32,7 @@ Soubory modelu najdete ve složce `openfisca_czechia`.
 - [ ] Majetkový test DSSP
 - [ ] Příjmy z podnikání (OSVČ)
 
-## Použití jako balíčku v Python skriptech
+## Použití jako balíček v Python skriptech
 
 Doporučujeme použít nástroj [uv](https://docs.astral.sh/uv/) pro správu verzí Pythonu a virtuálního prostředí.
 
@@ -48,7 +48,7 @@ Následně přidejte do projektu balíček `openfisca-czechia`.
 uv add openfisca-czechia
 ```
 
-A pak použijte balíček například pomocí následujícího kódu:
+A pak použijte balíček například pomocí následujícího kódu ([dokumentace k Python API](https://openfisca.org/doc/simulate/run-simulation.html)):
 
 ```python
 from openfisca_core.simulation_builder import SimulationBuilder
@@ -111,6 +111,72 @@ Pokud je kód v souboru `main.py`, pak ho spustíte následujícím způsobem:
 uv run main.py
 ```
 
+## Použití přes webové API
+
+Balíček jde spustit jako webový server například pomocí [uv](https://docs.astral.sh/uv/) následujícím způsobem:
+
+```sh
+uv run --python 3.13 --with openfisca-core --with openfisca-czechia openfisca serve
+```
+
+To spustí webový server na lokálním portu 5000, tj. http://localhost:5000.
+
+Pak jde spustit simulaci před webové API ([dokumentace k webovému API](https://openfisca.org/doc/openfisca-web-api/index.html)) například pomocí Node.js:
+
+```js
+const input = {
+  osoby: {
+    dospely1: {
+      cisty_prijem_osoby: { "2026-01": 8000 },
+      dssp_je_osoba_pracovne_aktivni: { "2026-01": true },
+      dssp_je_osoba_zranitelna: { "2026-01": true },
+    },
+    dite1: {
+      vek: { "2026-01": 2 },
+      je_nezaopatrene_dite: { "2026-01": true },
+      dssp_je_osoba_zranitelna: { "2026-01": true },
+    },
+  },
+  domacnosti: {
+    domacnost1: {
+      clenove: ["dospely1", "dite1"],
+      typ_bydleni: { "2026-01": "byt_nebo_rodinny_dum" },
+      vztah_k_nemovitosti: { "2026-01": "najemni_podnajemni" },
+      dssp_velikost_obce_bydliste: { "2026-01": "praha_a_brno" },
+      naklady_na_najemne: { "2026-01": 12000 },
+      dalsi_poplatky_spojene_s_bydlenim: { "2026-01": 2000 },
+      naklady_na_energie: { "2026-01": 5000 },
+
+      // Proměnné, které pošleme s null se dopočítají
+      dssp: { "2026-01": null },
+      dssp_slozka_na_bydleni: { "2026-01": null },
+      dssp_slozka_na_zivobyti: { "2026-01": null },
+      dssp_bonus_na_dite: { "2026-01": null },
+      dssp_pracovni_bonus: { "2026-01": null },
+    },
+  },
+};
+
+fetch("http://localhost:5000/calculate", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(input),
+})
+  .then((response) => response.json())
+  .then((output) => {
+    const domacnost1 = output.domacnosti.domacnost1;
+
+    console.log("Výše DSSP pro zadanou domácnost:", {
+      dssp: domacnost1.dssp,
+      slozka_na_bydleni: domacnost1.dssp_slozka_na_bydleni,
+      slozka_na_zivobyti: domacnost1.dssp_slozka_na_zivobyti,
+      bonus_na_dite: domacnost1.dssp_bonus_na_dite,
+      pracovni_bonus: domacnost1.dssp_pracovni_bonus,
+    });
+  });
+```
 
 ## Licence
 
