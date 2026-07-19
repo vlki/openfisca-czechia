@@ -47,7 +47,7 @@ class dssp_naklady_na_energie(Variable):
         )
         naklady_na_energie_tuha_paliva = parameters(
             period
-        ).dssp.naklady_na_energie_spojene_s_uzivanim_tuhych_paliv[
+        ).dssp.slozka_na_bydleni.naklady_na_energie_spojene_s_uzivanim_tuhych_paliv[
             klic_velikosti_domacnosti
         ]
 

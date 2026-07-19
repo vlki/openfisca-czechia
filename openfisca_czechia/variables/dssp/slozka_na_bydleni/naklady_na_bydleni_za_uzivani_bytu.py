@@ -26,6 +26,10 @@ class dssp_naklady_na_bydleni_za_uzivani_bytu(Variable):
         najem = domacnost("naklady_na_najemne", period)
         poplatky = domacnost("dalsi_poplatky_spojene_s_bydlenim", period)
 
+        parametry_nakladu = parameters(
+            period
+        ).dssp.slozka_na_bydleni.naklady_na_bydleni_za_uzivani_bytu
+
         uhrazene_najemne = najem + poplatky
 
         byt_nebo_dum = typ_bydleni == TypBydleni.byt_nebo_rodinny_dum
@@ -34,39 +38,61 @@ class dssp_naklady_na_bydleni_za_uzivani_bytu(Variable):
         najemni = vztah_k_nemovitosti == VztahKNemovitosti.najemni_podnajemni
 
         podminky_s_vypocty_nakladu = [
-            # §23 odst. 1
+            # § 23 odst. 1
             (
                 byt_nebo_dum & vlastni,
                 vlastnicky_pausal,
             ),
-            # §23 odst. 3
+            # § 23 odst. 3
             (
                 byt_nebo_dum & najemni,
                 min_(uhrazene_najemne, normativni_najemne),
             ),
-            # §24 odst. 1
+            # § 24 odst. 1
             (
                 jiny_prostor & vlastni,
                 0.8 * vlastnicky_pausal,
             ),
-            # §24 odst. 2 a §25
+            # § 24 odst. 2
             (
-                (jiny_prostor & najemni)
-                | (typ_bydleni == TypBydleni.pobytove_sluzby)
-                | (typ_bydleni == TypBydleni.ubytovaci_zarizeni),
-                # TODO: move 0.8 to parameter
-                min_(uhrazene_najemne, 0.8 * normativni_najemne),
+                (jiny_prostor & najemni) | (typ_bydleni == TypBydleni.pobytove_sluzby),
+                min_(
+                    uhrazene_najemne,
+                    (
+                        parametry_nakladu.podil_normativniho_najemneho_jako_maximum_zapocitane_vyse_najemneho_pro_jine_prostory_k_bydleni
+                        * normativni_najemne,
+                    ),
+                ),
+            ),
+            # § 25
+            (
+                typ_bydleni == TypBydleni.ubytovaci_zarizeni,
+                min_(
+                    uhrazene_najemne,
+                    (
+                        parametry_nakladu.podil_normativniho_najemneho_jako_maximum_zapocitane_vyse_najemneho_pro_ubytovaci_zarizeni
+                        * normativni_najemne,
+                    ),
+                ),
             ),
         ]
         cast_za_uzivani_bytu = select(*zip(*podminky_s_vypocty_nakladu), default=0.0)
 
+        hranice_nad_kterou_se_zapocitava_pausal = (
+            parametry_nakladu.nasobek_zivotniho_minima_domacnosti_jako_hranice_rozhodneho_prijmu_nad_kterou_se_pro_energie_zapocitava_pausal
+            * zivotni_minimum
+        )
+        maximum_zapocitane_vyse_nakladu_na_energie = (
+            parametry_nakladu.nasobek_energetickeho_pausalu_jako_maximum_zapocitane_vyse_skutecnych_nakladu_na_energie
+            * energeticky_pausal
+        )
+
         # Část za energie: nad hranicí příjmu paušál, pod ní skutečné
-        # náklady, nejvýše 1,2násobek paušálu
-        # TODO: move 1.43 and 1.2 to parameters
+        # náklady, nejvýše Xnásobek paušálu
         cast_za_energie = where(
-            rozhodny_prijem >= 1.43 * zivotni_minimum,  # noqa: PLR2004
+            rozhodny_prijem >= hranice_nad_kterou_se_zapocitava_pausal,
             energeticky_pausal,
-            min_(naklady_na_energie, 1.2 * energeticky_pausal),
+            min_(naklady_na_energie, maximum_zapocitane_vyse_nakladu_na_energie),
         )
 
         return cast_za_uzivani_bytu + cast_za_energie

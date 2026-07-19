@@ -1,0 +1,30 @@
+metadata:
+  unit: /1
+  reference:
+    2025-10-01:
+      title: § 24 a § 25 zákona č. 151/2025 Sb. o dávce státní sociální pomoci - znění od 31.03.2026
+      href: https://e-sbirka.gov.cz/sb/2025/151/2026-03-31#par_24
+
+podil_normativniho_najemneho_jako_maximum_zapocitane_vyse_najemneho_pro_jine_prostory_k_bydleni:
+  description: Podíl normativního nájemného jako maximum započítané výše nájemného pro jiné prostory k bydlení
+  values:
+    2025-10-01:
+      value: 0.8
+
+podil_normativniho_najemneho_jako_maximum_zapocitane_vyse_najemneho_pro_ubytovaci_zarizeni:
+  description: Podíl normativního nájemného jako maximum započítané výše nájemného pro ubytovací zařízení
+  values:
+    2025-10-01:
+      value: 0.8
+
+nasobek_zivotniho_minima_domacnosti_jako_hranice_rozhodneho_prijmu_nad_kterou_se_pro_energie_zapocitava_pausal:
+  description: Násobek životního minima domácnosti jako hranice rozhodného příjmu, nad kterou se pro částku nákladů za energie započítává energetický paušál
+  values:
+    2025-10-01:
+      value: 1.43
+
+nasobek_energetickeho_pausalu_jako_maximum_zapocitane_vyse_skutecnych_nakladu_na_energie:
+  description: Násobek energetického paušálu jako maximum započítané výše skutečných nákladů na energie
+  values:
+    2025-10-01:
+      value: 1.2

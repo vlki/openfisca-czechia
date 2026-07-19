@@ -18,7 +18,7 @@ class dssp_slozka_na_zivobyti(Variable):
             "dssp_soucet_castek_na_zivotni_potreby_clenu_domacnosti", period
         )
 
-        parametry_slozky = parameters(period).dssp.slozka_na_zivobyti
+        parametry_slozky = parameters(period).dssp.slozka_na_zivobyti.slozka_na_zivobyti
 
         hranice_rozhodneho_prijmu_pod_kterou_je_slozka_soucasti_davky = (
             parametry_slozky.nasobek_zivotniho_minima_domacnosti_jako_hranice_rozhodneho_prijmu_pod_kterou_je_slozka_soucasti_davky

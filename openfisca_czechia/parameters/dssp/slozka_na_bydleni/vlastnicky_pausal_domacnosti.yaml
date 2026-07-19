@@ -1,0 +1,12 @@
+metadata:
+  unit: /1
+  reference:
+    2025-10-01:
+      title: § 19 zákona č. 151/2025 Sb. o dávce státní sociální pomoci - znění od 31.03.2026
+      href: https://e-sbirka.gov.cz/sb/2025/151/2026-03-31#par_19
+
+podil_normativniho_najemneho_ve_vypoctu_vlastnickeho_pausalu:
+  description: Podíl normativního nájemného ve výpočtu vlastnického paušálu
+  values:
+    2025-10-01:
+      value: 0.3

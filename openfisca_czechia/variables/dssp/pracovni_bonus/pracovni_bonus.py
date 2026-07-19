@@ -22,7 +22,7 @@ class dssp_pracovni_bonus(Variable):
             "dssp_prijem_zohlednovany_pro_pracovni_bonus", period
         )
 
-        parametry_bonusu = parameters(period).dssp.pracovni_bonus
+        parametry_bonusu = parameters(period).dssp.pracovni_bonus.pracovni_bonus
 
         hranice_delici_vypocty_bonusu = (
             parametry_bonusu.nasobek_zivotniho_minima_domacnosti_jako_hranice_rozhodneho_prijmu_delici_vypocty_pracovniho_bonusu

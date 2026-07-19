@@ -40,12 +40,14 @@ class dssp_normativni_najemne_domacnosti(Variable):
 
         normativni_najemne_pro_zranitelne = parameters(
             period
-        ).dssp.normativni_najemne_pro_zranitelne[klic_velikosti_domacnosti][
-            velikost_obce_bydliste
-        ]
+        ).dssp.slozka_na_bydleni.normativni_najemne_pro_zranitelne[
+            klic_velikosti_domacnosti
+        ][velikost_obce_bydliste]
         normativni_najemne_pro_nezranitelne = parameters(
             period
-        ).dssp.normativni_najemne[klic_velikosti_domacnosti][velikost_obce_bydliste]
+        ).dssp.slozka_na_bydleni.normativni_najemne[klic_velikosti_domacnosti][
+            velikost_obce_bydliste
+        ]
 
         return where(
             vsechny_osoby_zranitelne,

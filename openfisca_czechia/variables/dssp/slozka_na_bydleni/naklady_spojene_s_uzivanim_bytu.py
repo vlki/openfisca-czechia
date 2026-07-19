@@ -39,10 +39,14 @@ class dssp_naklady_spojene_s_uzivanim_bytu(Variable):
 
         naklady_pro_zranitelne = parameters(
             period
-        ).dssp.naklady_spojene_s_uzivanim_bytu_pro_zranitelne[klic_velikosti_domacnosti]
+        ).dssp.slozka_na_bydleni.naklady_spojene_s_uzivanim_bytu_pro_zranitelne[
+            klic_velikosti_domacnosti
+        ]
         naklady_pro_nezranitelne = parameters(
             period
-        ).dssp.naklady_spojene_s_uzivanim_bytu[klic_velikosti_domacnosti]
+        ).dssp.slozka_na_bydleni.naklady_spojene_s_uzivanim_bytu[
+            klic_velikosti_domacnosti
+        ]
 
         return where(
             vsechny_osoby_zranitelne,

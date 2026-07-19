@@ -37,12 +37,12 @@ class dssp_energeticky_pausal_domacnosti(Variable):
             default="",
         )
 
-        energeticky_pausal_domacnosti = parameters(period).dssp.energeticky_pausal[
-            klic_velikosti_domacnosti
-        ]
+        energeticky_pausal_domacnosti = parameters(
+            period
+        ).dssp.slozka_na_bydleni.energeticky_pausal[klic_velikosti_domacnosti]
         nasobek_energetickeho_pausalu_pro_zranitelne = parameters(
             period
-        ).dssp.energeticky_pausal_pro_zranitelne
+        ).dssp.slozka_na_bydleni.energeticky_pausal_pro_zranitelne
 
         energeticky_pausal_domacnosti = energeticky_pausal_domacnosti * where(
             vsechny_osoby_zranitelne,

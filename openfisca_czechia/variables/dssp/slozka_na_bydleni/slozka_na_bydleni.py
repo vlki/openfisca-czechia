@@ -18,7 +18,7 @@ class dssp_slozka_na_bydleni(Variable):
             "dssp_naklady_na_bydleni_za_uzivani_bytu", period
         )
 
-        parametry_slozky = parameters(period).dssp.slozka_na_bydleni
+        parametry_slozky = parameters(period).dssp.slozka_na_bydleni.slozka_na_bydleni
 
         # Částka, o kterou rozhodný příjem převyšuje definovaný násobek životního minima domácnosti
         # (dle zákona 151/2025 § 19 odst. 3)

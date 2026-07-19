@@ -18,7 +18,9 @@ class dssp_castka_na_nezaopatrene_dite(Variable):
             "dssp_jsou_vsechny_osoby_v_domacnosti_zranitelne", period
         )
 
-        parametry_castky = parameters(period).dssp.castka_na_nezaopatrene_dite
+        parametry_castky = parameters(
+            period
+        ).dssp.bonus_na_dite.castka_na_nezaopatrene_dite
 
         hranice_1 = (
             parametry_castky.hranice_jako_nasobky_zivotniho_minima_domacnosti.hranice_1
@@ -31,6 +33,12 @@ class dssp_castka_na_nezaopatrene_dite(Variable):
         hranice_3 = (
             parametry_castky.hranice_jako_nasobky_zivotniho_minima_domacnosti.hranice_3
             * zivotni_minimum
+        )
+
+        podil_rozhodneho_prijmu_a_zm = rozhodny_prijem / zivotni_minimum
+        podil_rozhodneho_prijmu_a_zm_pod_hranici_3 = (
+            parametry_castky.hranice_jako_nasobky_zivotniho_minima_domacnosti.hranice_3
+            - podil_rozhodneho_prijmu_a_zm
         )
 
         castka_na_nezaopatrene_dite = select(
@@ -51,7 +59,7 @@ class dssp_castka_na_nezaopatrene_dite(Variable):
                 # výpočet pro podmínku rozhodny_prijem <= hranice_3
                 (
                     parametry_castky.castky_mezi_hranicemi.zakladni_castka_pod_hranici_3_ktera_se_snizuje_koeficientem
-                    * (4 - (rozhodny_prijem / zivotni_minimum))
+                    * podil_rozhodneho_prijmu_a_zm_pod_hranici_3
                 ),
             ],
             default=0.0,

@@ -31,7 +31,7 @@ class dssp_bonus_na_dite(Variable):
             zranitelne_osoby | pracovne_aktivni_osoby
         )
 
-        parametry_bonusu = parameters(period).dssp.bonus_na_dite
+        parametry_bonusu = parameters(period).dssp.bonus_na_dite.bonus_na_dite
 
         hranice_rozhodneho_prijmu_pod_kterou_je_bonus_soucasti_davky = (
             parametry_bonusu.nasobek_zivotniho_minima_domacnosti_jako_hranice_rozhodneho_prijmu_pod_kterou_je_bonus_soucasti_davky

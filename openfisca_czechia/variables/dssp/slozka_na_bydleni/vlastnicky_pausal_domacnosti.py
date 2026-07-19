@@ -16,9 +16,13 @@ class dssp_vlastnicky_pausal_domacnosti(Variable):
             "dssp_naklady_spojene_s_uzivanim_bytu", period
         )
 
+        parametry_pausalu = parameters(
+            period
+        ).dssp.slozka_na_bydleni.vlastnicky_pausal_domacnosti
+
         cast_pismeno_a = (
-            # TODO: move to parameter
-            0.3 * (normativni_najemne - naklady_spojene_s_uzivanim_bytu)
+            parametry_pausalu.podil_normativniho_najemneho_ve_vypoctu_vlastnickeho_pausalu
+            * (normativni_najemne - naklady_spojene_s_uzivanim_bytu),
         )
 
         cast_pismeno_b = naklady_spojene_s_uzivanim_bytu
