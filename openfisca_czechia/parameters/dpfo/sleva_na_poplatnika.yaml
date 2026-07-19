@@ -1,0 +1,6 @@
+description: Sleva z DPFO na poplatníka
+metadata:
+  unit: currency-CZK
+values:
+  2022-01-01:
+    value: 2570

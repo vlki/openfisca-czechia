@@ -1,0 +1,17 @@
+description: Sazby zdravotního pojištění
+
+sazba_zamestnance:
+  description: Sazba zdravotního pojištění pro zaměstnance
+  metadata:
+    unit: /1
+  values:
+    1993-01-01:
+      value: 0.045
+
+sazba_zamestnavatele:
+  description: Sazba zdravotního pojištění pro zaměstnavatele
+  metadata:
+    unit: /1
+  values:
+    1993-01-01:
+      value: 0.09

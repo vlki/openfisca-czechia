@@ -1,4 +1,5 @@
 description: Daň z příjmu fyzických osob
+
 zakladni_sazba:
   description: Základní sazba daně z příjmu fyzických osob
   metadata:
@@ -6,6 +7,7 @@ zakladni_sazba:
   values:
     2008-01-01:
       value: 0.15
+
 vyssi_sazba:
   description: Vyšší sazba daně z příjmu fyzických osob
   metadata:
@@ -13,6 +15,7 @@ vyssi_sazba:
   values:
     2021-01-01:
       value: 0.23
+
 hranice_vyssi_sazby:
   description: Hranice, nad kterou se pro základ daně aplikuje vyšší sazba daně z příjmu fyzických osob, jako násobek průměrné mzdy
   metadata:

@@ -1,0 +1,6 @@
+description: Minimální mzda
+metadata:
+  unit: currency-CZK
+values:
+  2026-01-01:
+    value: 22400
