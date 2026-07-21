@@ -24,7 +24,9 @@ class dssp_rozhodny_prijem(Variable):
             return domacnost.sum(hodnoty_prijmove_promenne_bez_nezaopat_deti)
 
         return (
-            suma_pro_domacnost_bez_nezaopat_deti("cisty_pracovni_prijem_osoby")
+            suma_pro_domacnost_bez_nezaopat_deti(
+                "cisty_pracovni_prijem_osoby_bez_danoveho_bonusu"
+            )
             + suma_pro_domacnost_bez_nezaopat_deti("duchody")
             + suma_pro_domacnost_bez_nezaopat_deti("materska")
             + suma_pro_domacnost_bez_nezaopat_deti("nemocenska")
