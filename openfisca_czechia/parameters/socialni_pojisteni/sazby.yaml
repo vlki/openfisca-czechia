@@ -1,0 +1,17 @@
+description: Sazby sociálního pojištění
+
+sazba_zamestnance:
+  description: Sazba sociálního pojištění pro zaměstnance
+  metadata:
+    unit: /1
+  values:
+    2024-01-01:
+      value: 0.071
+
+sazba_zamestnavatele:
+  description: Sazba sociálního pojištění pro zaměstnavatele
+  metadata:
+    unit: /1
+  values:
+    2024-01-01:
+      value: 0.248

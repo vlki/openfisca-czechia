@@ -4,7 +4,7 @@
   input:
     osoby:
       dospely1:
-        cisty_prijem_osoby: 30000
+        cisty_pracovni_prijem_osoby: 30000
       dospely2:
         duchody: 1000
         materska: 1000
@@ -27,12 +27,12 @@
   input:
     osoby:
       dospely1:
-        cisty_prijem_osoby: 30000
+        cisty_pracovni_prijem_osoby: 30000
       dospely2:
-        cisty_prijem_osoby: 20000
+        cisty_pracovni_prijem_osoby: 20000
       dite1:
         je_nezaopatrene_dite: true
-        cisty_prijem_osoby: 15000
+        cisty_pracovni_prijem_osoby: 15000
     domacnosti:
       domacnost:
         clenove: [dospely1, dospely2, dite1]

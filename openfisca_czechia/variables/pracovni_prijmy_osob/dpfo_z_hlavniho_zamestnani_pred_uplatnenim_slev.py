@@ -48,11 +48,11 @@ class dpfo_z_hlavniho_zamestnani_pred_uplatnenim_slev(Variable):
         )
 
         # Daň se zaokrouhluje na celé koruny nahoru. Nejdříve děláme zaokrouhlení na
-        # 10 desetinných míst, abychom odstranili artefakty po násobení floatů v Pythonu.
+        # 2 desetinná místa, abychom odstranili artefakty po násobení floatů v Pythonu.
         dpfo = np.ceil(
             np.round(
                 dan_z_prijmu_danena_zakladni_sazbou + dan_z_prijmu_danena_vyssi_sazbou,
-                decimals=10,
+                decimals=2,
             )
         )
 

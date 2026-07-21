@@ -3,7 +3,7 @@
   input:
     osoby:
       dospely1:
-        cisty_prijem_osoby: 6000
+        cisty_pracovni_prijem_osoby: 6000
         dssp_je_osoba_pracovne_aktivni: true
         dssp_je_osoba_zranitelna: false
     domacnosti:
@@ -24,7 +24,7 @@
   input:
     osoby:
       dospely1:
-        cisty_prijem_osoby: 20000
+        cisty_pracovni_prijem_osoby: 20000
         dssp_je_osoba_zranitelna: true
       dospely2:
         dssp_je_osoba_zranitelna: true

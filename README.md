@@ -57,7 +57,7 @@ from openfisca_czechia import CountryTaxBenefitSystem
 TEST_CASE = {
     "osoby": {
         "dospely1": {
-            "cisty_prijem_osoby": {"2026-01": 8000},
+            "cisty_pracovni_prijem_osoby": {"2026-01": 8000},
             "dssp_je_osoba_pracovne_aktivni": {"2026-01": True},
             "dssp_je_osoba_zranitelna": {"2026-01": True},
         },
@@ -127,7 +127,7 @@ Pak jde spustit simulaci před webové API ([dokumentace k webovému API](https:
 const input = {
   osoby: {
     dospely1: {
-      cisty_prijem_osoby: { "2026-01": 8000 },
+      cisty_pracovni_prijem_osoby: { "2026-01": 8000 },
       dssp_je_osoba_pracovne_aktivni: { "2026-01": true },
       dssp_je_osoba_zranitelna: { "2026-01": true },
     },

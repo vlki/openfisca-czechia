@@ -30,6 +30,8 @@ class odvod_zdravotniho_pojisteni_zamestnance_z_hlavniho_zamestnani(Variable):
         # TODO: pridat minimalni zdravotni pojisteni
         return where(
             povinnost_odvodu,
-            np.ceil(np.round(hruby_prijem * sazba_zamestnance, decimals=10)),
+            # Zaokrouhluje se na koruny nahoru. Nejdřív děláme round na 2 desetinná
+            # místa, aby se odstranily artefakty po násobení Python float čísel
+            np.ceil(np.round(hruby_prijem * sazba_zamestnance, decimals=2)),
             0.0,
         )

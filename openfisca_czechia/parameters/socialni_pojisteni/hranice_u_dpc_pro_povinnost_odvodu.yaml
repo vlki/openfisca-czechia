@@ -1,0 +1,6 @@
+description: Hranice u DPČ pro povinnost odvodů sociálního pojištění
+values:
+  2026-01-01:
+    value: 4500
+metadata:
+  unit: currency-CZK

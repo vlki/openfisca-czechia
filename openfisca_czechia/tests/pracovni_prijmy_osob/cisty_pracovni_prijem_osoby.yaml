@@ -1,0 +1,28 @@
+- name: Čistý pracovní příjem osoby s HPP (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_z_hlavniho_zamestnani: 50000
+    typ_pracovni_smlouvy_hlavniho_zamestnani: hpp
+  output:
+    # 50000 - 4930 (dan) - 3550 (socialni) - 2250 (zdravotni)
+    cisty_pracovni_prijem_osoby: 39270
+  absolute_error_margin: 0.01
+
+- name: Čistý pracovní příjem osoby s DPP pod hranicí povinnosti odvodů (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_z_hlavniho_zamestnani: 10000
+    typ_pracovni_smlouvy_hlavniho_zamestnani: dpp
+  output:
+    cisty_pracovni_prijem_osoby: 10000
+  absolute_error_margin: 0.01
+
+- name: Čistý pracovní příjem osoby s DPP nad hranicí povinnosti odvodů (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_z_hlavniho_zamestnani: 16000
+    typ_pracovni_smlouvy_hlavniho_zamestnani: dpp
+  output:
+    # 16000 - 0 (dan) - 1136 (socialni) - 720 (zdravotni)
+    cisty_pracovni_prijem_osoby: 14144
+  absolute_error_margin: 0.01

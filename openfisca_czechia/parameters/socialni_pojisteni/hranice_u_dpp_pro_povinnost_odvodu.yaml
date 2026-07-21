@@ -1,0 +1,6 @@
+description: Hranice u DPP pro povinnost odvodů sociálního pojištění
+values:
+  2026-01-01:
+    value: 12000
+metadata:
+  unit: currency-CZK

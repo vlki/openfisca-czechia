@@ -4,7 +4,7 @@
   input:
     osoby:
       dospely1:
-        cisty_prijem_osoby: 30000
+        cisty_pracovni_prijem_osoby: 30000
       dospely2:
         duchody: 1000
         materska: 2000
@@ -29,7 +29,7 @@
   input:
     osoby:
       dospely1:
-        cisty_prijem_osoby: 30000
+        cisty_pracovni_prijem_osoby: 30000
       dospely2:
         rodicovsky_prispevek: 2000
         navazuje_rodicovsky_prispevek_na_materskou: false

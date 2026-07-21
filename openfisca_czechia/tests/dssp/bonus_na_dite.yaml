@@ -3,7 +3,7 @@
   input:
     osoby:
       dospely1:
-        cisty_prijem_osoby: 10000
+        cisty_pracovni_prijem_osoby: 10000
         dssp_je_osoba_pracovne_aktivni: true
         dssp_je_osoba_zranitelna: false
       dite1:
@@ -27,7 +27,7 @@
   input:
     osoby:
       dospely1:
-        cisty_prijem_osoby: 10000
+        cisty_pracovni_prijem_osoby: 10000
         dssp_je_osoba_pracovne_aktivni: true
         dssp_je_osoba_zranitelna: true
       dite1:
@@ -51,7 +51,7 @@
   input:
     osoby:
       dospely1:
-        cisty_prijem_osoby: 45000
+        cisty_pracovni_prijem_osoby: 45000
         dssp_je_osoba_pracovne_aktivni: true
         dssp_je_osoba_zranitelna: true
       dite1:
@@ -75,7 +75,7 @@
   input:
     osoby:
       dospely1:
-        cisty_prijem_osoby: 10000
+        cisty_pracovni_prijem_osoby: 10000
         dssp_je_osoba_pracovne_aktivni: true
         dssp_je_osoba_zranitelna: true
       dospely2:
