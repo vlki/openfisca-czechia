@@ -54,28 +54,30 @@ A pak použijte balíček například pomocí následujícího kódu ([dokumenta
 from openfisca_core.simulation_builder import SimulationBuilder
 from openfisca_czechia import CountryTaxBenefitSystem
 
+PERIOD = "2026-01"
+
 TEST_CASE = {
     "osoby": {
         "dospely1": {
-            "cisty_pracovni_prijem_osoby": {"2026-01": 8000},
-            "dssp_je_osoba_pracovne_aktivni": {"2026-01": True},
-            "dssp_je_osoba_zranitelna": {"2026-01": True},
+            "cisty_pracovni_prijem_osoby": {PERIOD: 8000},
+            "dssp_je_osoba_pracovne_aktivni": {PERIOD: True},
+            "dssp_je_osoba_zranitelna": {PERIOD: True},
         },
         "dite1": {
-            "vek": {"2026-01": 2},
-            "je_nezaopatrene_dite": {"2026-01": True},
-            "dssp_je_osoba_zranitelna": {"2026-01": True},
+            "vek": {PERIOD: 2},
+            "je_nezaopatrene_dite": {PERIOD: True},
+            "dssp_je_osoba_zranitelna": {PERIOD: True},
         },
     },
     "domacnosti": {
         "domacnost1": {
             "clenove": ["dospely1", "dite1"],
-            "typ_bydleni": {"2026-01": "byt_nebo_rodinny_dum"},
-            "vztah_k_nemovitosti": {"2026-01": "najemni_podnajemni"},
-            "dssp_velikost_obce_bydliste": {"2026-01": "praha_a_brno"},
-            "naklady_na_najemne": {"2026-01": 12000},
-            "dalsi_poplatky_spojene_s_bydlenim": {"2026-01": 2000},
-            "naklady_na_energie": {"2026-01": 5000},
+            "typ_bydleni": {PERIOD: "byt_nebo_rodinny_dum"},
+            "vztah_k_nemovitosti": {PERIOD: "najemni_podnajemni"},
+            "dssp_velikost_obce_bydliste": {PERIOD: "praha_a_brno"},
+            "naklady_na_najemne": {PERIOD: 12000},
+            "dalsi_poplatky_spojene_s_bydlenim": {PERIOD: 2000},
+            "naklady_na_energie": {PERIOD: 5000},
         }
     },
 }
@@ -87,12 +89,12 @@ def main():
     simulation_builder = SimulationBuilder()
     simulation = simulation_builder.build_from_entities(tax_benefit_system, TEST_CASE)
 
-    dssp = simulation.calculate("dssp", "2026-01")
+    dssp = simulation.calculate("dssp", PERIOD)
 
-    slozka_na_bydleni = simulation.get_array("dssp_slozka_na_bydleni", "2026-01")
-    slozka_na_zivobyti = simulation.get_array("dssp_slozka_na_zivobyti", "2026-01")
-    bonus_na_dite = simulation.get_array("dssp_bonus_na_dite", "2026-01")
-    pracovni_bonus = simulation.get_array("dssp_pracovni_bonus", "2026-01")
+    slozka_na_bydleni = simulation.get_array("dssp_slozka_na_bydleni", PERIOD)
+    slozka_na_zivobyti = simulation.get_array("dssp_slozka_na_zivobyti", PERIOD)
+    bonus_na_dite = simulation.get_array("dssp_bonus_na_dite", PERIOD)
+    pracovni_bonus = simulation.get_array("dssp_pracovni_bonus", PERIOD)
 
     print(f"DSSP: {dssp}")
     print(f"- slozka na bydleni: {slozka_na_bydleni}")
