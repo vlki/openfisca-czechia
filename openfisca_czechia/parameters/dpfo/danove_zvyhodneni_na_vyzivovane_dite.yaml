@@ -1,0 +1,39 @@
+description: Daňové zvýhodnění na vyživované dítě
+metadata:
+  unit: currency-CZK
+
+bez_ztpp_prvni_dite:
+  description: Daňové zvýhodnění na vyživované dítě - dítě bez ZTP/P, první dítě
+  values:
+    2023-01-01:
+      value: 1267
+
+bez_ztpp_druhe_dite:
+  description: Daňové zvýhodnění na vyživované dítě - dítě bez ZTP/P, druhé dítě
+  values:
+    2023-01-01:
+      value: 1860
+
+bez_ztpp_treti_a_dalsi_dite:
+  description: Daňové zvýhodnění na vyživované dítě - dítě bez ZTP/P, třetí a další dítě
+  values:
+    2023-01-01:
+      value: 2320
+
+se_ztpp_prvni_dite:
+  description: Daňové zvýhodnění na vyživované dítě - dítě se ZTP/P, první dítě
+  values:
+    2023-01-01:
+      value: 2534
+
+se_ztpp_druhe_dite:
+  description: Daňové zvýhodnění na vyživované dítě - dítě se ZTP/P, druhé dítě
+  values:
+    2023-01-01:
+      value: 3720
+
+se_ztpp_treti_a_dalsi_dite:
+  description: Daňové zvýhodnění na vyživované dítě - dítě se ZTP/P, třetí a další dítě
+  values:
+    2023-01-01:
+      value: 4640

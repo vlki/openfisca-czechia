@@ -13,3 +13,31 @@
   output:
     dpfo_z_hlavniho_zamestnani: 31678
   absolute_error_margin: 0.01
+
+- name: 2 dospělí s 2 dětmi (leden 2026)
+  period: 2026-01
+  absolute_error_margin: 0.01
+  input:
+    osoby:
+      dospely1:
+        hruby_prijem_z_hlavniho_zamestnani: 20000
+        uplatnuje_danove_zvyhodneni_na_vyzivovane_deti_u_hlavniho_zamestnani: true
+      dospely2:
+        hruby_prijem_z_hlavniho_zamestnani: 20000
+      dite1:
+        vek: 4
+        je_nezaopatrene_dite: true
+      dite2:
+        vek: 8
+        je_nezaopatrene_dite: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2, dite1, dite2]
+  output:
+    osoby:
+      dospely1:
+        # 3000 (dan pred slevami) - 2570 (sleva za poplatnika) = 430
+        # 430 - 3127 (danove zvyhodneni na deti) = -2697
+        dpfo_z_hlavniho_zamestnani: -2697
+      dospely2:
+        dpfo_z_hlavniho_zamestnani: 430

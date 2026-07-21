@@ -26,3 +26,31 @@
     # 16000 - 0 (dan) - 1136 (socialni) - 720 (zdravotni)
     cisty_pracovni_prijem_osoby: 14144
   absolute_error_margin: 0.01
+
+- name: 2 dospělí s 2 dětmi (leden 2026)
+  period: 2026-01
+  absolute_error_margin: 0.01
+  input:
+    osoby:
+      dospely1:
+        hruby_prijem_z_hlavniho_zamestnani: 20000
+        uplatnuje_danove_zvyhodneni_na_vyzivovane_deti_u_hlavniho_zamestnani: true
+      dospely2:
+        hruby_prijem_z_hlavniho_zamestnani: 20000
+      dite1:
+        vek: 4
+        je_nezaopatrene_dite: true
+      dite2:
+        vek: 8
+        je_nezaopatrene_dite: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2, dite1, dite2]
+  output:
+    osoby:
+      dospely1:
+        # 20000 - 1420 (socialni) - 900 (zdravotni) + 2697 (danovy bonus)
+        cisty_pracovni_prijem_osoby: 20377
+      dospely2:
+        # 20000 - 1420 (socialni) - 900 (zdravotni) - 430 (dan)
+        cisty_pracovni_prijem_osoby: 17250
