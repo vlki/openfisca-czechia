@@ -22,7 +22,7 @@ class dssp_vlastnicky_pausal_domacnosti(Variable):
 
         cast_pismeno_a = (
             parametry_pausalu.podil_normativniho_najemneho_ve_vypoctu_vlastnickeho_pausalu
-            * (normativni_najemne - naklady_spojene_s_uzivanim_bytu),
+            * (normativni_najemne - naklady_spojene_s_uzivanim_bytu)
         )
 
         cast_pismeno_b = naklady_spojene_s_uzivanim_bytu

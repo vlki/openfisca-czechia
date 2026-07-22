@@ -1,4 +1,4 @@
-from openfisca_core.model_api import where
+from openfisca_core.model_api import max_, where
 from openfisca_core.periods import MONTH
 from openfisca_core.variables import Variable
 
@@ -46,7 +46,7 @@ class dssp_pracovni_bonus(Variable):
         )
 
         # Pokud redukční část převyšuje základní část, pak je výše pracovního bonusu 0 Kč
-        pracovni_bonus_v_situaci_nad_hranici = max(
+        pracovni_bonus_v_situaci_nad_hranici = max_(
             (
                 zakladni_cast_pro_vypocet_bonusu_v_situaci_nad_hranici
                 - redukcni_cast_pro_vypocet_bonusu_v_situaci_nad_hranici

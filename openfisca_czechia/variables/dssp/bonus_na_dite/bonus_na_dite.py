@@ -43,7 +43,7 @@ class dssp_bonus_na_dite(Variable):
                     rozhodny_prijem
                     <= hranice_rozhodneho_prijmu_pod_kterou_je_bonus_soucasti_davky
                 )
-                and vsechny_osoby_zranitelne_nebo_pracovne_aktivni
+                & vsechny_osoby_zranitelne_nebo_pracovne_aktivni
             ),
             pocet_nezaopatrenych_deti * castka_na_nezaopatrene_dite,
             0,

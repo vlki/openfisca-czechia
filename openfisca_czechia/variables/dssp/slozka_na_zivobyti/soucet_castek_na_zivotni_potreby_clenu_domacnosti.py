@@ -81,7 +81,7 @@ class dssp_soucet_castek_na_zivotni_potreby_clenu_domacnosti(Variable):
         castka_navyseni_pro_nedeti = select(
             [
                 pocet_nedeti_plnici_podpurny_plan == 0,
-                pocet_osob == 1 and pocet_nedeti_plnici_podpurny_plan == 1,
+                (pocet_osob == 1) & (pocet_nedeti_plnici_podpurny_plan == 1),
                 pocet_osob > 1,
             ],
             [

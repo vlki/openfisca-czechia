@@ -58,10 +58,8 @@ class dssp_naklady_na_bydleni_za_uzivani_bytu(Variable):
                 (jiny_prostor & najemni) | (typ_bydleni == TypBydleni.pobytove_sluzby),
                 min_(
                     uhrazene_najemne,
-                    (
-                        parametry_nakladu.podil_normativniho_najemneho_jako_maximum_zapocitane_vyse_najemneho_pro_jine_prostory_k_bydleni
-                        * normativni_najemne,
-                    ),
+                    parametry_nakladu.podil_normativniho_najemneho_jako_maximum_zapocitane_vyse_najemneho_pro_jine_prostory_k_bydleni
+                    * normativni_najemne,
                 ),
             ),
             # § 25
@@ -69,10 +67,8 @@ class dssp_naklady_na_bydleni_za_uzivani_bytu(Variable):
                 typ_bydleni == TypBydleni.ubytovaci_zarizeni,
                 min_(
                     uhrazene_najemne,
-                    (
-                        parametry_nakladu.podil_normativniho_najemneho_jako_maximum_zapocitane_vyse_najemneho_pro_ubytovaci_zarizeni
-                        * normativni_najemne,
-                    ),
+                    parametry_nakladu.podil_normativniho_najemneho_jako_maximum_zapocitane_vyse_najemneho_pro_ubytovaci_zarizeni
+                    * normativni_najemne,
                 ),
             ),
         ]
