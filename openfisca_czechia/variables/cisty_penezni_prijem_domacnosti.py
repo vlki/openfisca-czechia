@@ -27,6 +27,9 @@ class cisty_penezni_prijem_domacnosti(Variable):
         podpora_v_nezamestnanosti = domacnost.sum(
             domacnost.members("podpora_v_nezamestnanosti", period)
         )
+        prispevek_na_peci = domacnost.sum(
+            domacnost.members("prispevek_na_peci", period)
+        )
         prispevek_na_uhradu_potreb_na_dite = domacnost.sum(
             domacnost.members("prispevek_na_uhradu_potreb_na_dite", period)
         )
@@ -44,6 +47,7 @@ class cisty_penezni_prijem_domacnosti(Variable):
             + nemocenska
             + odmena_pestouna
             + podpora_v_nezamestnanosti
+            + prispevek_na_peci
             + prispevek_na_uhradu_potreb_na_dite
             + jine_prijmy
             + dssp
