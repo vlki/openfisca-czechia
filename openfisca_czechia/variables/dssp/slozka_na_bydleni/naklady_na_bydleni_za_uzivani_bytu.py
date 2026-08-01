@@ -3,8 +3,8 @@ from openfisca_core.periods import MONTH
 from openfisca_core.variables import Variable
 
 from openfisca_czechia.entities import Domacnost
-from openfisca_czechia.variables.bydliste.typ_bydleni import TypBydleni
-from openfisca_czechia.variables.bydliste.vztah_k_nemovitosti import VztahKNemovitosti
+from openfisca_czechia.variables.bydleni.typ_bydleni import TypBydleni
+from openfisca_czechia.variables.bydleni.vztah_k_nemovitosti import VztahKNemovitosti
 
 
 class dssp_naklady_na_bydleni_za_uzivani_bytu(Variable):
