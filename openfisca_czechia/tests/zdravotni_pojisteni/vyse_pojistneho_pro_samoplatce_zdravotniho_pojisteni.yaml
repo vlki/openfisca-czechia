@@ -1,0 +1,4 @@
+- name: Výše pojistného pro 2026
+  period: 2026-01
+  output:
+    vyse_pojistneho_pro_samoplatce_zdravotniho_pojisteni: 3024

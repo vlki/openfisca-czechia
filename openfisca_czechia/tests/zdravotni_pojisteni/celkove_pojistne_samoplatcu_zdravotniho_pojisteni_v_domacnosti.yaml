@@ -1,0 +1,50 @@
+- name: Dvě osoby se zaměstnáním (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        hruby_prijem_z_hlavniho_zamestnani: 30000
+        typ_pracovni_smlouvy_hlavniho_zamestnani: hpp
+      dospely2:
+        hruby_prijem_z_hlavniho_zamestnani: 20000
+        typ_pracovni_smlouvy_hlavniho_zamestnani: dpp
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2]
+  output:
+    domacnosti:
+      domacnost:
+        celkove_pojistne_samoplatcu_zdravotniho_pojisteni_v_domacnosti: 0
+
+- name: Jedna osoba se zaměstnáním, druhá bez práce, neregistrovaná na Úřadu práce (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        hruby_prijem_z_hlavniho_zamestnani: 30000
+        typ_pracovni_smlouvy_hlavniho_zamestnani: hpp
+      dospely2:
+        je_registrovana_na_uradu_prace: False
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2]
+  output:
+    domacnosti:
+      domacnost:
+        celkove_pojistne_samoplatcu_zdravotniho_pojisteni_v_domacnosti: 3024
+
+- name: Dvě osoby bez práce a neregistrované na Úřadu práce (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        je_registrovana_na_uradu_prace: False
+      dospely2:
+        je_registrovana_na_uradu_prace: False
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2]
+  output:
+    domacnosti:
+      domacnost:
+        celkove_pojistne_samoplatcu_zdravotniho_pojisteni_v_domacnosti: 6048

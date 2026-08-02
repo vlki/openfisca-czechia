@@ -1,0 +1,45 @@
+- name: Osoba s povinností platit zdravotní pojištění u hlavního zaměstnání (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        hruby_prijem_z_hlavniho_zamestnani: 30000
+        typ_pracovni_smlouvy_hlavniho_zamestnani: hpp
+  output:
+    osoby:
+      dospely1:
+        je_samoplatce_zdravotniho_pojisteni: False
+
+- name: Osoba, za kterou platí zdravotní stát (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        plati_stat_zdravotni_pojisteni: True
+  output:
+    osoby:
+      dospely1:
+        je_samoplatce_zdravotniho_pojisteni: False
+
+- name: Osoba registrovaná na Úřadu práce (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        je_registrovana_na_uradu_prace: True
+  output:
+    osoby:
+      dospely1:
+        je_samoplatce_zdravotniho_pojisteni: False
+
+- name: Osoba bez zaměstnání, neregistrovaná na Úřadu práce, za kterou stát zdravotní neplatí (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        je_registrovana_na_uradu_prace: False
+        plati_stat_zdravotni_pojisteni: False
+  output:
+    osoby:
+      dospely1:
+        je_samoplatce_zdravotniho_pojisteni: True

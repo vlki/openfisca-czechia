@@ -15,3 +15,11 @@ sazba_zamestnavatele:
   values:
     1993-01-01:
       value: 0.09
+
+sazba_samoplatce:
+  description: Sazba zdravotního pojištění pro samoplátce jako podíl minimální mzdy
+  metadata:
+    unit: /1
+  values:
+    1993-01-01:
+      value: 0.135

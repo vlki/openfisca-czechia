@@ -15,5 +15,12 @@ class rezidualni_prijem_domacnosti(Variable):
             "cisty_penezni_prijem_domacnosti", period
         )
         celkove_naklady_na_bydleni = domacnost("celkove_naklady_na_bydleni", period)
+        celkove_pojistne_samoplatcu_zdravotniho_pojisteni_v_domacnosti = domacnost(
+            "celkove_pojistne_samoplatcu_zdravotniho_pojisteni_v_domacnosti", period
+        )
 
-        return cisty_penezni_prijem_domacnosti - celkove_naklady_na_bydleni
+        return (
+            cisty_penezni_prijem_domacnosti
+            - celkove_naklady_na_bydleni
+            - celkove_pojistne_samoplatcu_zdravotniho_pojisteni_v_domacnosti
+        )

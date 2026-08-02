@@ -1,0 +1,55 @@
+- name: Osoba se zaměstnáním (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        hruby_prijem_z_hlavniho_zamestnani: 30000
+        typ_pracovni_smlouvy_hlavniho_zamestnani: hpp
+  output:
+    osoby:
+      dospely1:
+        plati_stat_zdravotni_pojisteni: False
+
+- name: Osoba na mateřské (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        materska: 6000
+  output:
+    osoby:
+      dospely1:
+        plati_stat_zdravotni_pojisteni: True
+
+- name: Osoba s rodičovským příspěvkem (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        rodicovsky_prispevek: 12000
+  output:
+    osoby:
+      dospely1:
+        plati_stat_zdravotni_pojisteni: True
+
+- name: Osoba s důchodem (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        duchody: 12000
+  output:
+    osoby:
+      dospely1:
+        plati_stat_zdravotni_pojisteni: True
+
+- name: Nezaopatřené dítě (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        je_nezaopatrene_dite: True
+  output:
+    osoby:
+      dospely1:
+        plati_stat_zdravotni_pojisteni: True
