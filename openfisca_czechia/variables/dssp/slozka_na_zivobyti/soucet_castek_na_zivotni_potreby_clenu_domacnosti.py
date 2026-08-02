@@ -70,7 +70,7 @@ class dssp_soucet_castek_na_zivotni_potreby_clenu_domacnosti(Variable):
 
         pocet_osob = domacnost.nb_persons()
         osoby_plnici_podpurny_plan = domacnost.members(
-            "dssp_plni_osoba_podporny_plan", period
+            "dssp_plni_osoba_podpurny_plan", period
         )
         pocet_nedeti_plnici_podpurny_plan = domacnost.sum(
             ~jsou_osoby_nezaopatrene_deti

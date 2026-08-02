@@ -4,7 +4,7 @@ from openfisca_core.variables import Variable
 from openfisca_czechia.entities import Osoba
 
 
-class dssp_plni_osoba_podporny_plan(Variable):
+class dssp_plni_osoba_podpurny_plan(Variable):
     value_type = bool
     entity = Osoba
     label = "Zda plní osoba podpůrný plán v rámci DSSP"
