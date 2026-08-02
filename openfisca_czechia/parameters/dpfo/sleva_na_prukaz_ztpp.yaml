@@ -1,0 +1,6 @@
+description: Sleva z DPFO na průkaz ZTP/P
+metadata:
+  unit: currency-CZK
+values:
+  2013-01-01:
+    value: 1345

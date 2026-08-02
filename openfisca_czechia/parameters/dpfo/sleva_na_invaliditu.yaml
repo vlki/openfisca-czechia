@@ -1,0 +1,21 @@
+description: Sleva z DPFO na invaliditu
+metadata:
+  unit: currency-CZK
+
+stupen_1:
+  description: Sleva z DPFO na invaliditu 1. stupně
+  values:
+    2013-01-01:
+      value: 210
+
+stupen_2:
+  description: Sleva z DPFO na invaliditu 2. stupně
+  values:
+    2013-01-01:
+      value: 210
+
+stupen_3:
+  description: Sleva z DPFO na invaliditu 3. stupně
+  values:
+    2013-01-01:
+      value: 420

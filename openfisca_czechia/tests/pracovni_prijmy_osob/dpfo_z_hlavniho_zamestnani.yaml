@@ -41,3 +41,40 @@
         dpfo_z_hlavniho_zamestnani: -2697
       dospely2:
         dpfo_z_hlavniho_zamestnani: 430
+
+- name: Osoba s invaliditou 1. stupně
+  period: 2026-01
+  input:
+    hruby_prijem_z_hlavniho_zamestnani: 50000
+    stupen_invalidity: stupen_1
+  output:
+    dpfo_z_hlavniho_zamestnani: 4720
+  absolute_error_margin: 0.01
+
+- name: Osoba s invaliditou 2. stupně
+  period: 2026-01
+  input:
+    hruby_prijem_z_hlavniho_zamestnani: 50000
+    stupen_invalidity: stupen_2
+  output:
+    dpfo_z_hlavniho_zamestnani: 4720
+  absolute_error_margin: 0.01
+
+- name: Osoba s invaliditou 3. stupně
+  period: 2026-01
+  input:
+    hruby_prijem_z_hlavniho_zamestnani: 50000
+    stupen_invalidity: stupen_3
+  output:
+    dpfo_z_hlavniho_zamestnani: 4510
+  absolute_error_margin: 0.01
+
+- name: Osoba s invaliditou 3. stupně a průkazem ZTP/P
+  period: 2026-01
+  input:
+    hruby_prijem_z_hlavniho_zamestnani: 50000
+    stupen_invalidity: stupen_3
+    ma_prukaz_ztpp: true
+  output:
+    dpfo_z_hlavniho_zamestnani: 3165
+  absolute_error_margin: 0.01
