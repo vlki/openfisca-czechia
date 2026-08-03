@@ -37,7 +37,18 @@
   input:
     osoby:
       dospely1:
-        duchody: 12000
+        starobni_duchod: 12000
+  output:
+    osoby:
+      dospely1:
+        plati_stat_zdravotni_pojisteni: True
+
+- name: Osoba s invalidním důchodem (leden 2026)
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        invalidni_vdovecky_sirotci_duchody: 12000
   output:
     osoby:
       dospely1:

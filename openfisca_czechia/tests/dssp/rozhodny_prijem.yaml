@@ -6,7 +6,7 @@
       dospely1:
         cisty_pracovni_prijem_osoby: 30000
       dospely2:
-        duchody: 1000
+        starobni_duchod: 1000
         materska: 1000
         nemocenska: 1000
         odmena_pestouna: 1000

@@ -27,7 +27,8 @@ class dssp_rozhodny_prijem(Variable):
             suma_pro_domacnost_bez_nezaopat_deti(
                 "cisty_pracovni_prijem_osoby_bez_danoveho_bonusu"
             )
-            + suma_pro_domacnost_bez_nezaopat_deti("duchody")
+            + suma_pro_domacnost_bez_nezaopat_deti("starobni_duchod")
+            + suma_pro_domacnost_bez_nezaopat_deti("invalidni_vdovecky_sirotci_duchody")
             + suma_pro_domacnost_bez_nezaopat_deti("materska")
             + suma_pro_domacnost_bez_nezaopat_deti("nemocenska")
             + suma_pro_domacnost_bez_nezaopat_deti("odmena_pestouna")

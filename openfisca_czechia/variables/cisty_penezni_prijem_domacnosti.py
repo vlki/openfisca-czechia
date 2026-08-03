@@ -21,7 +21,10 @@ class cisty_penezni_prijem_domacnosti(Variable):
         )
         vyzivne_na_deti = domacnost.sum(domacnost.members("vyzivne_na_deti", period))
 
-        duchody = domacnost.sum(domacnost.members("duchody", period))
+        starobni_duchod = domacnost.sum(domacnost.members("starobni_duchod", period))
+        invalidni_vdovecky_sirotci_duchody = domacnost.sum(
+            domacnost.members("invalidni_vdovecky_sirotci_duchody", period)
+        )
         nemocenska = domacnost.sum(domacnost.members("nemocenska", period))
         odmena_pestouna = domacnost.sum(domacnost.members("odmena_pestouna", period))
         podpora_v_nezamestnanosti = domacnost.sum(
@@ -43,7 +46,8 @@ class cisty_penezni_prijem_domacnosti(Variable):
             + materska
             + rodicovsky_prispevek
             + vyzivne_na_deti
-            + duchody
+            + starobni_duchod
+            + invalidni_vdovecky_sirotci_duchody
             + nemocenska
             + odmena_pestouna
             + podpora_v_nezamestnanosti

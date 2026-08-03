@@ -97,7 +97,7 @@
   input:
     osoby:
       dospely1:
-        duchody: 8000
+        starobni_duchod: 8000
         dssp_je_osoba_pracovne_aktivni: false
         dssp_je_osoba_zranitelna: true
     domacnosti:

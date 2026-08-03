@@ -13,13 +13,17 @@ class plati_stat_zdravotni_pojisteni(Variable):
 
     def formula(osoba, period, parameters):
         je_nezaopatrene_dite = osoba("je_nezaopatrene_dite", period)
-        duchody = osoba("duchody", period)
+        starobni_duchod = osoba("starobni_duchod", period)
+        invalidni_vdovecky_sirotci_duchody = osoba(
+            "invalidni_vdovecky_sirotci_duchody", period
+        )
         materska = osoba("materska", period)
         rodicovsky_prispevek = osoba("rodicovsky_prispevek", period)
 
         return (
             je_nezaopatrene_dite
-            | (duchody > 0)
+            | (starobni_duchod > 0)
+            | (invalidni_vdovecky_sirotci_duchody > 0)
             | (materska > 0)
             | (rodicovsky_prispevek > 0)
         )
