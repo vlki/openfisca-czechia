@@ -1,0 +1,5 @@
+- name: Základní nezabavitelná částka na osobu vyživovanou (leden 2026)
+  period: 2026-01
+  output:
+    zakladni_nezabavitelna_castka_na_osobu_vyzivovanou_v_exekuci_nebo_insolvenci: 3525.375
+  absolute_error_margin: 0.01

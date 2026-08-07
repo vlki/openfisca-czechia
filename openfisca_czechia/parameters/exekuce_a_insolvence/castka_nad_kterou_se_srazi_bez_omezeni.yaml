@@ -1,0 +1,10 @@
+description: Násobek součtu částek životního minima, normativního nájemného a energetického paušálu jako částka, nad kterou se v exekuci a insolvenci sráží vše
+metadata:
+  unit: /1
+  reference:
+  2026-01-01:
+    title: § 2 nařízení vlády č. 595/2006 Sb.
+    href: https://e-sbirka.gov.cz/sb/2006/595/2026-01-01#par_2
+values:
+  2026-01-01:
+    value: 1.9

@@ -1,0 +1,5 @@
+- name: Částka, nad kterou se v exekuci a insolvenci sráží bez omezení (leden 2026)
+  period: 2026-01
+  output:
+    castka_nad_kterou_se_v_exekuci_a_insolvenci_srazi_bez_omezeni: 31521
+  absolute_error_margin: 0.01

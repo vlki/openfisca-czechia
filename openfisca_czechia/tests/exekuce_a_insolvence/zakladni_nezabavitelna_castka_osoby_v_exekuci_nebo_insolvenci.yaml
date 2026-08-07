@@ -1,0 +1,21 @@
+- name: Základní nezabavitelná částka jedince (leden 2026)
+  period: 2026-01
+  output:
+    zakladni_nezabavitelna_castka_osoby_v_exekuci_nebo_insolvenci: 14102
+  absolute_error_margin: 0.01
+
+- name: Základní nezabavitelná částka jedince s 1 vyživovanou osobou (leden 2026)
+  period: 2026-01
+  input:
+    pocet_vyzivovanych_osob_pro_vypocet_srazky_v_exekuci_nebo_insolvenci: 1
+  output:
+    zakladni_nezabavitelna_castka_osoby_v_exekuci_nebo_insolvenci: 17627
+  absolute_error_margin: 0.01
+
+- name: Základní nezabavitelná částka jedince s 3 vyživovanými osobami (leden 2026)
+  period: 2026-01
+  input:
+    pocet_vyzivovanych_osob_pro_vypocet_srazky_v_exekuci_nebo_insolvenci: 3
+  output:
+    zakladni_nezabavitelna_castka_osoby_v_exekuci_nebo_insolvenci: 24678
+  absolute_error_margin: 0.01

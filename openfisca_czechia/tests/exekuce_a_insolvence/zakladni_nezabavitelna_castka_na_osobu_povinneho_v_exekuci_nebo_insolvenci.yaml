@@ -1,0 +1,5 @@
+- name: Základní nezabavitelná částka na osobu povinného (leden 2026)
+  period: 2026-01
+  output:
+    zakladni_nezabavitelna_castka_na_osobu_povinneho_v_exekuci_nebo_insolvenci: 14101.5
+  absolute_error_margin: 0.01
