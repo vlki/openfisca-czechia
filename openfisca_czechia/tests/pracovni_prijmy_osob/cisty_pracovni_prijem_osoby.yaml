@@ -23,8 +23,8 @@
     hruby_prijem_z_hlavniho_zamestnani: 16000
     typ_pracovni_smlouvy_hlavniho_zamestnani: dpp
   output:
-    # 16000 - 0 (dan) - 1136 (socialni) - 720 (zdravotni)
-    cisty_pracovni_prijem_osoby: 14144
+    # 16000 - 0 (dan) - 1136 (socialni) - 1584 (zdravotni)
+    cisty_pracovni_prijem_osoby: 13280
   absolute_error_margin: 0.01
 
 - name: 2 dospělí s 2 dětmi (leden 2026)
@@ -49,8 +49,8 @@
   output:
     osoby:
       dospely1:
-        # 20000 - 1420 (socialni) - 900 (zdravotni) + 2697 (danovy bonus)
-        cisty_pracovni_prijem_osoby: 20377
+        # 20000 - 1420 (socialni) - 1224 (zdravotni) + 2697 (danovy bonus)
+        cisty_pracovni_prijem_osoby: 20053
       dospely2:
-        # 20000 - 1420 (socialni) - 900 (zdravotni) - 430 (dan)
-        cisty_pracovni_prijem_osoby: 17250
+        # 20000 - 1420 (socialni) - 1224 (zdravotni) - 430 (dan)
+        cisty_pracovni_prijem_osoby: 16926

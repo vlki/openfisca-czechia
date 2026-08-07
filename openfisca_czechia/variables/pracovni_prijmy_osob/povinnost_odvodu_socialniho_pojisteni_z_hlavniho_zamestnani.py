@@ -29,9 +29,10 @@ class povinnost_odvodu_socialniho_pojisteni_z_hlavniho_zamestnani(Variable):
 
         return select(
             [
+                hruby_prijem <= 0,
                 typ_pracovni_smlouvy == TypPracovniSmlouvy.hpp,
                 typ_pracovni_smlouvy == TypPracovniSmlouvy.dpp,
                 typ_pracovni_smlouvy == TypPracovniSmlouvy.dpc,
             ],
-            [True, hruby_prijem >= hranice_dpp, hruby_prijem >= hranice_dpc],
+            [False, True, hruby_prijem >= hranice_dpp, hruby_prijem >= hranice_dpc],
         )

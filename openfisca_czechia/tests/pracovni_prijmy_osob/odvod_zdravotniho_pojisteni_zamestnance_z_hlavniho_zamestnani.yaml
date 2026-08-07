@@ -22,5 +22,6 @@
     hruby_prijem_z_hlavniho_zamestnani: 13000
     typ_pracovni_smlouvy_hlavniho_zamestnani: dpp
   output:
-    odvod_zdravotniho_pojisteni_zamestnance_z_hlavniho_zamestnani: 585
+    # 0.045 * 13000 + (22400 - 13000) * 0.135
+    odvod_zdravotniho_pojisteni_zamestnance_z_hlavniho_zamestnani: 1854
   absolute_error_margin: 0.01
