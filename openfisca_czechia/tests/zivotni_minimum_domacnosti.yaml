@@ -12,6 +12,20 @@
     domacnost:
       zivotni_minimum_domacnosti: 4860
 
+- name: Jednotlivec (říjen 2026)
+  period: 2026-10
+  absolute_error_margin: 0.01
+  input:
+    osoby:
+      dospely1:
+        vek: 40
+    domacnosti:
+      domacnost:
+        clenove: [dospely1]
+  output:
+    domacnost:
+      zivotni_minimum_domacnosti: 5500
+
 - name: Pár bez dětí (leden 2026)
   period: 2026-01
   absolute_error_margin: 0.01
@@ -28,6 +42,23 @@
     domacnost:
       # 4470 + 4040
       zivotni_minimum_domacnosti: 8510
+
+- name: Pár bez dětí (říjen 2026)
+  period: 2026-10
+  absolute_error_margin: 0.01
+  input:
+    osoby:
+      dospely1:
+        vek: 40
+      dospely2:
+        vek: 38
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2]
+  output:
+    domacnost:
+      # 5000 + 3750
+      zivotni_minimum_domacnosti: 8750
 
 - name: Pár s dětmi 4 a 8 let (leden 2026)
   period: 2026-01

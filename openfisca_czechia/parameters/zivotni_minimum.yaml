@@ -10,18 +10,24 @@ jednotlivec:
   values:
     2023-10-01:
       value: 4860
+    2026-10-01:
+      value: 5500
 
 vice_osob_prvni:
   description: Částka životního minima první osoby v pořadí
   values:
     2023-10-01:
       value: 4470
+    2026-10-01:
+      value: 5000
 
 vice_osob_druha_nebo_dalsi_neni_nezaopatrene_dite:
   description: Částka životního minima druhé nebo další osoby v pořadí od 15 let věku, která není nezaopatřeným dítětem
   values:
     2023-10-01:
       value: 4040
+    2026-10-01:
+      value: 3750
 
 vice_osob_druha_nebo_dalsi_nezaopatrene_dite_15_az_26_let:
   description: Částka životního minima druhé nebo další osoby v pořadí, když je nezaopatřeným dítětem od 15 do 26 let věku
