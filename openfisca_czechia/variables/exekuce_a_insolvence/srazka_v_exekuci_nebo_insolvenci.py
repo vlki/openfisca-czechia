@@ -27,16 +27,22 @@ class srazka_v_exekuci_nebo_insolvenci(Variable):
         )
 
         castka_srazena_castecne = where(
-            zbytek_po_odecteni_nezabavitelne_castky
-            > castka_nad_kterou_se_srazi_bez_omezeni,
+            (
+                zbytek_po_odecteni_nezabavitelne_castky
+                > castka_nad_kterou_se_srazi_bez_omezeni
+            ),
             castka_nad_kterou_se_srazi_bez_omezeni,
             zbytek_po_odecteni_nezabavitelne_castky,
         )
         castka_srazena_bez_omezeni = where(
-            zbytek_po_odecteni_nezabavitelne_castky
-            > castka_nad_kterou_se_srazi_bez_omezeni,
-            zbytek_po_odecteni_nezabavitelne_castky
-            - castka_nad_kterou_se_srazi_bez_omezeni,
+            (
+                zbytek_po_odecteni_nezabavitelne_castky
+                > castka_nad_kterou_se_srazi_bez_omezeni
+            ),
+            (
+                zbytek_po_odecteni_nezabavitelne_castky
+                - castka_nad_kterou_se_srazi_bez_omezeni
+            ),
             0,
         )
 

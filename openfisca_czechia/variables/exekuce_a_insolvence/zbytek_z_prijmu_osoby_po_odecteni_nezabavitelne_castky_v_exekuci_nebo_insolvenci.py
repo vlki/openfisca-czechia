@@ -1,3 +1,4 @@
+from openfisca_core.model_api import max_
 from openfisca_core.periods import MONTH
 from openfisca_core.variables import Variable
 
@@ -22,4 +23,4 @@ class zbytek_z_prijmu_osoby_po_odecteni_nezabavitelne_castky_v_exekuci_nebo_inso
             period,
         )
 
-        return prijem_osoby - zakladni_nezabavitelna_castka
+        return max_(prijem_osoby - zakladni_nezabavitelna_castka, 0)
