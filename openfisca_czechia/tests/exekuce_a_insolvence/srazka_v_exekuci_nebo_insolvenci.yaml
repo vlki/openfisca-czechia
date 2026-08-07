@@ -7,3 +7,35 @@
   output:
     srazka_v_exekuci_nebo_insolvenci: 1966
   absolute_error_margin: 0.01
+
+- name: Srážka pro jedince s nepřednostní exekucí pod nezabavitelnou částkou (leden 2026)
+  period: 2026-01
+  input:
+    cisty_pracovni_prijem_osoby: 14000
+    pocet_exekuci_osoby: 1
+    ma_prednostni_exekuce: false
+  output:
+    srazka_v_exekuci_nebo_insolvenci: 0
+  absolute_error_margin: 0.01
+
+- name: Srážka pro osobu s 1 vyživovanou osobou a s přednostní exekucí (leden 2026)
+  period: 2026-01
+  input:
+    cisty_pracovni_prijem_osoby: 30000
+    pocet_exekuci_osoby: 1
+    ma_prednostni_exekuce: true
+    pocet_vyzivovanych_osob_pro_vypocet_srazky_v_exekuci_nebo_insolvenci: 1
+  output:
+    srazka_v_exekuci_nebo_insolvenci: 8248
+  absolute_error_margin: 0.01
+
+- name: Srážka pro osobu s 1 vyživovanou osobou, s přednostní exekucí a příjmem nad hranicí, kde se sráží vše (leden 2026)
+  period: 2026-01
+  input:
+    cisty_pracovni_prijem_osoby: 50000
+    pocet_exekuci_osoby: 1
+    ma_prednostni_exekuce: true
+    pocet_vyzivovanych_osob_pro_vypocet_srazky_v_exekuci_nebo_insolvenci: 1
+  output:
+    srazka_v_exekuci_nebo_insolvenci: 21866
+  absolute_error_margin: 0.01
