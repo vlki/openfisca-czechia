@@ -1,0 +1,6 @@
+- name: Nezaopatřené dítě (leden 2026)
+  period: 2026-01
+  input:
+    je_nezaopatrene_dite: true
+  output:
+    dssp_je_osoba_zranitelna: true

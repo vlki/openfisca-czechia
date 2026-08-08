@@ -10,7 +10,6 @@ class dssp_je_osoba_zranitelna(Variable):
     entity = Osoba
     label = "Zda je osoba zranitelná v rámci DSSP"
     definition_period = MONTH
-    default_value = False
 
     def formula(osoba, period, parameters):
         je_nezaopatrene_dite = osoba("je_nezaopatrene_dite", period)
