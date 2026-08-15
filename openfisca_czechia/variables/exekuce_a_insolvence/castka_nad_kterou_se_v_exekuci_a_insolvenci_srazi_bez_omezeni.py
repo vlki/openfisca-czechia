@@ -14,7 +14,7 @@ class castka_nad_kterou_se_v_exekuci_a_insolvenci_srazi_bez_omezeni(Variable):
         zm_jednotlivce = parameters(period).zivotni_minimum.jednotlivec
         normativni_najemne = parameters(
             period
-        ).dssp.slozka_na_bydleni.normativni_najemne.jednoclenna_domacnost.obec_70000_obyvatel_a_vice
+        ).dssp.slozka_na_bydleni.normativni_najemne_dle_velikosti_obce.pro_nezranitelne.jednoclenna_domacnost.obec_70000_obyvatel_a_vice
         energeticky_pausal = parameters(
             period
         ).dssp.slozka_na_bydleni.energeticky_pausal.jednoclenna_domacnost

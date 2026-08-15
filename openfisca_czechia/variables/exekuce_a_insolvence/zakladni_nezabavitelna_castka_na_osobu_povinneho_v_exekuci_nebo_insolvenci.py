@@ -16,7 +16,7 @@ class zakladni_nezabavitelna_castka_na_osobu_povinneho_v_exekuci_nebo_insolvenci
         zm_jednotlivce = parameters(period).zivotni_minimum.jednotlivec
         normativni_najemne = parameters(
             period
-        ).dssp.slozka_na_bydleni.normativni_najemne.jednoclenna_domacnost.obec_70000_obyvatel_a_vice
+        ).dssp.slozka_na_bydleni.normativni_najemne_dle_velikosti_obce.pro_nezranitelne.jednoclenna_domacnost.obec_70000_obyvatel_a_vice
         energeticky_pausal = parameters(
             period
         ).dssp.slozka_na_bydleni.energeticky_pausal.jednoclenna_domacnost

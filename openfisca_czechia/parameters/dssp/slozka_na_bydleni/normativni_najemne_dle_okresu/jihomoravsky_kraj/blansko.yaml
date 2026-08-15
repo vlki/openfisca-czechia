@@ -1,0 +1,53 @@
+description: Normativní nájemné pro zranitelné a nezranitelné domácnosti dle počtu členů v okresu Blansko
+metadata:
+  unit: currency-CZK
+
+jednoclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 8168
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 10456
+
+dvouclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 10030
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 12775
+
+triclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 11260
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 13308
+
+ctyrclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 11260
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 14592
+
+peti_nebo_viceclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 12000
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 15583
