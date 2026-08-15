@@ -6,48 +6,48 @@ jednoclenna_domacnost:
   nezranitelna:
     values:
       2026-10-01:
-        value: 6730
+        value: 7610
   zranitelna:
     values:
       2026-10-01:
-        value: 9146
+        value: 10456
 
 dvouclenna_domacnost:
   nezranitelna:
     values:
       2026-10-01:
-        value: 9056
+        value: 10296
   zranitelna:
     values:
       2026-10-01:
-        value: 11500
+        value: 13270
 
 triclenna_domacnost:
   nezranitelna:
     values:
       2026-10-01:
-        value: 9686
+        value: 11286
   zranitelna:
     values:
       2026-10-01:
-        value: 11748
+        value: 13978
 
 ctyrclenna_domacnost:
   nezranitelna:
     values:
       2026-10-01:
-        value: 9686
+        value: 11286
   zranitelna:
     values:
       2026-10-01:
-        value: 12000
+        value: 14370
 
 peti_nebo_viceclenna_domacnost:
   nezranitelna:
     values:
       2026-10-01:
-        value: 10600
+        value: 12420
   zranitelna:
     values:
       2026-10-01:
-        value: 13400
+        value: 15780

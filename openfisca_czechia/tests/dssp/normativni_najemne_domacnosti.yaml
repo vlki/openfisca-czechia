@@ -87,7 +87,7 @@
         dssp_okres_bydliste: blansko
   output:
     domacnost:
-      dssp_normativni_najemne_domacnosti: 11260
+      dssp_normativni_najemne_domacnosti: 12860
 
 - name: Jednočlenná zranitelná domácnost bez zadaného okresu, tedy v Praze (říjen 2026)
   period: 2026-10
@@ -100,7 +100,7 @@
         clenove: [dospely1]
   output:
     domacnost:
-      dssp_normativni_najemne_domacnosti: 15500
+      dssp_normativni_najemne_domacnosti: 16810
 
 - name: Pětičlenná zranitelná domácnost v okresu Prachatice (říjen 2026)
   period: 2026-10
@@ -122,7 +122,7 @@
         dssp_okres_bydliste: prachatice
   output:
     domacnost:
-      dssp_normativni_najemne_domacnosti: 12000
+      dssp_normativni_najemne_domacnosti: 14370
 
 - name: Tříčlenná nezranitelná domácnost v okresu Ostrava-město (říjen 2026)
   period: 2026-10
@@ -141,7 +141,7 @@
         dssp_okres_bydliste: ostrava_mesto
   output:
     domacnost:
-      dssp_normativni_najemne_domacnosti: 10184
+      dssp_normativni_najemne_domacnosti: 11784
 
 - name: Čtyřčlenná nezranitelná domácnost v okresu Blansko ještě před účinností (září 2026)
   period: 2026-09
