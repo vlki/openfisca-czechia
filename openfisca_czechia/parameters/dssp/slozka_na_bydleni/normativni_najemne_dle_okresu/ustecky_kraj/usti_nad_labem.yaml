@@ -1,0 +1,53 @@
+description: Normativní nájemné pro zranitelné a nezranitelné domácnosti dle počtu členů v okresu Ústí nad Labem
+metadata:
+  unit: currency-CZK
+
+jednoclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 7052
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 8701
+
+dvouclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 8500
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 10000
+
+triclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 8861
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 11078
+
+ctyrclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 9562
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 11361
+
+peti_nebo_viceclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 9700
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 11925

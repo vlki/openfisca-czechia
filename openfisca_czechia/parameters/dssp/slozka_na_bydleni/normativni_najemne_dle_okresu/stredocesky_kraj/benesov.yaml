@@ -1,0 +1,53 @@
+description: Normativní nájemné pro zranitelné a nezranitelné domácnosti dle počtu členů v okresu Benešov
+metadata:
+  unit: currency-CZK
+
+jednoclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 7256
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 10020
+
+dvouclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 9906
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 13019
+
+triclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 10108
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 13266
+
+ctyrclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 12000
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 14956
+
+peti_nebo_viceclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 12000
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 14956

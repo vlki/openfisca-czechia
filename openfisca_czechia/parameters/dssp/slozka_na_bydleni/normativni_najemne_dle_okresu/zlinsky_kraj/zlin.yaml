@@ -1,0 +1,53 @@
+description: Normativní nájemné pro zranitelné a nezranitelné domácnosti dle počtu členů v okresu Zlín
+metadata:
+  unit: currency-CZK
+
+jednoclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 7503
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 10000
+
+dvouclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 9500
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 11881
+
+triclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 10398
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 13000
+
+ctyrclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 10640
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 13500
+
+peti_nebo_viceclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 11000
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 14300

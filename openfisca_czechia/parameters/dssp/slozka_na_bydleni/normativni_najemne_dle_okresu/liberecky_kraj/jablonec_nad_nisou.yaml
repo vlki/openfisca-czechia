@@ -1,0 +1,53 @@
+description: Normativní nájemné pro zranitelné a nezranitelné domácnosti dle počtu členů v okresu Jablonec nad Nisou
+metadata:
+  unit: currency-CZK
+
+jednoclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 7500
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 9500
+
+dvouclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 9400
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 11360
+
+triclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 10300
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 13000
+
+ctyrclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 11200
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 13617
+
+peti_nebo_viceclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 11200
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 14500

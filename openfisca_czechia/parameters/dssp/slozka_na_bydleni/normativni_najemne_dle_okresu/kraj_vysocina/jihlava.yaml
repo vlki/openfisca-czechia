@@ -1,0 +1,53 @@
+description: Normativní nájemné pro zranitelné a nezranitelné domácnosti dle počtu členů v okresu Jihlava
+metadata:
+  unit: currency-CZK
+
+jednoclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 8192
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 10924
+
+dvouclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 10000
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 13000
+
+triclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 11000
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 14000
+
+ctyrclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 11500
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 15000
+
+peti_nebo_viceclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 12907
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 15850

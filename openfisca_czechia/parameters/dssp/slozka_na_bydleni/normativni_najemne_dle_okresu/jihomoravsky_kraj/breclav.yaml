@@ -1,0 +1,53 @@
+description: Normativní nájemné pro zranitelné a nezranitelné domácnosti dle počtu členů v okresu Břeclav
+metadata:
+  unit: currency-CZK
+
+jednoclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 8614
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 11350
+
+dvouclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 11000
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 12825
+
+triclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 11020
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 13900
+
+ctyrclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 12000
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 15000
+
+peti_nebo_viceclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 12000
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 15500

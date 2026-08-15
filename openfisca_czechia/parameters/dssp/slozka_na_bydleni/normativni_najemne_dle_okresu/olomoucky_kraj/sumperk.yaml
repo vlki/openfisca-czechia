@@ -1,0 +1,53 @@
+description: Normativní nájemné pro zranitelné a nezranitelné domácnosti dle počtu členů v okresu Šumperk
+metadata:
+  unit: currency-CZK
+
+jednoclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 7200
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 9000
+
+dvouclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 8500
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 10541
+
+triclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 9000
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 10700
+
+ctyrclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 9000
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 11150
+
+peti_nebo_viceclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 9404
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 12000

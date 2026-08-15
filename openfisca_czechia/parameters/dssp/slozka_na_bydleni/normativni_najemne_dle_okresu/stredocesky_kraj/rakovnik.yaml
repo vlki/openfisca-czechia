@@ -1,0 +1,53 @@
+description: Normativní nájemné pro zranitelné a nezranitelné domácnosti dle počtu členů v okresu Rakovník
+metadata:
+  unit: currency-CZK
+
+jednoclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 7704
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 10000
+
+dvouclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 9494
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 12333
+
+triclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 11691
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 14654
+
+ctyrclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 11691
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 14654
+
+peti_nebo_viceclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 11691
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 15000

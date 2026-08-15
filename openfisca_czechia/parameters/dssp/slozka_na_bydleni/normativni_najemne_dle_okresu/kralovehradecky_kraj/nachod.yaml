@@ -1,0 +1,53 @@
+description: Normativní nájemné pro zranitelné a nezranitelné domácnosti dle počtu členů v okresu Náchod
+metadata:
+  unit: currency-CZK
+
+jednoclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 6116
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 8100
+
+dvouclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 7900
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 10000
+
+triclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 8500
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 11000
+
+ctyrclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 9030
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 11500
+
+peti_nebo_viceclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 9472
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 11625

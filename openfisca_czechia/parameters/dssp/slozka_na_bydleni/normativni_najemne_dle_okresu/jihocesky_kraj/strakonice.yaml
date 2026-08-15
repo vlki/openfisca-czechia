@@ -1,0 +1,53 @@
+description: Normativní nájemné pro zranitelné a nezranitelné domácnosti dle počtu členů v okresu Strakonice
+metadata:
+  unit: currency-CZK
+
+jednoclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 6802
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 8842
+
+dvouclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 7825
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 10210
+
+triclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 8744
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 10907
+
+ctyrclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 9810
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 11396
+
+peti_nebo_viceclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 9810
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 12000

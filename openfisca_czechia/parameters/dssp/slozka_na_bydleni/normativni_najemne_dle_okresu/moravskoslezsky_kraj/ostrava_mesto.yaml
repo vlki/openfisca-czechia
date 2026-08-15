@@ -1,0 +1,53 @@
+description: Normativní nájemné pro zranitelné a nezranitelné domácnosti dle počtu členů v okresu Ostrava-město
+metadata:
+  unit: currency-CZK
+
+jednoclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 8260
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 9936
+
+dvouclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 9718
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 11580
+
+triclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 10184
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 12300
+
+ctyrclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 10792
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 12863
+
+peti_nebo_viceclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 11000
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 13602

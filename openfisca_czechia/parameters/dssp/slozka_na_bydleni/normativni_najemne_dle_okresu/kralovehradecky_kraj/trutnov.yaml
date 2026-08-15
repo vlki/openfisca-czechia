@@ -1,0 +1,53 @@
+description: Normativní nájemné pro zranitelné a nezranitelné domácnosti dle počtu členů v okresu Trutnov
+metadata:
+  unit: currency-CZK
+
+jednoclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 6933
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 8653
+
+dvouclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 8800
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 10913
+
+triclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 9490
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 11815
+
+ctyrclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 10000
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 11815
+
+peti_nebo_viceclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 10000
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 13477

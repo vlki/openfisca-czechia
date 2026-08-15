@@ -1,0 +1,53 @@
+description: Normativní nájemné pro zranitelné a nezranitelné domácnosti dle počtu členů v okresu Plzeň-jih
+metadata:
+  unit: currency-CZK
+
+jednoclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 6970
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 9000
+
+dvouclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 8273
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 10000
+
+triclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 9573
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 12000
+
+ctyrclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 12000
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 15000
+
+peti_nebo_viceclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 12000
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 15000

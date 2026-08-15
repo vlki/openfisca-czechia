@@ -1,0 +1,53 @@
+description: Normativní nájemné pro zranitelné a nezranitelné domácnosti dle počtu členů v okresu Prachatice
+metadata:
+  unit: currency-CZK
+
+jednoclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 6000
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 8975
+
+dvouclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 6392
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 9789
+
+triclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 7000
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 10633
+
+ctyrclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 8000
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 12000
+
+peti_nebo_viceclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 8000
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 12000

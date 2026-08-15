@@ -1,0 +1,53 @@
+description: Normativní nájemné pro zranitelné a nezranitelné domácnosti dle počtu členů v okresu Litoměřice
+metadata:
+  unit: currency-CZK
+
+jednoclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 8000
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 10342
+
+dvouclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 9678
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 12000
+
+triclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 10689
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 13407
+
+ctyrclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 10689
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 13600
+
+peti_nebo_viceclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 10689
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 13600

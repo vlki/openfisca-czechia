@@ -1,0 +1,53 @@
+description: Normativní nájemné pro zranitelné a nezranitelné domácnosti dle počtu členů v okresu Sokolov
+metadata:
+  unit: currency-CZK
+
+jednoclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 5444
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 7604
+
+dvouclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 7053
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 9000
+
+triclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 7835
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 10000
+
+ctyrclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 7848
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 10000
+
+peti_nebo_viceclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 8622
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 11283

@@ -1,0 +1,53 @@
+description: Normativní nájemné pro zranitelné a nezranitelné domácnosti dle počtu členů v okresu Ústí nad Orlicí
+metadata:
+  unit: currency-CZK
+
+jednoclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 5328
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 8682
+
+dvouclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 8000
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 10000
+
+triclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 9000
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 11350
+
+ctyrclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 9000
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 11800
+
+peti_nebo_viceclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 9400
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 12000

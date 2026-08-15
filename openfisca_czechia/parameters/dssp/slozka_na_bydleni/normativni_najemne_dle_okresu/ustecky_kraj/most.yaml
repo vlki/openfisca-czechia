@@ -1,0 +1,53 @@
+description: Normativní nájemné pro zranitelné a nezranitelné domácnosti dle počtu členů v okresu Most
+metadata:
+  unit: currency-CZK
+
+jednoclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 6301
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 8093
+
+dvouclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 7652
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 9612
+
+triclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 8238
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 10446
+
+ctyrclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 8850
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 11000
+
+peti_nebo_viceclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 9100
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 11598

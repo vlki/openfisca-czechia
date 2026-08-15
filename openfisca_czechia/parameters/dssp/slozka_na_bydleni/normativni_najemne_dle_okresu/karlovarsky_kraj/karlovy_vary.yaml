@@ -1,0 +1,53 @@
+description: Normativní nájemné pro zranitelné a nezranitelné domácnosti dle počtu členů v okresu Karlovy Vary
+metadata:
+  unit: currency-CZK
+
+jednoclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 7400
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 9500
+
+dvouclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 8500
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 10621
+
+triclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 9996
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 12000
+
+ctyrclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 10720
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 12554
+
+peti_nebo_viceclenna_domacnost:
+  nezranitelna:
+    values:
+      2026-10-01:
+        value: 10720
+  zranitelna:
+    values:
+      2026-10-01:
+        value: 12638
