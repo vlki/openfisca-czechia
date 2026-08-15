@@ -1,0 +1,16 @@
+metadata:
+  unit: year
+
+pecujici_rodic_je_zranitelny_do_maximalniho_veku_ditete:
+  description: Pečující rodič je zranitelný do daného věku dítěte
+  values:
+    2025-10-01:
+      value: 4
+
+pecujici_osamely_rodic_je_zranitelny_do_maximalniho_veku_ditete:
+  description: Pečující osamělý rodič je zranitelný do daného věku dítěte
+  values:
+    2025-10-01:
+      value: 7
+    2026-10-01:
+      value: 15

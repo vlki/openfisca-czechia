@@ -1,0 +1,136 @@
+- name: Rodič v domácnosti se dvěma dospělými pečující o dítě mladší 4 let
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        vek: 30
+        je_rodic_pecujici_o_dite: true
+      dospely2:
+        vek: 32
+      dite1:
+        vek: 3
+        je_nezaopatrene_dite: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2, dite1]
+  output:
+    osoby:
+      dospely1:
+        dssp_je_osoba_zranitelna_z_titulu_pecujiciho_rodice: true
+      dospely2:
+        dssp_je_osoba_zranitelna_z_titulu_pecujiciho_rodice: false
+      dite1:
+        dssp_je_osoba_zranitelna_z_titulu_pecujiciho_rodice: false
+
+- name: Rodič v domácnosti se dvěma dospělými pečující o dítě starší 4 let
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        vek: 30
+        je_rodic_pecujici_o_dite: true
+      dospely2:
+        vek: 32
+      dite1:
+        vek: 5
+        je_nezaopatrene_dite: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2, dite1]
+  output:
+    osoby:
+      dospely1:
+        dssp_je_osoba_zranitelna_z_titulu_pecujiciho_rodice: false
+
+- name: Rozhoduje věk nejmladšího dítěte v domácnosti
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        vek: 30
+        je_rodic_pecujici_o_dite: true
+      dospely2:
+        vek: 32
+      dite1:
+        vek: 10
+        je_nezaopatrene_dite: true
+      dite2:
+        vek: 2
+        je_nezaopatrene_dite: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2, dite1, dite2]
+  output:
+    osoby:
+      dospely1:
+        dssp_je_osoba_zranitelna_z_titulu_pecujiciho_rodice: true
+
+- name: Osamělý rodič pečující o dítě mladší 7 let
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        vek: 30
+        je_rodic_pecujici_o_dite: true
+      dite1:
+        vek: 6
+        je_nezaopatrene_dite: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dite1]
+  output:
+    osoby:
+      dospely1:
+        dssp_je_osoba_zranitelna_z_titulu_pecujiciho_rodice: true
+
+- name: Osamělý rodič pečující o dítě starší 7 let
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        vek: 30
+        je_rodic_pecujici_o_dite: true
+      dite1:
+        vek: 8
+        je_nezaopatrene_dite: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dite1]
+  output:
+    osoby:
+      dospely1:
+        dssp_je_osoba_zranitelna_z_titulu_pecujiciho_rodice: false
+
+- name: Osoba, která není rodičem pečujícím o dítě, není zranitelná
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        vek: 30
+      dite1:
+        vek: 1
+        je_nezaopatrene_dite: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dite1]
+  output:
+    osoby:
+      dospely1:
+        dssp_je_osoba_zranitelna_z_titulu_pecujiciho_rodice: false
+
+- name: Rodič pečující o dítě bez nezaopatřeného dítěte v domácnosti
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        vek: 30
+        je_rodic_pecujici_o_dite: true
+      dospely2:
+        vek: 32
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2]
+  output:
+    osoby:
+      dospely1:
+        dssp_je_osoba_zranitelna_z_titulu_pecujiciho_rodice: false
