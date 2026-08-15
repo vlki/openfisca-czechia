@@ -67,3 +67,100 @@
   output:
     domacnost:
       dssp_normativni_najemne_domacnosti: 17710
+
+- name: Čtyřčlenná nezranitelná domácnost v okresu Blansko (říjen 2026)
+  period: 2026-10
+  input:
+    osoby:
+      dospely1:
+        dssp_je_osoba_pracovne_aktivni: true
+        dssp_je_osoba_zranitelna: false
+      dospely2:
+        dssp_je_osoba_zranitelna: true
+      dite1:
+        dssp_je_osoba_zranitelna: true
+      dite2:
+        dssp_je_osoba_zranitelna: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2, dite1, dite2]
+        dssp_okres_bydliste: blansko
+  output:
+    domacnost:
+      dssp_normativni_najemne_domacnosti: 11260
+
+- name: Jednočlenná zranitelná domácnost bez zadaného okresu, tedy v Praze (říjen 2026)
+  period: 2026-10
+  input:
+    osoby:
+      dospely1:
+        dssp_je_osoba_zranitelna: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1]
+  output:
+    domacnost:
+      dssp_normativni_najemne_domacnosti: 15500
+
+- name: Pětičlenná zranitelná domácnost v okresu Prachatice (říjen 2026)
+  period: 2026-10
+  input:
+    osoby:
+      dospely1:
+        dssp_je_osoba_zranitelna: true
+      dospely2:
+        dssp_je_osoba_zranitelna: true
+      dite1:
+        dssp_je_osoba_zranitelna: true
+      dite2:
+        dssp_je_osoba_zranitelna: true
+      dite3:
+        dssp_je_osoba_zranitelna: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2, dite1, dite2, dite3]
+        dssp_okres_bydliste: prachatice
+  output:
+    domacnost:
+      dssp_normativni_najemne_domacnosti: 12000
+
+- name: Tříčlenná nezranitelná domácnost v okresu Ostrava-město (říjen 2026)
+  period: 2026-10
+  input:
+    osoby:
+      dospely1:
+        dssp_je_osoba_pracovne_aktivni: true
+        dssp_je_osoba_zranitelna: false
+      dospely2:
+        dssp_je_osoba_zranitelna: true
+      dite1:
+        dssp_je_osoba_zranitelna: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2, dite1]
+        dssp_okres_bydliste: ostrava_mesto
+  output:
+    domacnost:
+      dssp_normativni_najemne_domacnosti: 10184
+
+- name: Čtyřčlenná nezranitelná domácnost v okresu Blansko ještě před účinností (září 2026)
+  period: 2026-09
+  input:
+    osoby:
+      dospely1:
+        dssp_je_osoba_pracovne_aktivni: true
+        dssp_je_osoba_zranitelna: false
+      dospely2:
+        dssp_je_osoba_zranitelna: true
+      dite1:
+        dssp_je_osoba_zranitelna: true
+      dite2:
+        dssp_je_osoba_zranitelna: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2, dite1, dite2]
+        dssp_velikost_obce_bydliste: obec_do_69999_obyvatel
+        dssp_okres_bydliste: blansko
+  output:
+    domacnost:
+      dssp_normativni_najemne_domacnosti: 11230
