@@ -12,8 +12,10 @@ class dssp_je_osoba_zranitelna_z_titulu_vdovstvi(Variable):
     default_value = False
 
     def formula(osoba, period, parameters):
+        zemrely_manzel_nebo_partner_v_poslednich_12m = osoba('zemrely_manzel_nebo_partner_v_poslednich_12m', period)
+
         # § 7 odst. 1 i) Zranitelnou osobou je pozůstalý manžel nebo partner, se kterým uzavřel
         # partnerství podle občanského zákoníku nebo registrované partnerství podle zákona
         # o registrovaném partnerství (dále jen „partner“), a to po dobu 12 kalendářních měsíců
         # od měsíce následujícího po měsíci, kdy jeho manžel nebo partner zemřel
-        return False
+        return zemrely_manzel_nebo_partner_v_poslednich_12m
