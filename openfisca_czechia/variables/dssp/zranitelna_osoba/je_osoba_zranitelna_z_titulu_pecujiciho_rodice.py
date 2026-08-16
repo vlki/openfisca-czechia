@@ -22,15 +22,21 @@ class dssp_je_osoba_zranitelna_z_titulu_pecujiciho_rodice(Variable):
 
         vek_osob_v_domacnosti = osoba.domacnost.members("vek", period)
         vek_nejmladsiho_ditete_v_domacnosti = osoba.domacnost.min(
-            where(osoba("je_nezaopatrene_dite", period), vek_osob_v_domacnosti, np.iinfo(np.int32).max)
+            where(
+                osoba("je_nezaopatrene_dite", period),
+                vek_osob_v_domacnosti,
+                np.iinfo(np.int32).max,
+            )
         )
 
-        parametry = parameters(period).dssp.zranitelna_osoba.zranitelna_osoba_z_titulu_pecujiciho_rodice
+        parametry = parameters(
+            period
+        ).dssp.zranitelna_osoba.zranitelna_osoba_z_titulu_pecujiciho_rodice
 
         vekova_hranice_ditete = where(
             je_osamely_rodic,
             parametry.pecujici_osamely_rodic_je_zranitelny_do_maximalniho_veku_ditete,
-            parametry.pecujici_rodic_je_zranitelny_do_maximalniho_veku_ditete
+            parametry.pecujici_rodic_je_zranitelny_do_maximalniho_veku_ditete,
         )
 
         return je_rodic_pecujici_o_dite & (

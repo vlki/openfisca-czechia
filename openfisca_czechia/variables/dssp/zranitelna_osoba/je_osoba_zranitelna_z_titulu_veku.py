@@ -12,6 +12,11 @@ class dssp_je_osoba_zranitelna_z_titulu_veku(Variable):
     default_value = False
 
     def formula(osoba, period, parameters):
+        vek = osoba("vek", period)
+
+        vek_od_ktereho_je_osoba_zranitelna = parameters(
+            period
+        ).dssp.zranitelna_osoba.zranitelna_osoba_z_titulu_veku
+
         # § 7 odst. 1 a) Zranitelnou osobou je osoba starší 68 let
-        # TODO
-        return False
+        return vek >= vek_od_ktereho_je_osoba_zranitelna

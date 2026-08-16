@@ -4,9 +4,11 @@
     osoby:
       dospely1:
         vek: 30
+        je_rodic: true
         je_rodic_pecujici_o_dite: true
       dospely2:
         vek: 32
+        je_rodic: true
       dite1:
         vek: 3
         je_nezaopatrene_dite: true
@@ -28,9 +30,11 @@
     osoby:
       dospely1:
         vek: 30
+        je_rodic: true
         je_rodic_pecujici_o_dite: true
       dospely2:
         vek: 32
+        je_rodic: true
       dite1:
         vek: 5
         je_nezaopatrene_dite: true
@@ -48,9 +52,11 @@
     osoby:
       dospely1:
         vek: 30
+        je_rodic: true
         je_rodic_pecujici_o_dite: true
       dospely2:
         vek: 32
+        je_rodic: true
       dite1:
         vek: 10
         je_nezaopatrene_dite: true
@@ -71,6 +77,7 @@
     osoby:
       dospely1:
         vek: 30
+        je_rodic: true
         je_rodic_pecujici_o_dite: true
       dite1:
         vek: 6
@@ -89,6 +96,7 @@
     osoby:
       dospely1:
         vek: 30
+        je_rodic: true
         je_rodic_pecujici_o_dite: true
       dite1:
         vek: 8
@@ -107,6 +115,7 @@
     osoby:
       dospely1:
         vek: 30
+        je_rodic: true
       dite1:
         vek: 1
         je_nezaopatrene_dite: true
@@ -124,6 +133,7 @@
     osoby:
       dospely1:
         vek: 30
+        je_rodic: true
         je_rodic_pecujici_o_dite: true
       dospely2:
         vek: 32

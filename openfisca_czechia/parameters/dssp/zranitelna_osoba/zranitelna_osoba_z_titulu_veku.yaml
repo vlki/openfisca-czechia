@@ -1,0 +1,6 @@
+description: Věk, od kterého je osoba považována za zranitelnou v rámci DSSP
+metadata:
+  unit: year
+values:
+  2025-10-01:
+    value: 68
