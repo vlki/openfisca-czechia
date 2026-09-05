@@ -13,12 +13,12 @@ class podil_celkovych_nakladu_na_bydleni_a_cisteho_penezniho_prijmu(Variable):
 
     def formula(domacnost, period, parameters):
         celkove_naklady_na_bydleni = domacnost("celkove_naklady_na_bydleni", period)
-        cisty_penezni_prijem_domacnosti = domacnost(
-            "cisty_penezni_prijem_domacnosti", period
+        cisty_penezni_prijem_domacnosti_po_srazkach = domacnost(
+            "cisty_penezni_prijem_domacnosti_po_srazkach", period
         )
 
         return where(
-            cisty_penezni_prijem_domacnosti > 0,
-            celkove_naklady_na_bydleni / cisty_penezni_prijem_domacnosti,
+            cisty_penezni_prijem_domacnosti_po_srazkach > 0,
+            celkove_naklady_na_bydleni / cisty_penezni_prijem_domacnosti_po_srazkach,
             0,
         )
