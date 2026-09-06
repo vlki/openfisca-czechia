@@ -1,0 +1,61 @@
+- name: Bez pracovního příjmu je záloha nulová (leden 2026)
+  period: 2026-01
+  output:
+    zaloha_na_dan_z_prijmu_osoby_pred_slevami: 0
+  absolute_error_margin: 0.01
+
+- name: Základní sazba u jednoho zaměstnání (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 50000
+    typ_pracovni_smlouvy_zamestnani_1: hpp
+  output:
+    # 0.15 * 50000, po slevě na poplatníka zbyde 4930
+    zaloha_na_dan_z_prijmu_osoby_pred_slevami: 7500
+  absolute_error_margin: 0.01
+
+- name: Vyšší sazba u jednoho zaměstnání (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 200000
+    typ_pracovni_smlouvy_zamestnani_1: hpp
+  output:
+    # 146901 * 0.15 + 53099 * 0.23, po slevě na poplatníka zbyde 31678
+    zaloha_na_dan_z_prijmu_osoby_pred_slevami: 34248
+  absolute_error_margin: 0.01
+
+- name: Dva zaměstnavatelé mají každý vlastní hranici vyšší sazby (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 100000
+    typ_pracovni_smlouvy_zamestnani_1: hpp
+    hruby_prijem_ze_zamestnani_2: 100000
+    typ_pracovni_smlouvy_zamestnani_2: hpp
+  output:
+    # 15000 + 15000, oba základy zůstávají pod hranicí vyšší sazby
+    zaloha_na_dan_z_prijmu_osoby_pred_slevami: 30000
+  absolute_error_margin: 0.01
+
+- name: Dvě DPP u téhož zaměstnavatele dají jednu zálohu z úhrnu (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 7000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
+    hruby_prijem_ze_zamestnani_2: 6000
+    typ_pracovni_smlouvy_zamestnani_2: dpp
+    zamestnavatel_zamestnani_2: zamestnavatel_a
+    podepsane_prohlaseni_u_zamestnavatele: zadny
+  output:
+    # 0.15 * 13000, ne dvě zálohy ze 7000 a 6000
+    zaloha_na_dan_z_prijmu_osoby_pred_slevami: 1950
+  absolute_error_margin: 0.01
+
+- name: Příjem zdaněný srážkou do zálohy nevstupuje (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 10000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
+    podepsane_prohlaseni_u_zamestnavatele: zadny
+  output:
+    zaloha_na_dan_z_prijmu_osoby_pred_slevami: 0
+  absolute_error_margin: 0.01

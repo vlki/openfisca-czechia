@@ -21,9 +21,9 @@ class zaloha_na_dan_z_prijmu_osoby(Variable):
     """
 
     def formula(osoba, period, parameters):
-        zaloha_celkem = 0.0
-        zaloha_u_zamestnavatele_s_prohlasenim = 0.0
+        zaloha_celkem = osoba("zaloha_na_dan_z_prijmu_osoby_pred_slevami", period)
 
+        zaloha_u_zamestnavatele_s_prohlasenim = 0.0
         for index in INDEXY_ZAMESTNANI:
             zaloha_ze_zamestnani = osoba(
                 f"zaloha_na_dan_pred_slevami_ze_zamestnani_{index}", period
@@ -32,7 +32,6 @@ class zaloha_na_dan_z_prijmu_osoby(Variable):
                 f"je_podepsane_prohlaseni_k_dani_u_zamestnani_{index}", period
             )
 
-            zaloha_celkem = zaloha_celkem + zaloha_ze_zamestnani
             zaloha_u_zamestnavatele_s_prohlasenim = (
                 zaloha_u_zamestnavatele_s_prohlasenim
                 + where(je_podepsane_prohlaseni, zaloha_ze_zamestnani, 0)
