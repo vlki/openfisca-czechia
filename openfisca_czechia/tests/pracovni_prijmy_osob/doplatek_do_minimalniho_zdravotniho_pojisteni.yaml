@@ -47,3 +47,35 @@
   output:
     doplatek_do_minimalniho_zdravotniho_pojisteni: 0
   absolute_error_margin: 0.01
+
+- name: Pracující nezaopatřené dítě doplatek neplatí (leden 2026)
+  period: 2026-01
+  input:
+    je_nezaopatrene_dite: true
+    hruby_prijem_ze_zamestnani_1: 8000
+    typ_pracovni_smlouvy_zamestnani_1: hpp
+  output:
+    # Za nezaopatřené dítě platí pojistné stát, takže minimální vyměřovací
+    # základ pro něj neplatí
+    doplatek_do_minimalniho_zdravotniho_pojisteni: 0
+  absolute_error_margin: 0.01
+
+- name: Starobní důchodce s DPČ doplatek neplatí (leden 2026)
+  period: 2026-01
+  input:
+    starobni_duchod: 15000
+    hruby_prijem_ze_zamestnani_1: 6000
+    typ_pracovni_smlouvy_zamestnani_1: dpc
+  output:
+    doplatek_do_minimalniho_zdravotniho_pojisteni: 0
+  absolute_error_margin: 0.01
+
+- name: Držitel průkazu ZTP/P doplatek neplatí (leden 2026)
+  period: 2026-01
+  input:
+    ma_prukaz_ztpp: true
+    hruby_prijem_ze_zamestnani_1: 8000
+    typ_pracovni_smlouvy_zamestnani_1: hpp
+  output:
+    doplatek_do_minimalniho_zdravotniho_pojisteni: 0
+  absolute_error_margin: 0.01

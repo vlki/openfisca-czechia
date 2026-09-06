@@ -1,0 +1,49 @@
+- name: Bez důvodu výjimka nevzniká (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 8000
+  output:
+    vyjimka_z_minimalniho_zdravotniho_pojisteni: false
+
+- name: Nezaopatřené dítě má výjimku, protože za něj platí pojistné stát (leden 2026)
+  period: 2026-01
+  input:
+    je_nezaopatrene_dite: true
+  output:
+    vyjimka_z_minimalniho_zdravotniho_pojisteni: true
+
+- name: Příjemce starobního důchodu má výjimku (leden 2026)
+  period: 2026-01
+  input:
+    starobni_duchod: 15000
+  output:
+    vyjimka_z_minimalniho_zdravotniho_pojisteni: true
+
+- name: Osoba na mateřské má výjimku (leden 2026)
+  period: 2026-01
+  input:
+    materska: 20000
+  output:
+    vyjimka_z_minimalniho_zdravotniho_pojisteni: true
+
+- name: Osoba s rodičovským příspěvkem má výjimku (leden 2026)
+  period: 2026-01
+  input:
+    rodicovsky_prispevek: 12000
+  output:
+    vyjimka_z_minimalniho_zdravotniho_pojisteni: true
+
+- name: Držitel průkazu ZTP/P má výjimku i bez státního pojištění (leden 2026)
+  period: 2026-01
+  input:
+    ma_prukaz_ztpp: true
+  output:
+    vyjimka_z_minimalniho_zdravotniho_pojisteni: true
+
+- name: Explicitně zadaná hodnota přebíjí formuli (leden 2026)
+  period: 2026-01
+  input:
+    je_nezaopatrene_dite: true
+    vyjimka_z_minimalniho_zdravotniho_pojisteni: false
+  output:
+    vyjimka_z_minimalniho_zdravotniho_pojisteni: false
