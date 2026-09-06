@@ -3,8 +3,8 @@
   input:
     osoby:
       dospely1:
-        hruby_prijem_z_hlavniho_zamestnani: 30000
-        typ_pracovni_smlouvy_hlavniho_zamestnani: hpp
+        hruby_prijem_ze_zamestnani_1: 30000
+        typ_pracovni_smlouvy_zamestnani_1: hpp
   output:
     osoby:
       dospely1:

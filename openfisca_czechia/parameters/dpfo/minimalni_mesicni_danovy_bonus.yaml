@@ -1,0 +1,6 @@
+description: Nejnižší částka měsíčního daňového bonusu, kterou plátce daně vyplatí
+metadata:
+  unit: currency-CZK
+values:
+  2008-01-01:
+    value: 50

@@ -1,0 +1,89 @@
+- name: Daňový bonus nad hranicí 50 Kč se vyplatí (leden 2026)
+  period: 2026-01
+  absolute_error_margin: 0.01
+  input:
+    osoby:
+      dospely1:
+        hruby_prijem_ze_zamestnani_1: 25000
+        uplatnuje_danove_zvyhodneni_na_vyzivovane_deti: true
+      dite1:
+        vek: 4
+        je_nezaopatrene_dite: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dite1]
+  output:
+    osoby:
+      dospely1:
+        # 3750 (zaloha) - 2570 (sleva na poplatnika) - 1267 (zvyhodneni) = -87
+        zaloha_na_dan_z_prijmu_osoby: -87
+        danovy_bonus_osoby: 87
+
+- name: Daňový bonus pod hranicí 50 Kč se nevyplatí (leden 2026)
+  period: 2026-01
+  absolute_error_margin: 0.01
+  input:
+    osoby:
+      dospely1:
+        hruby_prijem_ze_zamestnani_1: 25300
+        uplatnuje_danove_zvyhodneni_na_vyzivovane_deti: true
+      dite1:
+        vek: 4
+        je_nezaopatrene_dite: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dite1]
+  output:
+    osoby:
+      dospely1:
+        # 3795 - 2570 - 1267 = -42, tedy méně než 50 Kč
+        zaloha_na_dan_z_prijmu_osoby: 0
+        danovy_bonus_osoby: 0
+
+- name: Kladná záloha po odečtení zvýhodnění (leden 2026)
+  period: 2026-01
+  absolute_error_margin: 0.01
+  input:
+    osoby:
+      dospely1:
+        hruby_prijem_ze_zamestnani_1: 25700
+        uplatnuje_danove_zvyhodneni_na_vyzivovane_deti: true
+      dite1:
+        vek: 4
+        je_nezaopatrene_dite: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dite1]
+  output:
+    osoby:
+      dospely1:
+        # 3855 - 2570 - 1267 = 18
+        zaloha_na_dan_z_prijmu_osoby: 18
+        danovy_bonus_osoby: 0
+
+- name: Bonus nenáleží, když příjem u plátce s prohlášením nedosáhne poloviny minimální mzdy (leden 2026)
+  period: 2026-01
+  absolute_error_margin: 0.01
+  input:
+    osoby:
+      dospely1:
+        hruby_prijem_ze_zamestnani_1: 6000
+        typ_pracovni_smlouvy_zamestnani_1: dpc
+        hruby_prijem_ze_zamestnani_2: 30000
+        typ_pracovni_smlouvy_zamestnani_2: hpp
+        podepsane_prohlaseni_u_zamestnavatele: zamestnavatel_a
+        uplatnuje_danove_zvyhodneni_na_vyzivovane_deti: true
+      dite1:
+        vek: 4
+        je_nezaopatrene_dite: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dite1]
+  output:
+    osoby:
+      dospely1:
+        # 6000 u zaměstnavatele s prohlášením je pod polovinou minimální mzdy 11200
+        danove_zvyhodneni_na_vyzivovane_deti: 0
+        # 900 (zaloha u A) - 2570 (sleva) = 0, plus 4500 (zaloha u B bez slev)
+        zaloha_na_dan_z_prijmu_osoby: 4500
+        danovy_bonus_osoby: 0

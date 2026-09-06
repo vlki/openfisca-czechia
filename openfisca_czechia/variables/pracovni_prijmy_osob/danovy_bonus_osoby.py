@@ -11,7 +11,7 @@ class danovy_bonus_osoby(Variable):
     definition_period = MONTH
     label = "Daňový bonus uplatněný u osoby"
 
-    def formula(person, period, parameters):
-        dpfo_z_hlavniho_zamestnani = person("dpfo_z_hlavniho_zamestnani", period)
+    def formula(osoba, period, parameters):
+        zaloha_na_dan_z_prijmu = osoba("zaloha_na_dan_z_prijmu_osoby", period)
 
-        return where(dpfo_z_hlavniho_zamestnani < 0, dpfo_z_hlavniho_zamestnani * -1, 0)
+        return where(zaloha_na_dan_z_prijmu < 0, zaloha_na_dan_z_prijmu * -1, 0)

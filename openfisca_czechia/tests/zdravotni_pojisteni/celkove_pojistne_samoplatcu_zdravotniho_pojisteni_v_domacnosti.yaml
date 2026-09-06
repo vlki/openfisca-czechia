@@ -3,11 +3,11 @@
   input:
     osoby:
       dospely1:
-        hruby_prijem_z_hlavniho_zamestnani: 30000
-        typ_pracovni_smlouvy_hlavniho_zamestnani: hpp
+        hruby_prijem_ze_zamestnani_1: 30000
+        typ_pracovni_smlouvy_zamestnani_1: hpp
       dospely2:
-        hruby_prijem_z_hlavniho_zamestnani: 20000
-        typ_pracovni_smlouvy_hlavniho_zamestnani: dpp
+        hruby_prijem_ze_zamestnani_1: 20000
+        typ_pracovni_smlouvy_zamestnani_1: dpp
     domacnosti:
       domacnost:
         clenove: [dospely1, dospely2]
@@ -21,8 +21,8 @@
   input:
     osoby:
       dospely1:
-        hruby_prijem_z_hlavniho_zamestnani: 30000
-        typ_pracovni_smlouvy_hlavniho_zamestnani: hpp
+        hruby_prijem_ze_zamestnani_1: 30000
+        typ_pracovni_smlouvy_zamestnani_1: hpp
       dospely2:
         je_registrovana_na_uradu_prace: False
     domacnosti:

@@ -1,0 +1,195 @@
+- name: Jedna DPP pod hranicí bez prohlášení, jen srážková daň (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 10000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
+    podepsane_prohlaseni_u_zamestnavatele: zadny
+  output:
+    srazkova_dan_z_prijmu_osoby: 1500
+    zaloha_na_dan_z_prijmu_osoby: 0
+    odvod_socialniho_pojisteni_osoby: 0
+    odvod_zdravotniho_pojisteni_osoby: 0
+    cisty_pracovni_prijem_osoby: 8500
+  absolute_error_margin: 0.01
+
+- name: Jedna DPP na hranici bez prohlášení, zálohová daň a odvody (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 12000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
+    podepsane_prohlaseni_u_zamestnavatele: zadny
+  output:
+    srazkova_dan_z_prijmu_osoby: 0
+    # 0.15 * 12000, bez slev
+    zaloha_na_dan_z_prijmu_osoby: 1800
+    # 0.071 * 12000
+    odvod_socialniho_pojisteni_osoby: 852
+    # 0.045 * 12000 + (22400 - 12000) * 0.135
+    odvod_zdravotniho_pojisteni_osoby: 1944
+    # 12000 - 1800 - 852 - 1944
+    cisty_pracovni_prijem_osoby: 7404
+  absolute_error_margin: 0.01
+
+- name: Dvě DPP u téhož zaměstnavatele, v úhrnu nad hranicí (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 7000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
+    hruby_prijem_ze_zamestnani_2: 6000
+    typ_pracovni_smlouvy_zamestnani_2: dpp
+    zamestnavatel_zamestnani_2: zamestnavatel_a
+    podepsane_prohlaseni_u_zamestnavatele: zadny
+  output:
+    srazkova_dan_z_prijmu_osoby: 0
+    # jedna záloha ze základu 13000, ne dvě z 7000 a 6000
+    zaloha_na_dan_z_prijmu_osoby: 1950
+    # 497 + 426
+    odvod_socialniho_pojisteni_osoby: 923
+    # 315 + 270 + (22400 - 13000) * 0.135
+    odvod_zdravotniho_pojisteni_osoby: 1854
+    # 13000 - 1950 - 923 - 1854
+    cisty_pracovni_prijem_osoby: 8273
+  absolute_error_margin: 0.01
+
+- name: Tytéž dvě DPP u různých zaměstnavatelů, obě pod hranicí (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 7000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
+    hruby_prijem_ze_zamestnani_2: 6000
+    typ_pracovni_smlouvy_zamestnani_2: dpp
+    podepsane_prohlaseni_u_zamestnavatele: zadny
+  output:
+    # 1050 + 900
+    srazkova_dan_z_prijmu_osoby: 1950
+    zaloha_na_dan_z_prijmu_osoby: 0
+    odvod_socialniho_pojisteni_osoby: 0
+    odvod_zdravotniho_pojisteni_osoby: 0
+    # 13000 - 1950
+    cisty_pracovni_prijem_osoby: 11050
+  absolute_error_margin: 0.01
+
+- name: Hlavní pracovní poměr s prohlášením a vedlejší DPP u jiného zaměstnavatele (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 40000
+    typ_pracovni_smlouvy_zamestnani_1: hpp
+    hruby_prijem_ze_zamestnani_2: 8000
+    typ_pracovni_smlouvy_zamestnani_2: dpp
+    podepsane_prohlaseni_u_zamestnavatele: zamestnavatel_a
+  output:
+    # 0.15 * 8000 z DPP bez prohlášení
+    srazkova_dan_z_prijmu_osoby: 1200
+    # 6000 - 2570 (sleva na poplatnika jen u zaměstnavatele s prohlášením)
+    zaloha_na_dan_z_prijmu_osoby: 3430
+    odvod_socialniho_pojisteni_osoby: 2840
+    odvod_zdravotniho_pojisteni_osoby: 1800
+    # 48000 - 1200 - 3430 - 2840 - 1800
+    cisty_pracovni_prijem_osoby: 38730
+  absolute_error_margin: 0.01
+
+- name: DPČ pod hranicí bez prohlášení (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 4000
+    typ_pracovni_smlouvy_zamestnani_1: dpc
+    podepsane_prohlaseni_u_zamestnavatele: zadny
+  output:
+    srazkova_dan_z_prijmu_osoby: 600
+    odvod_socialniho_pojisteni_osoby: 0
+    odvod_zdravotniho_pojisteni_osoby: 0
+    cisty_pracovni_prijem_osoby: 3400
+  absolute_error_margin: 0.01
+
+- name: DPČ na hranici bez prohlášení (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 4500
+    typ_pracovni_smlouvy_zamestnani_1: dpc
+    podepsane_prohlaseni_u_zamestnavatele: zadny
+  output:
+    srazkova_dan_z_prijmu_osoby: 0
+    # 0.15 * 4500
+    zaloha_na_dan_z_prijmu_osoby: 675
+    # 0.071 * 4500 zaokrouhleno nahoru
+    odvod_socialniho_pojisteni_osoby: 320
+    # 203 + (22400 - 4500) * 0.135 zaokrouhleno nahoru
+    odvod_zdravotniho_pojisteni_osoby: 2620
+    # 4500 - 675 - 320 - 2620
+    cisty_pracovni_prijem_osoby: 885
+  absolute_error_margin: 0.01
+
+- name: Vyšší sazba daně se u jednoho zaměstnavatele uplatní (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 200000
+    typ_pracovni_smlouvy_zamestnani_1: hpp
+  output:
+    # 146901 * 0.15 + 53099 * 0.23 = 34248, minus sleva na poplatnika 2570
+    zaloha_na_dan_z_prijmu_osoby: 31678
+    cisty_pracovni_prijem_osoby: 145122
+  absolute_error_margin: 0.01
+
+- name: Stejný celkový příjem u dvou zaměstnavatelů zůstává v základní sazbě (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 100000
+    typ_pracovni_smlouvy_zamestnani_1: hpp
+    hruby_prijem_ze_zamestnani_2: 100000
+    typ_pracovni_smlouvy_zamestnani_2: hpp
+    podepsane_prohlaseni_u_zamestnavatele: zadny
+  output:
+    # 15000 + 15000, každý plátce má vlastní hranici pro vyšší sazbu
+    zaloha_na_dan_z_prijmu_osoby: 30000
+    odvod_socialniho_pojisteni_osoby: 14200
+    odvod_zdravotniho_pojisteni_osoby: 9000
+    # 200000 - 30000 - 14200 - 9000
+    cisty_pracovni_prijem_osoby: 146800
+  absolute_error_margin: 0.01
+
+- name: Tři zaměstnání u tří zaměstnavatelů (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 25000
+    typ_pracovni_smlouvy_zamestnani_1: hpp
+    hruby_prijem_ze_zamestnani_2: 5000
+    typ_pracovni_smlouvy_zamestnani_2: dpp
+    hruby_prijem_ze_zamestnani_3: 4000
+    typ_pracovni_smlouvy_zamestnani_3: dpc
+    podepsane_prohlaseni_u_zamestnavatele: zamestnavatel_a
+  output:
+    # 750 z DPP a 600 z DPČ, obojí pod svou hranicí a bez prohlášení
+    srazkova_dan_z_prijmu_osoby: 1350
+    # 3750 - 2570
+    zaloha_na_dan_z_prijmu_osoby: 1180
+    # 0.071 * 25000
+    odvod_socialniho_pojisteni_osoby: 1775
+    # 0.045 * 25000, základ je nad minimální mzdou
+    odvod_zdravotniho_pojisteni_osoby: 1125
+    # 34000 - 1350 - 1180 - 1775 - 1125
+    cisty_pracovni_prijem_osoby: 28570
+  absolute_error_margin: 0.01
+
+- name: Pracovní poměr a DPČ u téhož zaměstnavatele bez prohlášení (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 20000
+    typ_pracovni_smlouvy_zamestnani_1: hpp
+    hruby_prijem_ze_zamestnani_2: 3000
+    typ_pracovni_smlouvy_zamestnani_2: dpc
+    zamestnavatel_zamestnani_2: zamestnavatel_a
+    podepsane_prohlaseni_u_zamestnavatele: zadny
+  output:
+    # Zjednodušení modelu: pracovní poměr nevstupuje do úhrnu pro DPČ, takže DPČ
+    # zůstává pod hranicí 4500 -- podléhá srážkové dani a nezakládá povinnost odvodů
+    # 0.15 * 3000
+    srazkova_dan_z_prijmu_osoby: 450
+    # 0.15 * 20000, DPČ je zdaněná srážkou a do základu zálohy nevstupuje
+    zaloha_na_dan_z_prijmu_osoby: 3000
+    # 0.071 * 20000, z DPČ se neodvádí
+    odvod_socialniho_pojisteni_osoby: 1420
+    # 0.045 * 20000 + (22400 - 20000) * 0.135, vyměřovacím základem je jen mzda z HPP
+    odvod_zdravotniho_pojisteni_osoby: 1224
+    # 23000 - 450 - 3000 - 1420 - 1224
+    cisty_pracovni_prijem_osoby: 16906
+  absolute_error_margin: 0.01

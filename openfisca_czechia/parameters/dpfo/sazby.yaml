@@ -25,3 +25,11 @@ hranice_vyssi_sazby:
       value: 48.0
     2024-01-01:
       value: 36.0
+
+zvlastni_sazba_srazkove_dane:
+  description: Zvláštní sazba daně z příjmu vybírané srážkou
+  metadata:
+    unit: /1
+  values:
+    2013-01-01:
+      value: 0.15

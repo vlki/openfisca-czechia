@@ -1,0 +1,46 @@
+- name: Sleva na poplatníka pro 2026
+  period: 2026-01
+  output:
+    sleva_na_poplatnika: 2570
+  absolute_error_margin: 0.01
+
+- name: Bez invalidity a bez průkazu ZTP/P nejsou slevy (leden 2026)
+  period: 2026-01
+  output:
+    sleva_na_invaliditu: 0
+    sleva_na_prukaz_ztpp: 0
+  absolute_error_margin: 0.01
+
+- name: Sleva na invaliditu 1. stupně (leden 2026)
+  period: 2026-01
+  input:
+    stupen_invalidity: stupen_1
+  output:
+    sleva_na_invaliditu: 210
+  absolute_error_margin: 0.01
+
+- name: Sleva na invaliditu 2. stupně (leden 2026)
+  period: 2026-01
+  input:
+    stupen_invalidity: stupen_2
+  output:
+    sleva_na_invaliditu: 210
+  absolute_error_margin: 0.01
+
+- name: Sleva na invaliditu 3. stupně (leden 2026)
+  period: 2026-01
+  input:
+    stupen_invalidity: stupen_3
+  output:
+    sleva_na_invaliditu: 420
+  absolute_error_margin: 0.01
+
+- name: Sleva na průkaz ZTP/P jde kombinovat se slevou na invaliditu (leden 2026)
+  period: 2026-01
+  input:
+    stupen_invalidity: stupen_3
+    ma_prukaz_ztpp: true
+  output:
+    sleva_na_invaliditu: 420
+    sleva_na_prukaz_ztpp: 1345
+  absolute_error_margin: 0.01

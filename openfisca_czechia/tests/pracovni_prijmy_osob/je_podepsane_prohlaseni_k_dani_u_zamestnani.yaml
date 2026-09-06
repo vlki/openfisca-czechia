@@ -1,0 +1,41 @@
+- name: Ve výchozím stavu je prohlášení u zaměstnavatele prvního zaměstnání (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 20000
+    hruby_prijem_ze_zamestnani_2: 5000
+    hruby_prijem_ze_zamestnani_3: 5000
+  output:
+    je_podepsane_prohlaseni_k_dani_u_zamestnani_1: true
+    je_podepsane_prohlaseni_k_dani_u_zamestnani_2: false
+    je_podepsane_prohlaseni_k_dani_u_zamestnani_3: false
+
+- name: Prohlášení podepsané u zaměstnavatele druhého zaměstnání (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 20000
+    hruby_prijem_ze_zamestnani_2: 5000
+    podepsane_prohlaseni_u_zamestnavatele: zamestnavatel_b
+  output:
+    je_podepsane_prohlaseni_k_dani_u_zamestnani_1: false
+    je_podepsane_prohlaseni_k_dani_u_zamestnani_2: true
+
+- name: Prohlášení nepodepsané u žádného zaměstnavatele (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 20000
+    hruby_prijem_ze_zamestnani_2: 5000
+    podepsane_prohlaseni_u_zamestnavatele: zadny
+  output:
+    je_podepsane_prohlaseni_k_dani_u_zamestnani_1: false
+    je_podepsane_prohlaseni_k_dani_u_zamestnani_2: false
+
+- name: Dvě zaměstnání u téhož zaměstnavatele s podepsaným prohlášením (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 20000
+    hruby_prijem_ze_zamestnani_2: 5000
+    zamestnavatel_zamestnani_2: zamestnavatel_a
+    podepsane_prohlaseni_u_zamestnavatele: zamestnavatel_a
+  output:
+    je_podepsane_prohlaseni_k_dani_u_zamestnani_1: true
+    je_podepsane_prohlaseni_k_dani_u_zamestnani_2: true

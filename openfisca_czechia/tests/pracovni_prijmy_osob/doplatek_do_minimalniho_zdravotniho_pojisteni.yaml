@@ -1,0 +1,49 @@
+- name: Bez doplatku při příjmu nad minimální mzdou (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 50000
+    typ_pracovni_smlouvy_zamestnani_1: hpp
+  output:
+    doplatek_do_minimalniho_zdravotniho_pojisteni: 0
+  absolute_error_margin: 0.01
+
+- name: Doplatek při jednom zaměstnání pod minimální mzdou (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 13000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
+  output:
+    # (22400 - 13000) * 0.135
+    doplatek_do_minimalniho_zdravotniho_pojisteni: 1269
+  absolute_error_margin: 0.01
+
+- name: Vyměřovací základy dvou zaměstnání se sčítají, doplatek nevzniká (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 12000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
+    hruby_prijem_ze_zamestnani_2: 12000
+    typ_pracovni_smlouvy_zamestnani_2: dpp
+  output:
+    # 12000 + 12000 je nad minimální mzdou 22400
+    doplatek_do_minimalniho_zdravotniho_pojisteni: 0
+  absolute_error_margin: 0.01
+
+- name: Doplatek nevzniká bez povinnosti odvodů (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 10000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
+  output:
+    doplatek_do_minimalniho_zdravotniho_pojisteni: 0
+  absolute_error_margin: 0.01
+
+- name: Doplatek nevzniká při výjimce z minimálního pojištění (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 13000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
+    vyjimka_z_minimalniho_zdravotniho_pojisteni: true
+  output:
+    doplatek_do_minimalniho_zdravotniho_pojisteni: 0
+  absolute_error_margin: 0.01

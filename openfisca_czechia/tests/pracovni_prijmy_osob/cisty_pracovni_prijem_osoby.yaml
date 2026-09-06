@@ -1,8 +1,8 @@
 - name: Čistý pracovní příjem osoby s HPP (leden 2026)
   period: 2026-01
   input:
-    hruby_prijem_z_hlavniho_zamestnani: 50000
-    typ_pracovni_smlouvy_hlavniho_zamestnani: hpp
+    hruby_prijem_ze_zamestnani_1: 50000
+    typ_pracovni_smlouvy_zamestnani_1: hpp
   output:
     # 50000 - 4930 (dan) - 3550 (socialni) - 2250 (zdravotni)
     cisty_pracovni_prijem_osoby: 39270
@@ -11,8 +11,8 @@
 - name: Čistý pracovní příjem osoby s DPP pod hranicí povinnosti odvodů (leden 2026)
   period: 2026-01
   input:
-    hruby_prijem_z_hlavniho_zamestnani: 10000
-    typ_pracovni_smlouvy_hlavniho_zamestnani: dpp
+    hruby_prijem_ze_zamestnani_1: 10000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
   output:
     cisty_pracovni_prijem_osoby: 10000
   absolute_error_margin: 0.01
@@ -20,8 +20,8 @@
 - name: Čistý pracovní příjem osoby s DPP nad hranicí povinnosti odvodů (leden 2026)
   period: 2026-01
   input:
-    hruby_prijem_z_hlavniho_zamestnani: 16000
-    typ_pracovni_smlouvy_hlavniho_zamestnani: dpp
+    hruby_prijem_ze_zamestnani_1: 16000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
   output:
     # 16000 - 0 (dan) - 1136 (socialni) - 1584 (zdravotni)
     cisty_pracovni_prijem_osoby: 13280
@@ -33,10 +33,10 @@
   input:
     osoby:
       dospely1:
-        hruby_prijem_z_hlavniho_zamestnani: 20000
-        uplatnuje_danove_zvyhodneni_na_vyzivovane_deti_u_hlavniho_zamestnani: true
+        hruby_prijem_ze_zamestnani_1: 20000
+        uplatnuje_danove_zvyhodneni_na_vyzivovane_deti: true
       dospely2:
-        hruby_prijem_z_hlavniho_zamestnani: 20000
+        hruby_prijem_ze_zamestnani_1: 20000
       dite1:
         vek: 4
         je_nezaopatrene_dite: true

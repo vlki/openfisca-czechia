@@ -1,0 +1,49 @@
+- name: Srážková daň z jedné DPP (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 10000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
+    podepsane_prohlaseni_u_zamestnavatele: zadny
+  output:
+    # 0.15 * 10000
+    srazkova_dan_z_prijmu_osoby: 1500
+  absolute_error_margin: 0.01
+
+- name: Srážková daň ze dvou DPP u různých zaměstnavatelů (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 7000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
+    hruby_prijem_ze_zamestnani_2: 6000
+    typ_pracovni_smlouvy_zamestnani_2: dpp
+    podepsane_prohlaseni_u_zamestnavatele: zadny
+  output:
+    # 0.15 * 7000 = 1050
+    # 0.15 * 6000 = 900
+    # 1050 + 900 = 1950
+    srazkova_dan_z_prijmu_osoby: 1950
+  absolute_error_margin: 0.01
+
+- name: Srážková daň jen z vedlejší DPP, hlavní příjem má prohlášení (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 40000
+    typ_pracovni_smlouvy_zamestnani_1: hpp
+    hruby_prijem_ze_zamestnani_2: 8000
+    typ_pracovni_smlouvy_zamestnani_2: dpp
+    podepsane_prohlaseni_u_zamestnavatele: zamestnavatel_a
+  output:
+    # 0.15 * 8000
+    srazkova_dan_z_prijmu_osoby: 1200
+  absolute_error_margin: 0.01
+
+- name: Srážková daň z DPČ pod hranicí (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 4000
+    typ_pracovni_smlouvy_zamestnani_1: dpc
+    podepsane_prohlaseni_u_zamestnavatele: zadny
+  output:
+    # 0.15 * 4000
+    srazkova_dan_z_prijmu_osoby: 600
+  absolute_error_margin: 0.01

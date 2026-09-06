@@ -1,0 +1,26 @@
+- name: Odvod sociálního pojištění z HPP (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 50000
+    typ_pracovni_smlouvy_zamestnani_1: hpp
+  output:
+    odvod_socialniho_pojisteni_zamestnance_ze_zamestnani_1: 3550
+  absolute_error_margin: 0.01
+
+- name: Odvod sociálního pojištění z DPP pod hranicí povinnosti (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 10000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
+  output:
+    odvod_socialniho_pojisteni_zamestnance_ze_zamestnani_1: 0
+  absolute_error_margin: 0.01
+
+- name: Odvod sociálního pojištění z DPP nad hranicí povinnosti (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 13000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
+  output:
+    odvod_socialniho_pojisteni_zamestnance_ze_zamestnani_1: 923
+  absolute_error_margin: 0.01

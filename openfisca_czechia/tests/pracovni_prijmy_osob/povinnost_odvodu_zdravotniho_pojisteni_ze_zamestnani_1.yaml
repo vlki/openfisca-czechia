@@ -1,0 +1,55 @@
+- name: Povinnost vždy u HPP (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 20000
+    typ_pracovni_smlouvy_zamestnani_1: hpp
+  output:
+    povinnost_odvodu_zdravotniho_pojisteni_ze_zamestnani_1: true
+
+- name: Povinnost není u DPP, když pod hranicí (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 10000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
+  output:
+    povinnost_odvodu_zdravotniho_pojisteni_ze_zamestnani_1: false
+
+- name: Povinnost je u DPP, když nad hranicí (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 15000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
+  output:
+    povinnost_odvodu_zdravotniho_pojisteni_ze_zamestnani_1: true
+
+- name: Povinnost je u DPP, když přesně na hranici (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 12000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
+  output:
+    povinnost_odvodu_zdravotniho_pojisteni_ze_zamestnani_1: true
+
+- name: Povinnost není u DPČ, když pod hranicí (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 3000
+    typ_pracovni_smlouvy_zamestnani_1: dpc
+  output:
+    povinnost_odvodu_zdravotniho_pojisteni_ze_zamestnani_1: false
+
+- name: Povinnost je u DPČ, když nad hranicí (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 10000
+    typ_pracovni_smlouvy_zamestnani_1: dpc
+  output:
+    povinnost_odvodu_zdravotniho_pojisteni_ze_zamestnani_1: true
+
+- name: Povinnost je u DPČ, když přesně na hranici (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 4500
+    typ_pracovni_smlouvy_zamestnani_1: dpc
+  output:
+    povinnost_odvodu_zdravotniho_pojisteni_ze_zamestnani_1: true

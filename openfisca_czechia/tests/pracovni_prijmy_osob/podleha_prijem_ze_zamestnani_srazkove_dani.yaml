@@ -1,0 +1,96 @@
+- name: DPP pod hranicí bez podepsaného prohlášení podléhá srážkové dani (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 10000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
+    podepsane_prohlaseni_u_zamestnavatele: zadny
+  output:
+    podleha_prijem_ze_zamestnani_1_srazkove_dani: true
+
+- name: DPP pod hranicí s podepsaným prohlášením srážkové dani nepodléhá (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 10000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
+    podepsane_prohlaseni_u_zamestnavatele: zamestnavatel_a
+  output:
+    podleha_prijem_ze_zamestnani_1_srazkove_dani: false
+
+- name: DPP přesně na hranici srážkové dani nepodléhá, protože limit je nedosažení (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 12000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
+    podepsane_prohlaseni_u_zamestnavatele: zadny
+  output:
+    podleha_prijem_ze_zamestnani_1_srazkove_dani: false
+
+- name: DPČ pod hranicí bez podepsaného prohlášení podléhá srážkové dani (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 4000
+    typ_pracovni_smlouvy_zamestnani_1: dpc
+    podepsane_prohlaseni_u_zamestnavatele: zadny
+  output:
+    podleha_prijem_ze_zamestnani_1_srazkove_dani: true
+
+- name: DPČ přesně na hranici srážkové dani nepodléhá (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 4500
+    typ_pracovni_smlouvy_zamestnani_1: dpc
+    podepsane_prohlaseni_u_zamestnavatele: zadny
+  output:
+    podleha_prijem_ze_zamestnani_1_srazkove_dani: false
+
+- name: Pracovní poměr srážkové dani nepodléhá ani pod hranicí pro ostatní příjmy (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 3000
+    typ_pracovni_smlouvy_zamestnani_1: hpp
+    podepsane_prohlaseni_u_zamestnavatele: zadny
+  output:
+    # Zjednodušení modelu, viz komentář ve formuli: podle § 6 odst. 4 písm. b)
+    # by pracovní poměr pod hranicí srážkové dani podléhal, tak nízký pracovní
+    # poměr ale v praxi nenastává
+    podleha_prijem_ze_zamestnani_1_srazkove_dani: false
+
+- name: Pracovní poměr netlačí DPČ u téhož zaměstnavatele nad hranici (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 20000
+    typ_pracovni_smlouvy_zamestnani_1: hpp
+    hruby_prijem_ze_zamestnani_2: 3000
+    typ_pracovni_smlouvy_zamestnani_2: dpc
+    zamestnavatel_zamestnani_2: zamestnavatel_a
+    podepsane_prohlaseni_u_zamestnavatele: zadny
+  output:
+    # Zjednodušení modelu: do úhrnu pro DPČ se pracovní poměr nezapočítává,
+    # takže DPČ zůstává pod hranicí 4500 a srážkové dani podléhá
+    podleha_prijem_ze_zamestnani_1_srazkove_dani: false
+    podleha_prijem_ze_zamestnani_2_srazkove_dani: true
+
+- name: Dvě DPP u téhož zaměstnavatele nad hranicí v úhrnu srážkové dani nepodléhají (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 7000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
+    hruby_prijem_ze_zamestnani_2: 6000
+    typ_pracovni_smlouvy_zamestnani_2: dpp
+    zamestnavatel_zamestnani_2: zamestnavatel_a
+    podepsane_prohlaseni_u_zamestnavatele: zadny
+  output:
+    podleha_prijem_ze_zamestnani_1_srazkove_dani: false
+    podleha_prijem_ze_zamestnani_2_srazkove_dani: false
+
+- name: Tytéž dvě DPP u různých zaměstnavatelů srážkové dani podléhají (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 7000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
+    hruby_prijem_ze_zamestnani_2: 6000
+    typ_pracovni_smlouvy_zamestnani_2: dpp
+    podepsane_prohlaseni_u_zamestnavatele: zadny
+  output:
+    podleha_prijem_ze_zamestnani_1_srazkove_dani: true
+    podleha_prijem_ze_zamestnani_2_srazkove_dani: true

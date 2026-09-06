@@ -1,0 +1,58 @@
+- name: Dvě DPP u téhož zaměstnavatele se sčítají (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 7000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
+    hruby_prijem_ze_zamestnani_2: 6000
+    typ_pracovni_smlouvy_zamestnani_2: dpp
+    zamestnavatel_zamestnani_2: zamestnavatel_a
+  output:
+    uhrn_prijmu_z_dpp_u_stejneho_zamestnavatele_zamestnani_1: 13000
+    uhrn_prijmu_z_dpp_u_stejneho_zamestnavatele_zamestnani_2: 13000
+    uhrn_prijmu_z_dpc_u_stejneho_zamestnavatele_zamestnani_1: 0
+    uhrn_prijmu_z_dpc_u_stejneho_zamestnavatele_zamestnani_2: 0
+  absolute_error_margin: 0.01
+
+- name: Dvě DPP u různých zaměstnavatelů se nesčítají (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 7000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
+    hruby_prijem_ze_zamestnani_2: 6000
+    typ_pracovni_smlouvy_zamestnani_2: dpp
+  output:
+    uhrn_prijmu_z_dpp_u_stejneho_zamestnavatele_zamestnani_1: 7000
+    uhrn_prijmu_z_dpp_u_stejneho_zamestnavatele_zamestnani_2: 6000
+  absolute_error_margin: 0.01
+
+- name: DPP a DPČ u téhož zaměstnavatele patří každá do svého úhrnu (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 8000
+    typ_pracovni_smlouvy_zamestnani_1: dpp
+    hruby_prijem_ze_zamestnani_2: 3000
+    typ_pracovni_smlouvy_zamestnani_2: dpc
+    zamestnavatel_zamestnani_2: zamestnavatel_a
+  output:
+    # Úhrny nezávisí na typu smlouvy daného zaměstnání, jen na jeho zaměstnavateli,
+    # proto jsou u obou zaměstnání stejné
+    uhrn_prijmu_z_dpp_u_stejneho_zamestnavatele_zamestnani_1: 8000
+    uhrn_prijmu_z_dpp_u_stejneho_zamestnavatele_zamestnani_2: 8000
+    uhrn_prijmu_z_dpc_u_stejneho_zamestnavatele_zamestnani_1: 3000
+    uhrn_prijmu_z_dpc_u_stejneho_zamestnavatele_zamestnani_2: 3000
+  absolute_error_margin: 0.01
+
+- name: Pracovní poměr nevstupuje do úhrnu pro DPČ (leden 2026)
+  period: 2026-01
+  input:
+    hruby_prijem_ze_zamestnani_1: 20000
+    typ_pracovni_smlouvy_zamestnani_1: hpp
+    hruby_prijem_ze_zamestnani_2: 3000
+    typ_pracovni_smlouvy_zamestnani_2: dpc
+    zamestnavatel_zamestnani_2: zamestnavatel_a
+  output:
+    # Zjednodušení modelu: pracovní poměr se do žádného úhrnu nezapočítává
+    uhrn_prijmu_z_dpp_u_stejneho_zamestnavatele_zamestnani_1: 0
+    uhrn_prijmu_z_dpc_u_stejneho_zamestnavatele_zamestnani_1: 3000
+    uhrn_prijmu_z_dpc_u_stejneho_zamestnavatele_zamestnani_2: 3000
+  absolute_error_margin: 0.01

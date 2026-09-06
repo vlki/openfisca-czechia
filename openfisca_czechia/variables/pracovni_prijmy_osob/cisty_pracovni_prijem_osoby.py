@@ -10,21 +10,19 @@ class cisty_pracovni_prijem_osoby(Variable):
     definition_period = MONTH
     label = "Čistý pracovní příjem osoby"
 
-    def formula(person, period, parameters):
-        hruby_prijem_z_hlavniho_zamestnani = person(
-            "hruby_prijem_z_hlavniho_zamestnani", period
-        )
-        dpfo_z_hlavniho_zamestnani = person("dpfo_z_hlavniho_zamestnani", period)
-        socialni_z_hlavniho_zamestnani = person(
-            "odvod_socialniho_pojisteni_zamestnance_z_hlavniho_zamestnani", period
-        )
-        zdravotni_z_hlavniho_zamestnani = person(
-            "odvod_zdravotniho_pojisteni_zamestnance_z_hlavniho_zamestnani", period
-        )
+    def formula(osoba, period, parameters):
+        hruby_pracovni_prijem = osoba("hruby_pracovni_prijem_osoby", period)
+        srazkova_dan = osoba("srazkova_dan_z_prijmu_osoby", period)
+        # Záloha může být záporná, pokud daňové zvýhodnění na vyživované děti
+        # přesáhne daň. V takovém případě se čistý příjem o daňový bonus zvyšuje.
+        zaloha_na_dan = osoba("zaloha_na_dan_z_prijmu_osoby", period)
+        odvod_socialniho_pojisteni = osoba("odvod_socialniho_pojisteni_osoby", period)
+        odvod_zdravotniho_pojisteni = osoba("odvod_zdravotniho_pojisteni_osoby", period)
 
         return (
-            hruby_prijem_z_hlavniho_zamestnani
-            - dpfo_z_hlavniho_zamestnani
-            - socialni_z_hlavniho_zamestnani
-            - zdravotni_z_hlavniho_zamestnani
+            hruby_pracovni_prijem
+            - srazkova_dan
+            - zaloha_na_dan
+            - odvod_socialniho_pojisteni
+            - odvod_zdravotniho_pojisteni
         )

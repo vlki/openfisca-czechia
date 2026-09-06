@@ -1,0 +1,125 @@
+- name: Jednotlivec bez dětí (leden 2026)
+  period: 2026-01
+  absolute_error_margin: 0.01
+  input:
+    osoby:
+      dospely1:
+        hruby_prijem_ze_zamestnani_1: 30000
+        uplatnuje_danove_zvyhodneni_na_vyzivovane_deti: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1]
+  output:
+    osoby:
+      dospely1:
+        danove_zvyhodneni_na_vyzivovane_deti: 0
+
+- name: Samoživitel s 1 dítětem (leden 2026)
+  period: 2026-01
+  absolute_error_margin: 0.01
+  input:
+    osoby:
+      dospely1:
+        hruby_prijem_ze_zamestnani_1: 30000
+        uplatnuje_danove_zvyhodneni_na_vyzivovane_deti: true
+      dite1:
+        vek: 4
+        je_nezaopatrene_dite: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dite1]
+  output:
+    osoby:
+      dospely1:
+        danove_zvyhodneni_na_vyzivovane_deti: 1267
+
+- name: Samoživitel s 1 dítětem se ZTP/P a 1 dítětem bez ZTP/P (leden 2026)
+  period: 2026-01
+  absolute_error_margin: 0.01
+  input:
+    osoby:
+      dospely1:
+        hruby_prijem_ze_zamestnani_1: 30000
+        uplatnuje_danove_zvyhodneni_na_vyzivovane_deti: true
+      dite1:
+        vek: 4
+        je_nezaopatrene_dite: true
+        ma_prukaz_ztpp: true
+      dite2:
+        vek: 8
+        je_nezaopatrene_dite: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dite1, dite2]
+  output:
+    osoby:
+      dospely1:
+        # 1267 + 3720
+        danove_zvyhodneni_na_vyzivovane_deti: 4987
+
+- name: Samoživitel s 2 dětmi se ZTP/P a 2 dětmi bez ZTP/P (leden 2026)
+  period: 2026-01
+  absolute_error_margin: 0.01
+  input:
+    osoby:
+      dospely1:
+        hruby_prijem_ze_zamestnani_1: 30000
+        uplatnuje_danove_zvyhodneni_na_vyzivovane_deti: true
+      dite1:
+        vek: 4
+        je_nezaopatrene_dite: true
+        ma_prukaz_ztpp: true
+      dite2:
+        vek: 8
+        je_nezaopatrene_dite: true
+        ma_prukaz_ztpp: true
+      dite3:
+        vek: 11
+        je_nezaopatrene_dite: true
+      dite4:
+        vek: 14
+        je_nezaopatrene_dite: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dite1, dite2, dite3, dite4]
+  output:
+    osoby:
+      dospely1:
+        # 1267 + 1860 + 4640 + 4640
+        danove_zvyhodneni_na_vyzivovane_deti: 12407
+
+- name: 2 dospělí s 2 dětmi se ZTP/P a 2 dětmi bez ZTP/P (leden 2026)
+  period: 2026-01
+  absolute_error_margin: 0.01
+  input:
+    osoby:
+      dospely1:
+        hruby_prijem_ze_zamestnani_1: 30000
+        uplatnuje_danove_zvyhodneni_na_vyzivovane_deti: true
+      dospely2:
+        hruby_prijem_ze_zamestnani_1: 25000
+        uplatnuje_danove_zvyhodneni_na_vyzivovane_deti: false
+      dite1:
+        vek: 4
+        je_nezaopatrene_dite: true
+        ma_prukaz_ztpp: true
+      dite2:
+        vek: 8
+        je_nezaopatrene_dite: true
+        ma_prukaz_ztpp: true
+      dite3:
+        vek: 11
+        je_nezaopatrene_dite: true
+      dite4:
+        vek: 14
+        je_nezaopatrene_dite: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2, dite1, dite2, dite3, dite4]
+  output:
+    osoby:
+      dospely1:
+        # 1267 + 1860 + 4640 + 4640
+        danove_zvyhodneni_na_vyzivovane_deti: 12407
+      dospely2:
+        danove_zvyhodneni_na_vyzivovane_deti: 0
