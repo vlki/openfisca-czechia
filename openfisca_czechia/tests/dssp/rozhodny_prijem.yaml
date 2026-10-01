@@ -11,7 +11,6 @@
         nemocenska: 1000
         odmena_pestouna: 1000
         podpora_v_nezamestnanosti: 1000
-        prispevek_na_uhradu_potreb_na_dite: 1000
         rodicovsky_prispevek: 10000
         vyzivne_na_deti: 3000
     domacnosti:
@@ -19,7 +18,7 @@
         clenove: [dospely1, dospely2]
   output:
     domacnost:
-      dssp_rozhodny_prijem: 49000
+      dssp_rozhodny_prijem: 48000
 
 - name: Do rozhodného příjmu pro DSSP se nezahrnují příjmy nezaopatřených dětí
   absolute_error_margin: 0.01

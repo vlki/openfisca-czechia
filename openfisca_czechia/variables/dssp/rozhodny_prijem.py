@@ -33,7 +33,6 @@ class dssp_rozhodny_prijem(Variable):
             + suma_pro_domacnost_bez_nezaopat_deti("nemocenska")
             + suma_pro_domacnost_bez_nezaopat_deti("odmena_pestouna")
             + suma_pro_domacnost_bez_nezaopat_deti("podpora_v_nezamestnanosti")
-            + suma_pro_domacnost_bez_nezaopat_deti("prispevek_na_uhradu_potreb_na_dite")
             + suma_pro_domacnost_bez_nezaopat_deti("rodicovsky_prispevek")
             + suma_pro_domacnost_bez_nezaopat_deti("vyzivne_na_deti")
             + suma_pro_domacnost_bez_nezaopat_deti("jine_prijmy")
