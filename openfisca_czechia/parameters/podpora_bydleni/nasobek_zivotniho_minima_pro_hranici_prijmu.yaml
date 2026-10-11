@@ -1,0 +1,10 @@
+description: Násobek životního minima domácnosti, do kterého jsou příjmy domácnosti pro nárok na podporu bydlení
+values:
+  2026-01-01:
+    value: 2
+metadata:
+  unit: /1
+  reference:
+    2026-01-01:
+      title: § 17 odst. 3 písm. a) zákona č. 175/2025 Sb., o podpoře bydlení
+      href: https://e-sbirka.gov.cz/sb/2025/175/2026-09-01#par_17-odst_3-pism_a

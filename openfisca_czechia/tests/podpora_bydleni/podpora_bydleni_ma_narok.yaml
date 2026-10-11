@@ -1,0 +1,113 @@
+- name: Jednotlivec s příjmy pod hranicí (říjen 2026)
+  period: 2026-10
+  absolute_error_margin: 0.01
+  input:
+    osoby:
+      dospely1:
+        vek: 40
+    domacnosti:
+      domacnost:
+        clenove: [dospely1]
+        cisty_penezni_prijem_domacnosti: 10000
+        dssp: 0
+  output:
+    domacnost:
+      podpora_bydleni_prijem_domacnosti: 10000
+      # 2 × 5500
+      podpora_bydleni_hranice_prijmu: 11000
+      podpora_bydleni_ma_narok: true
+
+- name: Jednotlivec s příjmy přesně na hranici (říjen 2026)
+  period: 2026-10
+  absolute_error_margin: 0.01
+  input:
+    osoby:
+      dospely1:
+        vek: 40
+    domacnosti:
+      domacnost:
+        clenove: [dospely1]
+        cisty_penezni_prijem_domacnosti: 11000
+        dssp: 0
+  output:
+    domacnost:
+      podpora_bydleni_hranice_prijmu: 11000
+      podpora_bydleni_ma_narok: true
+
+- name: Jednotlivec s příjmy nad hranicí (říjen 2026)
+  period: 2026-10
+  absolute_error_margin: 0.01
+  input:
+    osoby:
+      dospely1:
+        vek: 40
+    domacnosti:
+      domacnost:
+        clenove: [dospely1]
+        cisty_penezni_prijem_domacnosti: 11001
+        dssp: 0
+  output:
+    domacnost:
+      podpora_bydleni_ma_narok: false
+
+- name: DSSP se do příjmů nezapočítává (říjen 2026)
+  period: 2026-10
+  absolute_error_margin: 0.01
+  input:
+    osoby:
+      dospely1:
+        vek: 40
+    domacnosti:
+      domacnost:
+        clenove: [dospely1]
+        cisty_penezni_prijem_domacnosti: 15000
+        dssp: 6000
+  output:
+    domacnost:
+      # 15000 - 6000
+      podpora_bydleni_prijem_domacnosti: 9000
+      podpora_bydleni_ma_narok: true
+
+- name: Srážky v insolvenci příjmy nesnižují (říjen 2026)
+  period: 2026-10
+  absolute_error_margin: 0.01
+  input:
+    osoby:
+      dospely1:
+        vek: 40
+        srazka_v_exekuci_nebo_insolvenci: 3000
+    domacnosti:
+      domacnost:
+        clenove: [dospely1]
+        cisty_penezni_prijem_domacnosti: 12000
+        dssp: 0
+  output:
+    domacnost:
+      podpora_bydleni_prijem_domacnosti: 12000
+      podpora_bydleni_ma_narok: false
+
+- name: Pár s dětmi 4 a 8 let na hranici (leden 2026)
+  period: 2026-01
+  absolute_error_margin: 0.01
+  input:
+    osoby:
+      dospely1:
+        vek: 40
+      dospely2:
+        vek: 38
+      dite1:
+        vek: 4
+        je_nezaopatrene_dite: true
+      dite2:
+        vek: 8
+        je_nezaopatrene_dite: true
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2, dite1, dite2]
+        cisty_penezni_prijem_domacnosti: 28080
+        dssp: 0
+  output:
+    domacnost:
+      # 2 × (4470 + 4040 + 2480 + 3050)
+      podpora_bydleni_hranice_prijmu: 28080
+      podpora_bydleni_ma_narok: true
