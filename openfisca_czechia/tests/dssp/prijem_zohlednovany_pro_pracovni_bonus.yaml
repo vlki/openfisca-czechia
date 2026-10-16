@@ -40,3 +40,19 @@
   output:
     domacnost:
       dssp_prijem_zohlednovany_pro_pracovni_bonus: 30000
+
+- name: Záporný čistý pracovní příjem se do zohledňovaného příjmu započte jako nula (leden 2026)
+  absolute_error_margin: 0.01
+  period: 2026-01
+  input:
+    osoby:
+      dospely1:
+        hruby_prijem_ze_zamestnani_1: 1000
+      dospely2:
+        nemocenska: 4000
+    domacnosti:
+      domacnost:
+        clenove: [dospely1, dospely2]
+  output:
+    domacnost:
+      dssp_prijem_zohlednovany_pro_pracovni_bonus: 4000

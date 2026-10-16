@@ -24,8 +24,11 @@ class dssp_rozhodny_prijem(Variable):
             return domacnost.sum(hodnoty_prijmove_promenne_bez_nezaopat_deti)
 
         return (
+            # Pracovní příjem vstupuje do součtu omezený zdola na nule, protože
+            # podle § 4 odst. 3 zákona 151/2025 Sb. nelze žádný z příjmů snížit
+            # o ztrátu z jiného druhu příjmů
             suma_pro_domacnost_bez_nezaopat_deti(
-                "cisty_pracovni_prijem_osoby_bez_danoveho_bonusu"
+                "dssp_zapocitatelny_pracovni_prijem_osoby"
             )
             + suma_pro_domacnost_bez_nezaopat_deti("starobni_duchod")
             + suma_pro_domacnost_bez_nezaopat_deti("invalidni_vdovecky_sirotci_duchody")

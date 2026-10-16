@@ -35,8 +35,11 @@ class dssp_prijem_zohlednovany_pro_pracovni_bonus(Variable):
         )
 
         return (
+            # Zohledňovaný příjem je částí rozhodného příjmu (§ 40 odst. 2 zákona
+            # 151/2025 Sb.), takže pracovní příjem vstupuje do součtu stejně
+            # omezený zdola na nule jako v rozhodném příjmu
             suma_pro_domacnost_bez_nezaopat_deti(
-                "cisty_pracovni_prijem_osoby_bez_danoveho_bonusu"
+                "dssp_zapocitatelny_pracovni_prijem_osoby"
             )
             + suma_pro_domacnost_bez_nezaopat_deti("nemocenska")
             + suma_pro_domacnost_bez_nezaopat_deti("odmena_pestouna")

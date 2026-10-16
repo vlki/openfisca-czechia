@@ -23,6 +23,9 @@ class dssp_je_osoba_pracovne_aktivni(Variable):
             "ma_sverene_dite_do_pece_max_2_roky", period
         )
 
+        # Záměrně se tu pracuje s nečištěným příjmem, který může být i záporný:
+        # rozhoduje se, jestli osoba pracuje, ne kolik jí z práce zbude. Proto je
+        # podmínka != 0, a ne > 0.
         return (
             (cisty_pracovni_prijem_osoby != 0)
             | (nemocenska > 0)
