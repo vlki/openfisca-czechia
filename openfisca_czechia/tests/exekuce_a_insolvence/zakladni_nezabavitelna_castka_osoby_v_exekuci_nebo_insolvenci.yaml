@@ -19,3 +19,25 @@
   output:
     zakladni_nezabavitelna_castka_osoby_v_exekuci_nebo_insolvenci: 24678
   absolute_error_margin: 0.01
+
+- name: Základní nezabavitelná částka jedince se 2 vyživovanými osobami se zaokrouhluje nahoru (leden 2026)
+  period: 2026-01
+  input:
+    pocet_vyzivovanych_osob_pro_vypocet_srazky_v_exekuci_nebo_insolvenci: 2
+  output:
+    zakladni_nezabavitelna_castka_osoby_v_exekuci_nebo_insolvenci: 21153
+  absolute_error_margin: 0.01
+
+- name: Základní nezabavitelná částka jedince se 4 vyživovanými osobami vychází na celé koruny (leden 2026)
+  period: 2026-01
+  input:
+    pocet_vyzivovanych_osob_pro_vypocet_srazky_v_exekuci_nebo_insolvenci: 4
+  output:
+    zakladni_nezabavitelna_castka_osoby_v_exekuci_nebo_insolvenci: 28203
+  absolute_error_margin: 0.01
+
+- name: Základní nezabavitelná částka jedince se nemění se zvýšením životního minima během roku (říjen 2026)
+  period: 2026-10
+  output:
+    zakladni_nezabavitelna_castka_osoby_v_exekuci_nebo_insolvenci: 14102
+  absolute_error_margin: 0.01

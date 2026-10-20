@@ -39,3 +39,13 @@
   output:
     srazka_v_exekuci_nebo_insolvenci: 21866
   absolute_error_margin: 0.01
+
+- name: Srážka pro jedince s nepřednostní exekucí (říjen 2026)
+  period: 2026-10
+  input:
+    cisty_pracovni_prijem_osoby: 20000
+    pocet_exekuci_osoby: 1
+    ma_prednostni_exekuce: false
+  output:
+    srazka_v_exekuci_nebo_insolvenci: 1966
+  absolute_error_margin: 0.01

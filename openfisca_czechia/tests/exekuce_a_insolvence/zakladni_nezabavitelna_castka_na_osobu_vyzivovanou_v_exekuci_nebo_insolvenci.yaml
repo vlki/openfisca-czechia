@@ -3,3 +3,9 @@
   output:
     zakladni_nezabavitelna_castka_na_osobu_vyzivovanou_v_exekuci_nebo_insolvenci: 3525.375
   absolute_error_margin: 0.01
+
+- name: Základní nezabavitelná částka na osobu vyživovanou se nemění se zvýšením životního minima během roku (říjen 2026)
+  period: 2026-10
+  output:
+    zakladni_nezabavitelna_castka_na_osobu_vyzivovanou_v_exekuci_nebo_insolvenci: 3525.375
+  absolute_error_margin: 0.01

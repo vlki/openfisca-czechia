@@ -26,10 +26,16 @@ class zakladni_nezabavitelna_castka_osoby_v_exekuci_nebo_insolvenci(Variable):
             period,
         )
 
-        return np.round(
-            zakladni_nezabavitelna_castka_na_osobu_povinneho
-            + (
-                pocet_vyzivovanych_osob
-                * zakladni_nezabavitelna_castka_na_osobu_vyzivovanou
+        # § 3 nařízení vlády č. 595/2006 Sb.: zaokrouhluje se na celé koruny nahoru.
+        # Nejdřív round na 2 desetinná místa, aby artefakty Python float čísel
+        # neposunuly celou částku o korunu výš.
+        return np.ceil(
+            np.round(
+                zakladni_nezabavitelna_castka_na_osobu_povinneho
+                + (
+                    pocet_vyzivovanych_osob
+                    * zakladni_nezabavitelna_castka_na_osobu_vyzivovanou
+                ),
+                decimals=2,
             )
         )
