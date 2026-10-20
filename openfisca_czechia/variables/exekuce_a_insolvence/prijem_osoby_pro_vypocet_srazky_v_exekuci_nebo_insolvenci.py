@@ -23,7 +23,6 @@ class prijem_osoby_pro_vypocet_srazky_v_exekuci_nebo_insolvenci(Variable):
         nemocenska = osoba("nemocenska", period)
         podpora_v_nezamestnanosti = osoba("podpora_v_nezamestnanosti", period)
         odmena_pestouna = osoba("odmena_pestouna", period)
-        vyzivne_na_deti = osoba("vyzivne_na_deti", period)
         jine_prijmy = osoba("jine_prijmy", period)
 
         return (
@@ -35,6 +34,5 @@ class prijem_osoby_pro_vypocet_srazky_v_exekuci_nebo_insolvenci(Variable):
             + nemocenska
             + podpora_v_nezamestnanosti
             + odmena_pestouna
-            + vyzivne_na_deti
             + jine_prijmy
         )
