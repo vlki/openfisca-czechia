@@ -8,7 +8,7 @@ authors = [
     {name = "Jan Vlcek", email = "jan.vlcek@vlki.cz"}
 ]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 5 - Production/Stable",
     "License :: OSI Approved :: GNU Affero General Public License v3",
     "Operating System :: POSIX",
     "Programming Language :: Python",
