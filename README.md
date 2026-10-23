@@ -14,7 +14,7 @@ OpenFisca je svobodný software pro simulace a mikrosimulace. Tento repozitář 
 
 * [Co model obsahuje](#co-model-obsahuje)
 * [Co zatím model neobsahuje](#co-zatím-model-neobsahuje)
-* [Kdo model používá](#kdo-model-používá)
+* [Kdo model využívá](#kdo-model-využívá)
 * [Organizace složek](#organizace-složek)
 * [Použití jako balíček v Python skriptech](#použití-jako-balíček-v-python-skriptech)
 * [Použití pomocí Claude/ChatGPT/dalších AI nástrojů](#použití-pomocí-claudechatgptdalších-ai-nástrojů)
