@@ -1,3 +1,8 @@
+## 1.0.0
+
+* DSSP dle legislativy k 1.10.2026 (normativy dle okresů, vyšší životní minima)
+* daň z příjmu a odvody na sociální a zdravotní pojištění z až 3 zaměstnání
+* exekuční a insolvenční srážky
 
 ## 0.1.2
 
