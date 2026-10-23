@@ -1,3 +1,7 @@
+## 1.0.1
+
+* Změna development status z Alpha na Production/Stable
+
 ## 1.0.0
 
 * DSSP dle legislativy k 1.10.2026 (normativy dle okresů, vyšší životní minima)
