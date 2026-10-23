@@ -14,9 +14,10 @@ OpenFisca je svobodný software pro simulace a mikrosimulace. Tento repozitář 
 
 * [Co model obsahuje](#co-model-obsahuje)
 * [Co zatím model neobsahuje](#co-zatím-model-neobsahuje)
+* [Kdo model používá](#kdo-model-používá)
 * [Organizace složek](#organizace-složek)
 * [Použití jako balíček v Python skriptech](#použití-jako-balíček-v-python-skriptech)
-* [Použití pomocí Claude/ChatGPT/dalších AI nástrojů](#použití-pomocí-claude-chatgpt-dalsich-ai-nastroju)
+* [Použití pomocí Claude/ChatGPT/dalších AI nástrojů](#použití-pomocí-claudechatgptdalších-ai-nástrojů)
 * [Použití přes webové API](#použití-přes-webové-api)
 * [Licence](#licence)
 
@@ -35,6 +36,10 @@ Vše dle platné legislativy k říjnu 2026.
 
 * Majetkový test DSSP
 * Odvody z příjmu z podnikání (OSVČ)
+
+## Kdo model použivá
+
+Model byl zveřejněn v říjnu 2026 a v současnosti je používán pro všechny výpočty [Kalkulačky dávek, daní a exekucí Centra SPOT](https://kalkulacka.centrumspot.cz/).
 
 ## Organizace složek
 
