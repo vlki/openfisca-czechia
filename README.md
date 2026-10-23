@@ -19,6 +19,7 @@ OpenFisca je svobodný software pro simulace a mikrosimulace. Tento repozitář 
 * [Použití jako balíček v Python skriptech](#použití-jako-balíček-v-python-skriptech)
 * [Použití pomocí Claude/ChatGPT/dalších AI nástrojů](#použití-pomocí-claudechatgptdalších-ai-nástrojů)
 * [Použití přes webové API](#použití-přes-webové-api)
+* [Kontakt](#kontakt)
 * [Licence](#licence)
 
 ## Co model obsahuje
@@ -37,9 +38,9 @@ Vše dle platné legislativy k říjnu 2026.
 * Majetkový test DSSP
 * Odvody z příjmu z podnikání (OSVČ)
 
-## Kdo model použivá
+## Kdo model využívá
 
-Model byl zveřejněn v říjnu 2026 a v současnosti je používán pro všechny výpočty [Kalkulačky dávek, daní a exekucí Centra SPOT](https://kalkulacka.centrumspot.cz/).
+V současnosti je model využíván pro všechny výpočty [Kalkulačky dávek, daní a exekucí Centra SPOT](https://kalkulacka.centrumspot.cz/).
 
 ## Organizace složek
 
@@ -272,6 +273,10 @@ Výsledek by měl v tomto případě být:
   rezidualni_prijem_domacnosti: { '2026-10': 15020 }
 }
 ```
+
+## Kontakt
+
+Správcem modelu v tomto repozitáři je Jan Vlček. V případě dotazů pište na [jan.vlcek@vlki.cz](mailto:jan.vlcek@vlki.cz)
 
 ## Licence
 
