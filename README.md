@@ -159,9 +159,16 @@ Rezidualni prijem domacnosti: [15020.]
 
 ## Použití pomocí Claude/ChatGPT/dalších AI nástrojů
 
-Nástroje jako Claude nebo ChatGPT umí počítat situace domácností pomocí OpenFisca, pokud se jim předají instrukce, jak OpenFiscu pro Česko použít. Je to užitečné především pro uživatele, kteří si nejsou jistí při práci s jazykem Python, protože Claude nebo ChatGPT pak fungují jako prostředník, který umí požadavky uživatele přeložit na vstupy do OpenFisca modelu a výstupy zpět předat.
+Nástroje jako Claude nebo ChatGPT (či další AI nástroje) umí počítat situace domácností pomocí OpenFisca, pokud se jim předají instrukce, jak OpenFiscu pro Česko použít. Je to užitečné především pro uživatele, kteří si nejsou jistí při práci s jazykem Python, protože Claude nebo ChatGPT pak fungují jako prostředník, který umí požadavky uživatele přeložit na vstupy do OpenFisca modelu a výstupy zpět předat.
 
 Pro použití si nejdříve stáhněte soubor [SKILL.md](/SKILL.md) a nainstalujte si ho jako skill ve svém Claude/ChatGPT. Instrukce, jak takový skill nainstalovat si dohledejte v dokumentaci nástroje, nebo se přímo Claude/ChatGPT zeptejte.
+
+Jakmile máte skill nainstalovaný, pak stačí v promptu zmínit, že chcete použít OpenFisca a Claude/ChatGPT by měl sáhnout pro skill.
+
+Příklad promptu:
+```
+Vypočti mi pomocí OpenFiscy výši exekuční srážky a výši DSSP u domácnosti 2 seniorů (oba věk 70), co jeden má starobní důchod 6000 Kč a druhý starobní důchod 8000 Kč.
+```
 
 ## Použití přes webové API
 
